@@ -1,0 +1,82 @@
+# Examples and Challenge Questions
+
+In this section, we will review a field based experimental design example.  There are challenge questions to answer.
+
+We will also introduce tools to generate randomised experimental designs - this is a good trick to have up your sleeves!
+
+## Designing your first experiment
+
+You are challenged to design an Arctic field manipulation experiment to evalauate UV-B radiation and increased CO2 impacts on plant growth.
+
+Context: an arctic tundra study 
+Increasing ultraviolet-B (+UV-B) radiation from ozone depletion (the arctic ozone hole)
+Increasing atmospheric CO2  (+CO2) from anthropogenic emissions
+For plants: +UV-B potentially harmful, +CO2 potentially beneficial
+
+Hypotheses
+Elevated (+) UV-B radiation will reduce the growth of arctic plants
+Elevated (+) $CO_{2}$ will increase the growth of arctic plants
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/ArcticPlants.png")
+```
+
+The resources available to you are constrained.  The arctic research station has given permission for 16 plots (each 2m x 2m) in the natural vegetation nearby.
+
+One +UV-B plot (2m x 2m) costs £4000 (this provides the UV-B lamps, frame, power and control system, wooden walkways around the plots)
+One $+CO_{2}$ plot (2m x 2m) costs £6000 (this provides a CO2 release system, CO2 control and covers CO2 purchase costs, wooden walkways around the plots)
+One control plot (2m x 2m) costs £200 (marking posts, wooden walkways around the plots)
+
+You have a budget of £61,000
+
+Design an experiment to test the hypotheses (i.e. the design of the plots and treatments including replication, not what measurements you will take - which will be plant growth rates....).  Think hard about this.  How many treatments do you have?  How many plots/treatment would you like to allocate?  Is this possible?  Will this be a balanced design, given your max budget?  If it isn't, what rule can you use to allocate them replicates to treatments?
+
+Write an answer down, before moving to the next section.  We'll provide the answer separately!
+
+## Using R to generate Experimental Designs
+
+Let's set up a script to do this. As with every script last semester, we start with a preamble and some libraries
+
+```{r, warning = FALSE, message=FALSE}
+# Designing experiments with R: and introduction
+# MY NAME
+# DATE
+
+#libraries I need
+
+library(tidyverse)
+library(ggfortify)
+library(agricolae)
+library(car)
+library(gmodels)
+library(visreg)
+```
+
+That's alot of packages, but you'll see how we use them for designing and then analysing data.
+
+To design and experiment, we are going to use the `design.csd` function from the _agricolae_ package.
+
+```{r}
+# use this to make sure the random allocation pattern is the same for you and me
+set.seed(123)
+
+# define the treatments
+treatments <- c("Control","UVB","CO2")
+
+# define the design
+design <- design.crd(treatments, r = c(6,5,5), serie = 0)
+
+# view the design - note that the actual data are in $book
+glimpse(design)
+
+# grab that book
+use_design <- design$book
+
+# show the design
+use_design
+```
+
+Great scott!  So, we have 16 plots and we've randomly allocated the set of treatments to these plots, with 6 controls, and 5 of the non-control treatments.
+
+
+

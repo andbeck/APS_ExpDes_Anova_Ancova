@@ -1,0 +1,39 @@
+# Experimental Design and ANOVA - A Summary    
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggfortify)
+library(agricolae)
+library(car)
+library(gmodels)
+library(visreg)
+library(patchwork)
+```
+
+There are three sets of things you should now know about based on reading these chapters and working through the examples.  The first set is a bunch of clever R stuff for helping generate experimental designs.  The second set is a better understanding of experimental designs in general.  The third set is how to analyse and interpret data from 1-way and 2-way ANOVA models, that are the toolboxes for analysing these designs.
+
+Lets review these in reverse order
+
+## How To Analyse ANOVA models
+
+In semester 1, you were introduced to the 1-way ANOVA model, using the daphnia parasite data.  Here you've learned more about those analyses.  
+
+You now understand better what treatment contrasts are, the risk of post-hoc tests like the Tukey Test, and methods for making _a priori_ contrasts to test specific hypothesis.  You learned how specify specific hypoptheses and use the `fit.contrast` function from the _gmodels_ package to help you be really precise in asking and answering questions.
+
+You also learned how to include a blocking factor in your models to control for environmental gradients in your experiments.  You learned how to estimate the standard error that is used for the testing of among treatment level differences too.
+
+Finally, you learned about the idea of interactions - the effect of UVB on Plant Yield Varies by CO2 level.  You learned how to fit these models (e.g. `lm(Yield ~ UVB * CO2, data = dataframe)`) and how to interpret the statistical outputs against the graphs you made.  Speaking of which, you learned how tomake graphs that reveal the presence of interactions, or not.
+
+## Experimental Designs.
+
+You should now understand the differences between, and value of the Completely Randomised Design, the Randomised Complete Block Design and the Latin Square Design.  There are plenty more designs out there to manage lots of different issues.  The _agricolae_ package is a great tool for generating designs (to help plan experminents) and is also a great resource for learning about them.
+
+https://myaseen208.github.io/agricolae/articles/Intro_agricolae.html
+
+## Clever R Stuff
+
+You've also increased your R ninja skills.  You've learned about building 'fake data' using the `design_` class of functions in _agricolae_ mixed with random numbers and a clear set of tools that develop understanding of how additive and interactive effects arise among treatments in your data.  This is a super skill.
+
+There is nothing better than making data that has a pattern or not, to understand better where patterns are in your own data.  If you can build 'fake data' with and without the pattern you might expect from theory, then you have the template on which to examine carefully your 'real data' collected via the experiments or surveys.
+
+

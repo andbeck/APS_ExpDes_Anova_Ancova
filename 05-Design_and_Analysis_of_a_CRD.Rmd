@@ -1,0 +1,242 @@
+# Design and Analysis of Experiments
+
+In this section, we will design and experiment, make up data for the experiment, and analyse the experiment.
+
+This is a very good process to go through - you will understand more fully how to generate randomisation in your experiments, and you will better understand how data that you collect is _structured_ - from where does variation come in your measurements.  
+
+Another way to think about this is to consider that we are learning how statistics looks at data you've collected.  We are going to make up data, where we know the answer to the question.  Then we are going to plot these data, and analyse them.
+
+## Example one
+We are now going to cheat by generating artificial data we we don’t have time to go run the experiment.
+
+The experiment is about plant biomass yield under several herbicide treatments: a control and two herbicides, and a third treatment that is a placebo - applied water but no herbicide.  The hypothesis is....?
+
+Enter the following code in your script file, then run it. 
+
+```{r, echo = FALSE, warning = FALSE, message=FALSE}
+library(tidyverse)
+library(agricolae)
+library(ggfortify)
+library(gmodels)
+```
+
+
+```{r}
+# set the random seed - this will ensure that your results and mine here are the same.
+set.seed(123)
+
+#treatment names we have a control and two herbicides, Herb3 is a placebo (applied water but no herbicide)
+treat <- c("Cont","Herb1","Herb2","Placebo")
+
+#number of replicates
+Nreps <- 30
+
+#Total number of experimental units
+Total.units <- Nreps * length(treat)
+
+#Our completely randomized design
+# not the trick of adding the $book at the end of the code
+design <- design.crd(treat, Nreps, serie = 0)$book
+
+# check it out (the first 10 rows)
+head(design, 10)
+```
+
+### Making up data
+
+Right, lets make up some artificial data so we know the right answers – this is a very good way of checking you understand what’s going on.
+
+First, lets define some randon variation centred around 0 with a standard deviation of 3:
+
+```{r}
+#Our experimental errors, normal distribution mean = 0, standard deviation = 3
+# rnorm is random normal distribution - the bell curve!
+error <- rnorm(Total.units, mean=0, sd=3)
+```
+
+Now we need to actually generate a response variable.  The thing we 'measured'.  For this experiment we are _measuring_ yield - the grams of dry biomass at the end of the experimental season.
+
+To do this, we have to think about the mean of the yield (we'll set it to 20), the deviation caused by Herbicide 1 (+5 average yield), the deviation caused by Herbicide 2 (+6 average yield) and the deviation caused by the placebo (nothing) and the error among observations (error).  If this works, there should be Controls and Placebos with values around 20, and Herbicide values around ±25-26.  But keep in mind... we have a standard deviation of 3 in the error... what will that do?  Let's see.
+
+```{r}
+#the observations of yield
+design$obs <- 
+  # mean yield overall
+  20 + 
+  # deviation caused by Herbicide 1
+  (design$treat=="Herb1") * 5 + 
+  (design$treat == "Herb2") * 6 + 
+  (design$treat == "Placebo")*1 +
+  error
+
+# look at it
+design$obs
+
+# look at the design now.
+head(design)
+```
+
+### Into the dplyr and ggplot pipeline.
+
+Great stuff.  Now we can move to our standard data management and visualisation pipeline.
+
+1. review the data
+2. sumamrise the data with dplyr - generate means and se's for the treatments
+3. visualise with ggplot2
+
+```{r}
+# check the data
+glimpse(design)
+
+# summarise to get means and ses
+sumDat <- design %>% 
+  group_by(treat) %>% 
+  summarise(
+    meanYield = mean(obs),
+    seYield = sd(obs)/sqrt(n())
+  )
+
+# plot the raw data and the mean±se
+# start with the mean±se and then add the raw data
+ggplot(sumDat, aes(x = treat, y = meanYield))+
+  geom_point(size = 5)+
+  geom_errorbar(data = sumDat, aes(ymin = meanYield - seYield, ymax = meanYield+seYield),
+                width = 0.1)+
+  geom_point(data = design, aes(x = treat, y = obs), colour = 'red', alpha = 0.3)
+```
+
+A few things to notice.  
+
+1. The data are quite variable and the means of the herbicide treatments are roughly 5 and 6 units higher. This is as we expected....
+2. The standard errors are quite small!  Why is that!?
+3. For those of you interested in some extra reading and thinking, the 95% Confidence Interval around the means can be calculated using `1.96*SE` == `1.96*sd(obs)/sqrt(n())`.  Go ahead and do that and look into that if you want... 
+
+## The One-Way ANOVA.  
+
+If you've been paying attention, we've essentially designed and plotted the data for a 1-way ANOVA.  These data are very similar to the daphnia parasite data we finished semester 1 with.  
+
+To analyse these data, we use the `lm()` function to build the model, check assumptions, and then make inference.  Let's go.
+
+```{r}
+# the model
+modYield <- lm(obs ~ treat, data = design)
+
+# assumptions
+autoplot(modYield)
+
+# inference: anova
+anova(modYield)
+
+# contrasts
+summary(modYield)
+```
+
+### Making insight and inference
+
+Lets walks through things very discretely.
+
+1. Our graph suggests that herbicide treatments have an effect of increasing yield.
+2. Our model is designed to test this hypothesis - are any of the differences among means non-zero?
+3. Our hypothesis is probably really about whether the herbicide and placebos are differnt than the controls
+4. Our diagnostics are fantistic... the best you've ever seen.
+5. The Anova Table confirms that there are differences - we can reject the null hypothesis
+6. The summary table confirms that Herb1 and Herb2 are both larger than controls and the Placebo is not.
+
+How do we interpret even more?  The estimate associated with Control is 20!  Just where it should be.  
+
+The estimates associated with Herb1, Herb2 and Placebo are the differences between the mean of these treatments and the control (the reference level!).  These differences are positive for Herb1 and Herb2, close to 5 and 6 respectively (as expected) and this positive difference is not 0 via the statistical test.  
+
+However, the differnce for Placebo is close to 0 and therefore we can not reject the null hypothesis test that it differs from control.  GENUIS!
+
+## A priori vs. Post-Hoc Contrasts
+
+In the semester 1, we introduced how to do a Tukey Test.
+
+This is known as an _a posteriori_ test – testing the significance of things suggested by the experiment, also known as data snooping or data dredging. These are multiple comparison methods (Bonferroni, Scheffe method, Tukey honest significant difference, Duncan’s multiple range test) which try to control the chance of getting a significant result by chance.
+
+To understand the risks of these, consider this experimental design.  We have 7 treatments.  With 7 treatments, there are 21 pairwise comparisons. With p-value threshold of $0.05$ we expect 1/20 (5/100) tests to be significant.  So with this 7 treatment and 21 comparison design, would you expect a signficant result by chance?  You betyja.
+
+This is why, unless a priori (in advance) you can justify ALL pairwise comparisons, a tukey test may not be appropriate.
+
+Some statisticians really don’t like them “In my view multiple comparison methods have no place at all in the interpretation of data” Nelder (very well respected statistician).
+
+### The more appropriate approach.
+
+The classical approach is to specify a priori (before experiment) a set of hypotheses then test them using contrasts.  For our experiment, as noted above, we were probably interested in what our treatment contrasts provided - tests of difference with the control.
+
+Specifying specific contrasts is easy once you get your head around the 'structure' of the syntax.  Lets have a go with specifying a comparison JUST between Herbicide 1 and the control.
+
+```{r}
+# check the levels and ORDERING of the treatments
+levels(design$treat)
+
+# define the contrast you want using -1, 1 and 0's
+# this says compare control with herbicide 1.... and ignore the Herb2 and Placebo
+# we give the reference -1 and the 'other' 1.
+contrast <- c(-1,1,0,0)
+
+# use the fit.contrast function from gmodels
+fit.contrast(modYield, "treat", contrast)
+
+# remind ourselves of the contrast from the summary table
+summary(modYield)
+```
+
+> Notice that the results are the same from the summary(modYield) and the fit.contrast.
+
+If we want to compare the two herbicides we can use this approach.  Note in advance that this contrast DOES NOT exist in the summary table!
+
+```{r}
+# define the contrast you want using -1, 1 and 0's
+# this says compare herb1 with herb2, ignoring the control and placebo.
+# we give the reference -1 and the 'other' 1.
+contrast <- c(0,-1,1,0)
+
+# use the fit.contrast function from gmodels
+fit.contrast(modYield, "treat", contrast)
+```
+
+Isn't this cool?  Note that the difference reported is the difference between the two means: 
+
+```{r}
+# check our summary data
+sumDat
+```
+
+Here it is: $26.2 - 24.2 = 2$
+
+This says that despite the difference we created of ~1 unit of yield between Herb1 and Herb2, when we defined error and generated the data, it created a significant difference detectable with statistics.
+
+### comparing the average of the herbicide effect with the control.
+
+This might be a comparison you intended to make also... the average effect of herbicides in general.  To do this, we expand the idea of -1,1 and 0's to include 1/2s (and yes, 1/3's and more are possible):
+
+```{r}
+# define the contrast you want using -1, 1 and 0's
+# this says compare control with the average of herbicide 1 and 2, ignoring the placebo
+# we give the reference -1 and the 'other two' a 1/2 each.
+contrast <- c(-1,1/2,1/2,0)
+
+# use the fit.contrast function from gmodels
+fit.contrast(modYield, "treat", contrast)
+```
+
+Again, checking sumDat
+
+```{r}
+sumDat
+```
+
+$(24.2+26.2)/2 = 25.2$ --> $25.2 - 20 = 5.2$
+
+### writing this up...
+
+Fill in these blanks using the various contrasts you made above!
+
+>We conclude that herbicides on average cause an _____ gram increase in yield (t = ___ , p = ___ ). We also note that there was a significant difference of _____ grams between the herbicides (t = _____  p = ______). The additional placebo treatment had no effect on yield (t = _______  p = __________).
+
+
+
+
+
+
