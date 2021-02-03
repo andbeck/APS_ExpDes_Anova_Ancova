@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 11 Nonlinearities, polynomials and regression | An Introduction to Experimental Design</title>
+  <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 11 Nonlinearities, polynomials and regression | An Introduction to Experimental Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 11 Nonlinearities, polynomials and regression | An Introduction to Experimental Design" />
+  
+  <meta name="twitter:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
+  
+
+<meta name="author" content="Andrew P Beckerman (based on text from Mark Rees and Gareth Phoenix)" />
+
+
+<meta name="date" content="2021-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducing-the-ancova-the-analysis-of-covariance.html"/>
+<link rel="next" href="a-final-overview.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">And Introduction to Experimental Design and Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#the-three-rs"><i class="fa fa-check"></i><b>1.0.1</b> The Three Rs</a></li>
+<li class="chapter" data-level="1.0.2" data-path="index.html"><a href="index.html#the-general-linear-model"><i class="fa fa-check"></i><b>1.0.2</b> The General Linear Model</a></li>
+<li class="chapter" data-level="1.0.3" data-path="index.html"><a href="index.html#section-readings--"><i class="fa fa-check"></i><b>1.0.3</b> Section Readings —-</a></li>
+<li class="chapter" data-level="1.0.4" data-path="index.html"><a href="index.html#install-some-extra-packages--"><i class="fa fa-check"></i><b>1.0.4</b> Install some extra packages —-</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction To Experiments (Some Philosophy)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#how-to-think-about-experiments-components-of-an-experiment"><i class="fa fa-check"></i><b>2.1</b> How to think about experiments: Components of an Experiment</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#how-do-we-increase-precision-and-reduce-bias"><i class="fa fa-check"></i><b>2.1.1</b> How do we increase precision and reduce bias?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#experimental-vs-measurement-units"><i class="fa fa-check"></i><b>2.2</b> Experimental vs Measurement units</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#take-home-message-randomization-properly-with-replication-protects-against-confounding"><i class="fa fa-check"></i><b>2.2.1</b> Take Home Message: Randomization properly with Replication protects against Confounding</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro.html"><a href="intro.html#a-non-randomized-experiment-haphazard-is-not-randomized"><i class="fa fa-check"></i><b>2.2.2</b> A non-randomized experiment – <strong>haphazard</strong> is NOT randomized</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#mini-quiz"><i class="fa fa-check"></i><b>2.3</b> Mini-Quiz</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#replication-how-many"><i class="fa fa-check"></i><b>2.4</b> Replication: How many?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html"><i class="fa fa-check"></i><b>3</b> Standard Errors, Precision and Sampling</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#standard-errors-and-precision"><i class="fa fa-check"></i><b>3.1</b> Standard Errors and precision</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#se-of-a-difference-and-balance."><i class="fa fa-check"></i><b>3.1.1</b> SE of a Difference and Balance.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#however-sometimes-unbalanced-designs-are-better."><i class="fa fa-check"></i><b>3.1.2</b> However sometimes unbalanced designs are better.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#the-crd-completely-randomised-design"><i class="fa fa-check"></i><b>3.2</b> The CRD: Completely Randomised Design</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="examples-and-challenge-questions.html"><a href="examples-and-challenge-questions.html"><i class="fa fa-check"></i><b>4</b> Examples and Challenge Questions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="examples-and-challenge-questions.html"><a href="examples-and-challenge-questions.html#designing-your-first-experiment"><i class="fa fa-check"></i><b>4.1</b> Designing your first experiment</a></li>
+<li class="chapter" data-level="4.2" data-path="examples-and-challenge-questions.html"><a href="examples-and-challenge-questions.html#using-r-to-generate-experimental-designs"><i class="fa fa-check"></i><b>4.2</b> Using R to generate Experimental Designs</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html"><i class="fa fa-check"></i><b>5</b> Design and Analysis of Experiments</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#making-up-data"><i class="fa fa-check"></i><b>5.1.1</b> Making up data</a></li>
+<li class="chapter" data-level="5.1.2" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#into-the-dplyr-and-ggplot-pipeline."><i class="fa fa-check"></i><b>5.1.2</b> Into the dplyr and ggplot pipeline.</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#the-one-way-anova."><i class="fa fa-check"></i><b>5.2</b> The One-Way ANOVA.</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#making-insight-and-inference"><i class="fa fa-check"></i><b>5.2.1</b> Making insight and inference</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#a-priori-vs.-post-hoc-contrasts"><i class="fa fa-check"></i><b>5.3</b> A priori vs. Post-Hoc Contrasts</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#the-more-appropriate-approach."><i class="fa fa-check"></i><b>5.3.1</b> The more appropriate approach.</a></li>
+<li class="chapter" data-level="5.3.2" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#comparing-the-average-of-the-herbicide-effect-with-the-control."><i class="fa fa-check"></i><b>5.3.2</b> comparing the average of the herbicide effect with the control.</a></li>
+<li class="chapter" data-level="5.3.3" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#writing-this-up"><i class="fa fa-check"></i><b>5.3.3</b> writing this up…</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html"><i class="fa fa-check"></i><b>6</b> Randomized Complete Block design (RCB)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#and-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> And example of the RCBD</a></li>
+<li class="chapter" data-level="6.2" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#analysing-the-crbd"><i class="fa fa-check"></i><b>6.2</b> Analysing the CRBD</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#building-the-model"><i class="fa fa-check"></i><b>6.2.1</b> Building the model</a></li>
+<li class="chapter" data-level="6.2.2" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#are-the-estimates-of-the-parameters-what-we-expect"><i class="fa fa-check"></i><b>6.2.2</b> Are the estimates of the parameters what we expect?</a></li>
+<li class="chapter" data-level="6.2.3" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#correct-standard-errors-for-a-figure"><i class="fa fa-check"></i><b>6.2.3</b> Correct Standard Errors for a Figure</a></li>
+<li class="chapter" data-level="6.2.4" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#making-inference-confidence-intervals-and-contrasts"><i class="fa fa-check"></i><b>6.2.4</b> Making inference: confidence intervals and contrasts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="the-latin-square-design-lsd.html"><a href="the-latin-square-design-lsd.html"><i class="fa fa-check"></i><b>7</b> The Latin Square Design (LSD)</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="the-latin-square-design-lsd.html"><a href="the-latin-square-design-lsd.html#fitting-the-model"><i class="fa fa-check"></i><b>7.0.1</b> Fitting the model</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html"><i class="fa fa-check"></i><b>8</b> Designs for testing for interactions: factorial designs.</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#introducing-interactions"><i class="fa fa-check"></i><b>8.1</b> Introducing Interactions</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#lets-design-an-experiment-again"><i class="fa fa-check"></i><b>8.1.1</b> Let’s design an experiment, again…</a></li>
+<li class="chapter" data-level="8.1.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#the-factorial-design-how-and-why-study-interactions"><i class="fa fa-check"></i><b>8.1.2</b> The Factorial Design: How and Why Study Interactions?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#a-factorial-design-and-the-two-way-anova"><i class="fa fa-check"></i><b>8.2</b> A Factorial Design and the Two-Way ANOVA</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#build-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Build the Data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#plot-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Plot the data!</a></li>
+<li class="chapter" data-level="8.2.3" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#analyse-the-data"><i class="fa fa-check"></i><b>8.2.3</b> Analyse the data</a></li>
+<li class="chapter" data-level="8.2.4" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#final-figuring"><i class="fa fa-check"></i><b>8.2.4</b> final figuring</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html"><i class="fa fa-check"></i><b>9</b> Experimental Design and ANOVA - A Summary</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
+<li class="chapter" data-level="9.2" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
+<li class="chapter" data-level="9.3" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html"><i class="fa fa-check"></i><b>10</b> Introducing the ANCOVA - the analysis of covariance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#setting-up-the-various-ideas."><i class="fa fa-check"></i><b>10.1</b> Setting up the various ideas.</a></li>
+<li class="chapter" data-level="10.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#working-through-and-example."><i class="fa fa-check"></i><b>10.2</b> Working through and example.</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#get-the-data-and-make-your-picture"><i class="fa fa-check"></i><b>10.2.1</b> Get the data and make your picture</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#building-the-model-and-understanding-it"><i class="fa fa-check"></i><b>10.3</b> Building the model (and understanding it)</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#dealing-with-some-issues-with-residuals."><i class="fa fa-check"></i><b>10.3.1</b> Dealing with some issues with residuals.</a></li>
+<li class="chapter" data-level="10.3.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#making-inference-on-the-ancova"><i class="fa fa-check"></i><b>10.3.2</b> Making inference on the ANCOVA</a></li>
+<li class="chapter" data-level="10.3.3" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#the-summary-table-and-making-sense-of-the-log-stuff."><i class="fa fa-check"></i><b>10.3.3</b> The summary table and making sense of the log stuff.</a></li>
+<li class="chapter" data-level="10.3.4" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#the-equations-supported-by-the-model."><i class="fa fa-check"></i><b>10.3.4</b> The equations supported by the model.</a></li>
+<li class="chapter" data-level="10.3.5" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#making-even-more-inference-and-drawing-the-picture"><i class="fa fa-check"></i><b>10.3.5</b> Making even more inference and drawing the picture</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#some-general-principles"><i class="fa fa-check"></i><b>10.4</b> Some General Principles</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#ancova-always-tests-the-interaction-against-the-additive-model"><i class="fa fa-check"></i><b>10.4.1</b> ANCOVA always tests the interaction against the additive model</a></li>
+<li class="chapter" data-level="10.4.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#specifying-models-in-r"><i class="fa fa-check"></i><b>10.4.2</b> Specifying models in R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html"><i class="fa fa-check"></i><b>11</b> Nonlinearities, polynomials and regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#transformations---a-reminder-and-starting-point."><i class="fa fa-check"></i><b>11.1</b> Transformations - a reminder and starting point.</a></li>
+<li class="chapter" data-level="11.2" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#working-through-an-example."><i class="fa fa-check"></i><b>11.2</b> Working through an example.</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-1---inference-before-fixing-the-problem"><i class="fa fa-check"></i><b>11.2.1</b> Interlude 1 - Inference before fixing the problem</a></li>
+<li class="chapter" data-level="11.2.2" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#solving-the-problem-i-the-non-linearity"><i class="fa fa-check"></i><b>11.2.2</b> Solving the Problem I: The Non-linearity</a></li>
+<li class="chapter" data-level="11.2.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-2---inference-before-fixing-both-problems"><i class="fa fa-check"></i><b>11.2.3</b> Interlude 2 - Inference before fixing both problems</a></li>
+<li class="chapter" data-level="11.2.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#solving-the-problem-ii-non-constant---increasing-variance"><i class="fa fa-check"></i><b>11.2.4</b> Solving the Problem II: Non-constant - increasing variance</a></li>
+<li class="chapter" data-level="11.2.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-3---inference-with-both-things-corrected."><i class="fa fa-check"></i><b>11.2.5</b> Interlude 3 - Inference with both things corrected.</a></li>
+<li class="chapter" data-level="11.2.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result."><i class="fa fa-check"></i><b>11.2.6</b> Explaining the result.</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-dose-of-reality"><i class="fa fa-check"></i><b>11.3</b> A dose of reality</a></li>
+<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.4</b> A mechanistic model</a></li>
+<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.5</b> The Take Home Messages</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="a-final-overview.html"><a href="a-final-overview.html"><i class="fa fa-check"></i><b>12</b> A final Overview</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="nonlinearities-polynomials-and-regression" class="section level1" number="11">
+<h1><span class="header-section-number">Chapter 11</span> Nonlinearities, polynomials and regression</h1>
+<p>If you recall from chapter 1, we introduced the general linear model, and finished with an example where the data were highly non-linear and based on the following equation</p>
+<p><span class="math inline">\(y = 0.01 + x^{2} + \epsilon\)</span></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<p>In this final section of the module, we are going to analyse a nonlinear relationship using a linear model. This exercise should accomplish two tasks. First, it will show you how to build models to capture non-linearity. Second, it will reinforce how we use the diagnostic tools to critique our model before moving on to make inference.</p>
+<div id="transformations---a-reminder-and-starting-point." class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Transformations - a reminder and starting point.</h2>
+<p>Transformations, as we discussed in previous chapters, allow lots of models to be expressed as a linear model.</p>
+<p>For example the model for exponential growth (Numbers vs Time)</p>
+<p><span class="math inline">\(N_{t}=N_{0}*e^{(r*t)}\)</span></p>
+<p>Remembering some rules of logrithms, this can be expressed as a linear model as:</p>
+<p><span class="math inline">\(log(N_{t})=log(N_{0}) + r*t\)</span></p>
+<p>Here, <span class="math inline">\(log(N_{0})\)</span> is the y-intercept and <span class="math inline">\(r\)</span> is the gradient or slope, and <span class="math inline">\(t\)</span> = time is the x-axis explanatory variable and <span class="math inline">\(log(N)\)</span> is the y-axis response variable.</p>
+</div>
+<div id="working-through-an-example." class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Working through an example.</h2>
+<p>Don’t forget that you need the <code>tidyverse</code>, <code>car</code> and <code>ggfortify</code> packages (use <code>library()</code>) to make all of this work!</p>
+<p>We are going to work with a built in dataset about cars to demonstrate how to detect and model non-linearities. This is an exercise in multiple regression and in using the diagnostic plots.</p>
+<p>The data are built into R and we don’t need to do anything but remember that the dataset is called cars. Lets see what it looks like. The <code>speed</code> is how fast the car is going before it is ‘asked’ to stop, and the <code>dist</code> variable is how long it takes to stop in m</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="nonlinearities-polynomials-and-regression.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(cars)</span></code></pre></div>
+<pre><code>## Rows: 50
+## Columns: 2
+## $ speed &lt;dbl&gt; 4, 4, 7, 7, 8, 9, 10, 10, 10, 11, 11, 12, 12, 12, 12, 13, 13, 1…
+## $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26, 3…</code></pre>
+<p>Let’s start with step 1: making a good picture.</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="nonlinearities-polynomials-and-regression.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cars, <span class="fu">aes</span>(<span class="at">x =</span> speed, <span class="at">y =</span> dist))<span class="sc">+</span></span>
+<span id="cb120-2"><a href="nonlinearities-polynomials-and-regression.html#cb120-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb120-3"><a href="nonlinearities-polynomials-and-regression.html#cb120-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Speed (km/hour&quot;</span>)<span class="sc">+</span><span class="fu">xlab</span>(<span class="st">&quot;Stopping Distance (m)&quot;</span>)</span></code></pre></div>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<p>There are a three things we should immediately notice in this figure. The first is that there is a positive relationship. The second is that it appears to be a bit non-linear, even <em>exponential</em>. Third, it looks like there is more variation out at high speeds than at low speeds.</p>
+<p>Let’s ignore all of this for the moment and fit the model and acquire the diagnostics.</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="nonlinearities-polynomials-and-regression.html#cb121-1" aria-hidden="true" tabindex="-1"></a>mod_dist <span class="ot">&lt;-</span> <span class="fu">lm</span>(dist <span class="sc">~</span> speed, <span class="at">data =</span> cars)</span>
+<span id="cb121-2"><a href="nonlinearities-polynomials-and-regression.html#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mod_dist)</span></code></pre></div>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<p>OK - our preliminary assessment about non-linearity and non-constant variance appears to be spot on! There are systematic departures from the linear model indicated by the upper left plot.</p>
+<p>Here we add a line to the data (plot) to understand why the residuals in the upper-left panel is u-shaped. Make sure you get the idea that the majority of the <strong>data</strong> are <em>above</em> then <em>below</em> then <em>above</em> the line as you move across the graph. This generates residuals that have the pattern we see!</p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<p>The lower left panel of the residuals/diagnostics indicates that the variance does increase with the mean.</p>
+<div id="interlude-1---inference-before-fixing-the-problem" class="section level3" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> Interlude 1 - Inference before fixing the problem</h3>
+<p>I want to have us look at this model now before moving on. If we ignore the residuals, we end up with a strong conclusion that there is a positive linear relationship between stopping distance and speed.</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="nonlinearities-polynomials-and-regression.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod_dist)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: dist
+##           Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## speed      1  21186 21185.5  89.567 1.49e-12 ***
+## Residuals 48  11354   236.5                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="nonlinearities-polynomials-and-regression.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_dist)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -29.069  -9.525  -2.272   9.215  43.201 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -17.5791     6.7584  -2.601   0.0123 *  
+## speed         3.9324     0.4155   9.464 1.49e-12 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 15.38 on 48 degrees of freedom
+## Multiple R-squared:  0.6511, Adjusted R-squared:  0.6438 
+## F-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12</code></pre>
+</div>
+<div id="solving-the-problem-i-the-non-linearity" class="section level3" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> Solving the Problem I: The Non-linearity</h3>
+<p>In order to fix this problem, we can take note from our first example in chapter 1 and fit a multiple regression model with a polynomial!</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="nonlinearities-polynomials-and-regression.html#cb126-1" aria-hidden="true" tabindex="-1"></a>mod_dist_nonLin <span class="ot">&lt;-</span> <span class="fu">lm</span>(dist <span class="sc">~</span> speed <span class="sc">+</span> <span class="fu">I</span>(speed<span class="sc">^</span><span class="dv">2</span>), <span class="at">data =</span> cars)</span>
+<span id="cb126-2"><a href="nonlinearities-polynomials-and-regression.html#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mod_dist_nonLin)</span></code></pre></div>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p>Wow. That’s a massive improvement on the diagnostic that indicated a systematic departure from the linear relationship between dist and speed. But…. we still have non-constant variance - the variation in predicted distance is still increasing with the mean.</p>
+</div>
+<div id="interlude-2---inference-before-fixing-both-problems" class="section level3" number="11.2.3">
+<h3><span class="header-section-number">11.2.3</span> Interlude 2 - Inference before fixing both problems</h3>
+<p>As above, lets look at what the model tells us:</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="nonlinearities-polynomials-and-regression.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod_dist_nonLin)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: dist
+##            Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+## speed       1 21185.5 21185.5  91.986 1.211e-12 ***
+## I(speed^2)  1   528.8   528.8   2.296    0.1364    
+## Residuals  47 10824.7   230.3                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="nonlinearities-polynomials-and-regression.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_dist_nonLin)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dist ~ speed + I(speed^2), data = cars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -28.720  -9.184  -3.188   4.628  45.152 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)  2.47014   14.81716   0.167    0.868
+## speed        0.91329    2.03422   0.449    0.656
+## I(speed^2)   0.09996    0.06597   1.515    0.136
+## 
+## Residual standard error: 15.18 on 47 degrees of freedom
+## Multiple R-squared:  0.6673, Adjusted R-squared:  0.6532 
+## F-statistic: 47.14 on 2 and 47 DF,  p-value: 5.852e-12</code></pre>
+<p>Hmm. That’s interesting. We’ve added a term to the model to capture that hint of the non-linearity. There are two ways we might think this is ‘unjustified.’ First, there is no evidence that this new term is significant. Second, we can formally compare the two models, giving us a p-value that’s familiar from the tables above.</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="nonlinearities-polynomials-and-regression.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod_dist_nonLin, mod_dist)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: dist ~ speed + I(speed^2)
+## Model 2: dist ~ speed
+##   Res.Df   RSS Df Sum of Sq     F Pr(&gt;F)
+## 1     47 10825                          
+## 2     48 11354 -1   -528.81 2.296 0.1364</code></pre>
+<p>One might stop here and return to the data and the diagnostics and thing, hmmm… that systematic departure issue? Not really a big deal after all…. but lets carry on.</p>
+</div>
+<div id="solving-the-problem-ii-non-constant---increasing-variance" class="section level3" number="11.2.4">
+<h3><span class="header-section-number">11.2.4</span> Solving the Problem II: Non-constant - increasing variance</h3>
+<p>One of the ways to ‘fix’ this problem, is to make an assumption that the variance is proportional to the mean.</p>
+<p>In the absence of this, the relationship is <span class="math inline">\(\sigma^{2} * speed\)</span> - as speed increases, the variance increases. But if we assume that the variance is proportional, we get <span class="math inline">\(1/speed * \sigma^{2} * speed\)</span>…..</p>
+<p>To do this in the model, we can use the <em>weights</em> argument:</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="nonlinearities-polynomials-and-regression.html#cb133-1" aria-hidden="true" tabindex="-1"></a>mod_dist_nonLin_weight <span class="ot">&lt;-</span> <span class="fu">lm</span>(dist <span class="sc">~</span> speed <span class="sc">+</span><span class="fu">I</span>(speed<span class="sc">^</span><span class="dv">2</span>), <span class="at">weights =</span> <span class="dv">1</span><span class="sc">/</span>speed, <span class="at">data =</span> cars)</span>
+<span id="cb133-2"><a href="nonlinearities-polynomials-and-regression.html#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mod_dist_nonLin_weight)</span></code></pre></div>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
+<p>Super. We now have a model where we capture the non-linearity using a polynomial and capture the issue of increasing variance by making the model reflect our assumption that different observations have different variances.</p>
+</div>
+<div id="interlude-3---inference-with-both-things-corrected." class="section level3" number="11.2.5">
+<h3><span class="header-section-number">11.2.5</span> Interlude 3 - Inference with both things corrected.</h3>
+<p>OK. Now we are ready for using the anova table and summary table to make inference and update our figure.</p>
+<div id="anova-tables-with-multiple-explantory-variables." class="section level4" number="11.2.5.1">
+<h4><span class="header-section-number">11.2.5.1</span> Anova Tables with multiple explantory variables.</h4>
+<p>In previous exercises, we’ve used <code>anova()</code> to generate the anova table, F-statistics and p-values to test our hypotheses. It’s very important to note that <code>anova()</code> makes a sequential sums of square calculation.</p>
+<p>In our ANCOVA example, the model we fit was <code>lm(log(weight) ~ log(height) * sex, data = Davis)</code>. We know this expanded to <code>log(height) + sex + log(height):sex</code>.</p>
+<p>When we reviewed the Anova Table, there were four rows corresponding to each of these three terms (2 main effects and 1 interaction) and the residual (remaining) variation.</p>
+<p>In this table produced by <code>anova()</code>, we read it like this. First, we ask how much variation is explained by log(height). Having explained this variation, and left some unexplained, how much is then explained by sex. Finally, having explained some variation by log(height) and some of the remaining then by sex, can we explain any more by allowing slopes to vary (the interaction).</p>
+<p>The key thing to note here is that this was a sequence. Sometimes this is fine - all we are interested in is the last line, for example, testing the hypothesis that the effect of height on weight varied by sex. This makes sense when we’ve designed an experiment to test a hypothesis.</p>
+<p>However, in multiple regression, like our example with speed and distance, we need to worry about the order. It’s really important too worry about this when we’ve NOT done a manipulative and designed experiment. This is because the terms in the model can be collinear. In an experiment, treatments are always independent. In observations studies, or when we start making polynomials, variables become non-independent.</p>
+<p>Collinearity occurs when:</p>
+<p>-One of the predictor variables is a function of another as in speed and speed^2
+-Your design is unbalanced, generating a non-orthogonal design – note not all unbalanced designs are non-orthogonal.</p>
+<p>How do we avoid using the sequence? Well, let’s introduce the trick, and then reveal how it’s working.</p>
+<p>The trick is <code>Anova()</code> - not the big A. We call it <strong>Big-A Anova</strong>. It’s in the <code>car</code> package.</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="nonlinearities-polynomials-and-regression.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Anova</span>(mod_dist_nonLin_weight)</span></code></pre></div>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: dist
+##            Sum Sq Df F value Pr(&gt;F)
+## speed       12.72  1  0.9009 0.3474
+## I(speed^2)  34.44  1  2.4402 0.1250
+## Residuals  663.42 47</code></pre>
+</div>
+<div id="explaining-the-trick" class="section level4" number="11.2.5.2">
+<h4><span class="header-section-number">11.2.5.2</span> Explaining the Trick</h4>
+<p>So, this table is actually constructed by fitting two different models. One of those models is where <span class="math inline">\(speed\)</span> is first and <span class="math inline">\(speed^{2}\)</span> is second. The other model is where <span class="math inline">\(speed^{2}\)</span> is first and <span class="math inline">\(speed\)</span> is second.</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="nonlinearities-polynomials-and-regression.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">lm</span>(dist <span class="sc">~</span> speed <span class="sc">+</span><span class="fu">I</span>(speed<span class="sc">^</span><span class="dv">2</span>), <span class="at">weights =</span> <span class="dv">1</span><span class="sc">/</span>speed, <span class="at">data =</span> cars))</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: dist
+##            Df  Sum Sq Mean Sq  F value    Pr(&gt;F)    
+## speed       1 1609.18 1609.18 114.0024 3.704e-14 ***
+## I(speed^2)  1   34.44   34.44   2.4402     0.125    
+## Residuals  47  663.42   14.12                       
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="nonlinearities-polynomials-and-regression.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">lm</span>(dist <span class="sc">~</span> <span class="fu">I</span>(speed<span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span>speed, <span class="at">weights =</span> <span class="dv">1</span><span class="sc">/</span>speed, <span class="at">data =</span> cars))</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: dist
+##            Df  Sum Sq Mean Sq  F value    Pr(&gt;F)    
+## I(speed^2)  1 1630.91 1630.91 115.5417 2.957e-14 ***
+## speed       1   12.72   12.72   0.9009    0.3474    
+## Residuals  47  663.42   14.12                       
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Pay close attention…. can you see which of the <span class="math inline">\(speed\)</span> and <span class="math inline">\(speed^{2}\)</span> F and p-values from EACH of the two models are combined in the Big-A Anova table? It’s from when the are <em>last in the model</em>.</p>
+<p>Technically, this is called a Type II anova table. Technically, it means that we are estimating the effects of each term, controlling for the other and respecting ‘marginality.’ The Big-A Anova takes care of this <em>‘rotation of the position of the terms’</em> for us and produces the accurate test table we need.</p>
+<p>For unbalanced data Type II ANOVA is recommended. In many cases the biology can be used to settle the question. Say for example if you’re interested in the effect of a flower type on pollination after correcting for the effects of plant size - you know plant size affects the number of pollinator visits. Or if you have blocks (what are they?) then you might be interested in treatment affects after correcting for the effect of block.</p>
+<p>This diagram may be valuable in helping you understand this idea.</p>
+<p><img src="images/VennModels.png" width="368" /></p>
+</div>
+</div>
+<div id="explaining-the-result." class="section level3" number="11.2.6">
+<h3><span class="header-section-number">11.2.6</span> Explaining the result.</h3>
+<p>So, hopefully that makes sense. We’ll review more of that in the generalised linear model module with Dylan Childs.</p>
+<p>What you might be wondering, however, is what the result means. We have no p-values that are &lt; 0.05. Controlling for speed, there is no effect of speed^2 and vice-versa. We kind of new that from our initial ‘sequential’ assessment above….</p>
+<p>OK. Whoa. This is weird, right?</p>
+</div>
+</div>
+<div id="a-dose-of-reality" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> A dose of reality</h2>
+<p>Let’s plot all of these three models we’ve made together with the data</p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
+<p>At this point, we should ask, is the non-linear model makeing sense? We think it probably should, right? It’s what the data look like and there was a hint of it in the residuals. But in the end, there is no evidence for a relationship.</p>
+<p>Perhaps there is a better way to go about this. And in this better way a lesson in p-values and statistics.</p>
+<blockquote>
+<p>Nothing beats a good question and an understanding of the mechanism you are actually evlauating.</p>
+</blockquote>
+</div>
+<div id="a-mechanistic-model" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> A mechanistic model</h2>
+<p>Here we have a mechanistic model stopping distance in made of:</p>
+<ul>
+<li>Thinking distance – distance travelled while driver reacts so this is reaction time * speed</li>
+<li>Braking distance – which depends on the car’s kinetic energy which is proportional to speed^2</li>
+</ul>
+<p>So we expect a model of the form – note that there is NO intercept</p>
+<p><span class="math inline">\(Distance = \beta_{1}*Speed + \beta_{2}*speed^{2}\)</span></p>
+<p>We can fit this model really simply with that trick of -1 …. and all of a sudden….</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="nonlinearities-polynomials-and-regression.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fit model without intercept</span></span>
+<span id="cb140-2"><a href="nonlinearities-polynomials-and-regression.html#cb140-2" aria-hidden="true" tabindex="-1"></a>mechMod <span class="ot">&lt;-</span> <span class="fu">lm</span>(dist <span class="sc">~</span> speed <span class="sc">+</span><span class="fu">I</span>(speed<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> <span class="dv">1</span>, <span class="at">weights =</span> <span class="dv">1</span><span class="sc">/</span>speed, <span class="at">data =</span> cars)</span>
+<span id="cb140-3"><a href="nonlinearities-polynomials-and-regression.html#cb140-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-4"><a href="nonlinearities-polynomials-and-regression.html#cb140-4" aria-hidden="true" tabindex="-1"></a><span class="co"># all the inferences</span></span>
+<span id="cb140-5"><a href="nonlinearities-polynomials-and-regression.html#cb140-5" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mechMod)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: dist
+##            Df Sum Sq Mean Sq  F value    Pr(&gt;F)    
+## speed       1 5997.7  5997.7 433.8850 &lt; 2.2e-16 ***
+## I(speed^2)  1  137.1   137.1   9.9154  0.002818 ** 
+## Residuals  48  663.5    13.8                       
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="nonlinearities-polynomials-and-regression.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Anova</span>(mechMod)</span></code></pre></div>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: dist
+##            Sum Sq Df F value   Pr(&gt;F)   
+## speed       92.60  1  6.6990 0.012727 * 
+## I(speed^2) 137.06  1  9.9154 0.002818 **
+## Residuals  663.51 48                    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="nonlinearities-polynomials-and-regression.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mechMod)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dist ~ speed + I(speed^2) - 1, data = cars, weights = 1/speed)
+## 
+## Weighted Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -6.4315 -2.3314 -0.8756  1.6428 11.9808 
+## 
+## Coefficients:
+##            Estimate Std. Error t value Pr(&gt;|t|)   
+## speed       1.28525    0.49657   2.588  0.01273 * 
+## I(speed^2)  0.08764    0.02783   3.149  0.00282 **
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.718 on 48 degrees of freedom
+## Multiple R-squared:  0.9024, Adjusted R-squared:  0.8983 
+## F-statistic: 221.9 on 2 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="nonlinearities-polynomials-and-regression.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting</span></span>
+<span id="cb146-2"><a href="nonlinearities-polynomials-and-regression.html#cb146-2" aria-hidden="true" tabindex="-1"></a>plotMech <span class="ot">&lt;-</span> cars <span class="sc">%&gt;%</span> </span>
+<span id="cb146-3"><a href="nonlinearities-polynomials-and-regression.html#cb146-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">preds =</span> <span class="fu">predict</span>(mechMod))</span>
+<span id="cb146-4"><a href="nonlinearities-polynomials-and-regression.html#cb146-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb146-5"><a href="nonlinearities-polynomials-and-regression.html#cb146-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plotMech, <span class="fu">aes</span>(<span class="at">x =</span> speed, <span class="at">y =</span> dist))<span class="sc">+</span></span>
+<span id="cb146-6"><a href="nonlinearities-polynomials-and-regression.html#cb146-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb146-7"><a href="nonlinearities-polynomials-and-regression.html#cb146-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> preds))</span></code></pre></div>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
+</div>
+<div id="the-take-home-messages" class="section level2" number="11.5">
+<h2><span class="header-section-number">11.5</span> The Take Home Messages</h2>
+<p>This example is not out of the ordinary of what you might face with your own data. The recipe for success in data analysis is a but different from what you might expect.</p>
+<ol style="list-style-type: decimal">
+<li>Design experiments to test hypotheses with Randomisation, Replication and Reducing Error in mind.</li>
+<li>Think about your question and the mechanisms expected to give rise to the pattern</li>
+<li>Plot your data and look at the patterns.</li>
+<li>Fit appropriate models. Models for experiments are easier to define than models from survey and observation. Models for experiments don’t have to worry as much about collinearity….</li>
+<li>Don’t follow the p-value.</li>
+<li>Eat Biscuits</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducing-the-ancova-the-analysis-of-covariance.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="a-final-overview.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Introduction to Experimental Design and Analysis.pdf", "Introduction to Experimental Design and Analysis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

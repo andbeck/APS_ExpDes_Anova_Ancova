@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Designs for testing for interactions: factorial designs. | An Introduction to Experimental Design</title>
+  <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Designs for testing for interactions: factorial designs. | An Introduction to Experimental Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Designs for testing for interactions: factorial designs. | An Introduction to Experimental Design" />
+  
+  <meta name="twitter:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
+  
+
+<meta name="author" content="Andrew P Beckerman (based on text from Mark Rees and Gareth Phoenix)" />
+
+
+<meta name="date" content="2021-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="the-latin-square-design-lsd.html"/>
+<link rel="next" href="experimental-design-and-anova-a-summary.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">And Introduction to Experimental Design and Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#the-three-rs"><i class="fa fa-check"></i><b>1.0.1</b> The Three Rs</a></li>
+<li class="chapter" data-level="1.0.2" data-path="index.html"><a href="index.html#the-general-linear-model"><i class="fa fa-check"></i><b>1.0.2</b> The General Linear Model</a></li>
+<li class="chapter" data-level="1.0.3" data-path="index.html"><a href="index.html#section-readings--"><i class="fa fa-check"></i><b>1.0.3</b> Section Readings —-</a></li>
+<li class="chapter" data-level="1.0.4" data-path="index.html"><a href="index.html#install-some-extra-packages--"><i class="fa fa-check"></i><b>1.0.4</b> Install some extra packages —-</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction To Experiments (Some Philosophy)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#how-to-think-about-experiments-components-of-an-experiment"><i class="fa fa-check"></i><b>2.1</b> How to think about experiments: Components of an Experiment</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#how-do-we-increase-precision-and-reduce-bias"><i class="fa fa-check"></i><b>2.1.1</b> How do we increase precision and reduce bias?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#experimental-vs-measurement-units"><i class="fa fa-check"></i><b>2.2</b> Experimental vs Measurement units</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#take-home-message-randomization-properly-with-replication-protects-against-confounding"><i class="fa fa-check"></i><b>2.2.1</b> Take Home Message: Randomization properly with Replication protects against Confounding</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro.html"><a href="intro.html#a-non-randomized-experiment-haphazard-is-not-randomized"><i class="fa fa-check"></i><b>2.2.2</b> A non-randomized experiment – <strong>haphazard</strong> is NOT randomized</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#mini-quiz"><i class="fa fa-check"></i><b>2.3</b> Mini-Quiz</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#replication-how-many"><i class="fa fa-check"></i><b>2.4</b> Replication: How many?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html"><i class="fa fa-check"></i><b>3</b> Standard Errors, Precision and Sampling</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#standard-errors-and-precision"><i class="fa fa-check"></i><b>3.1</b> Standard Errors and precision</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#se-of-a-difference-and-balance."><i class="fa fa-check"></i><b>3.1.1</b> SE of a Difference and Balance.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#however-sometimes-unbalanced-designs-are-better."><i class="fa fa-check"></i><b>3.1.2</b> However sometimes unbalanced designs are better.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#the-crd-completely-randomised-design"><i class="fa fa-check"></i><b>3.2</b> The CRD: Completely Randomised Design</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="examples-and-challenge-questions.html"><a href="examples-and-challenge-questions.html"><i class="fa fa-check"></i><b>4</b> Examples and Challenge Questions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="examples-and-challenge-questions.html"><a href="examples-and-challenge-questions.html#designing-your-first-experiment"><i class="fa fa-check"></i><b>4.1</b> Designing your first experiment</a></li>
+<li class="chapter" data-level="4.2" data-path="examples-and-challenge-questions.html"><a href="examples-and-challenge-questions.html#using-r-to-generate-experimental-designs"><i class="fa fa-check"></i><b>4.2</b> Using R to generate Experimental Designs</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html"><i class="fa fa-check"></i><b>5</b> Design and Analysis of Experiments</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#making-up-data"><i class="fa fa-check"></i><b>5.1.1</b> Making up data</a></li>
+<li class="chapter" data-level="5.1.2" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#into-the-dplyr-and-ggplot-pipeline."><i class="fa fa-check"></i><b>5.1.2</b> Into the dplyr and ggplot pipeline.</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#the-one-way-anova."><i class="fa fa-check"></i><b>5.2</b> The One-Way ANOVA.</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#making-insight-and-inference"><i class="fa fa-check"></i><b>5.2.1</b> Making insight and inference</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#a-priori-vs.-post-hoc-contrasts"><i class="fa fa-check"></i><b>5.3</b> A priori vs. Post-Hoc Contrasts</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#the-more-appropriate-approach."><i class="fa fa-check"></i><b>5.3.1</b> The more appropriate approach.</a></li>
+<li class="chapter" data-level="5.3.2" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#comparing-the-average-of-the-herbicide-effect-with-the-control."><i class="fa fa-check"></i><b>5.3.2</b> comparing the average of the herbicide effect with the control.</a></li>
+<li class="chapter" data-level="5.3.3" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#writing-this-up"><i class="fa fa-check"></i><b>5.3.3</b> writing this up…</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html"><i class="fa fa-check"></i><b>6</b> Randomized Complete Block design (RCB)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#and-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> And example of the RCBD</a></li>
+<li class="chapter" data-level="6.2" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#analysing-the-crbd"><i class="fa fa-check"></i><b>6.2</b> Analysing the CRBD</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#building-the-model"><i class="fa fa-check"></i><b>6.2.1</b> Building the model</a></li>
+<li class="chapter" data-level="6.2.2" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#are-the-estimates-of-the-parameters-what-we-expect"><i class="fa fa-check"></i><b>6.2.2</b> Are the estimates of the parameters what we expect?</a></li>
+<li class="chapter" data-level="6.2.3" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#correct-standard-errors-for-a-figure"><i class="fa fa-check"></i><b>6.2.3</b> Correct Standard Errors for a Figure</a></li>
+<li class="chapter" data-level="6.2.4" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#making-inference-confidence-intervals-and-contrasts"><i class="fa fa-check"></i><b>6.2.4</b> Making inference: confidence intervals and contrasts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="the-latin-square-design-lsd.html"><a href="the-latin-square-design-lsd.html"><i class="fa fa-check"></i><b>7</b> The Latin Square Design (LSD)</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="the-latin-square-design-lsd.html"><a href="the-latin-square-design-lsd.html#fitting-the-model"><i class="fa fa-check"></i><b>7.0.1</b> Fitting the model</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html"><i class="fa fa-check"></i><b>8</b> Designs for testing for interactions: factorial designs.</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#introducing-interactions"><i class="fa fa-check"></i><b>8.1</b> Introducing Interactions</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#lets-design-an-experiment-again"><i class="fa fa-check"></i><b>8.1.1</b> Let’s design an experiment, again…</a></li>
+<li class="chapter" data-level="8.1.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#the-factorial-design-how-and-why-study-interactions"><i class="fa fa-check"></i><b>8.1.2</b> The Factorial Design: How and Why Study Interactions?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#a-factorial-design-and-the-two-way-anova"><i class="fa fa-check"></i><b>8.2</b> A Factorial Design and the Two-Way ANOVA</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#build-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Build the Data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#plot-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Plot the data!</a></li>
+<li class="chapter" data-level="8.2.3" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#analyse-the-data"><i class="fa fa-check"></i><b>8.2.3</b> Analyse the data</a></li>
+<li class="chapter" data-level="8.2.4" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#final-figuring"><i class="fa fa-check"></i><b>8.2.4</b> final figuring</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html"><i class="fa fa-check"></i><b>9</b> Experimental Design and ANOVA - A Summary</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
+<li class="chapter" data-level="9.2" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
+<li class="chapter" data-level="9.3" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html"><i class="fa fa-check"></i><b>10</b> Introducing the ANCOVA - the analysis of covariance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#setting-up-the-various-ideas."><i class="fa fa-check"></i><b>10.1</b> Setting up the various ideas.</a></li>
+<li class="chapter" data-level="10.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#working-through-and-example."><i class="fa fa-check"></i><b>10.2</b> Working through and example.</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#get-the-data-and-make-your-picture"><i class="fa fa-check"></i><b>10.2.1</b> Get the data and make your picture</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#building-the-model-and-understanding-it"><i class="fa fa-check"></i><b>10.3</b> Building the model (and understanding it)</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#dealing-with-some-issues-with-residuals."><i class="fa fa-check"></i><b>10.3.1</b> Dealing with some issues with residuals.</a></li>
+<li class="chapter" data-level="10.3.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#making-inference-on-the-ancova"><i class="fa fa-check"></i><b>10.3.2</b> Making inference on the ANCOVA</a></li>
+<li class="chapter" data-level="10.3.3" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#the-summary-table-and-making-sense-of-the-log-stuff."><i class="fa fa-check"></i><b>10.3.3</b> The summary table and making sense of the log stuff.</a></li>
+<li class="chapter" data-level="10.3.4" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#the-equations-supported-by-the-model."><i class="fa fa-check"></i><b>10.3.4</b> The equations supported by the model.</a></li>
+<li class="chapter" data-level="10.3.5" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#making-even-more-inference-and-drawing-the-picture"><i class="fa fa-check"></i><b>10.3.5</b> Making even more inference and drawing the picture</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#some-general-principles"><i class="fa fa-check"></i><b>10.4</b> Some General Principles</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#ancova-always-tests-the-interaction-against-the-additive-model"><i class="fa fa-check"></i><b>10.4.1</b> ANCOVA always tests the interaction against the additive model</a></li>
+<li class="chapter" data-level="10.4.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#specifying-models-in-r"><i class="fa fa-check"></i><b>10.4.2</b> Specifying models in R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html"><i class="fa fa-check"></i><b>11</b> Nonlinearities, polynomials and regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#transformations---a-reminder-and-starting-point."><i class="fa fa-check"></i><b>11.1</b> Transformations - a reminder and starting point.</a></li>
+<li class="chapter" data-level="11.2" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#working-through-an-example."><i class="fa fa-check"></i><b>11.2</b> Working through an example.</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-1---inference-before-fixing-the-problem"><i class="fa fa-check"></i><b>11.2.1</b> Interlude 1 - Inference before fixing the problem</a></li>
+<li class="chapter" data-level="11.2.2" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#solving-the-problem-i-the-non-linearity"><i class="fa fa-check"></i><b>11.2.2</b> Solving the Problem I: The Non-linearity</a></li>
+<li class="chapter" data-level="11.2.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-2---inference-before-fixing-both-problems"><i class="fa fa-check"></i><b>11.2.3</b> Interlude 2 - Inference before fixing both problems</a></li>
+<li class="chapter" data-level="11.2.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#solving-the-problem-ii-non-constant---increasing-variance"><i class="fa fa-check"></i><b>11.2.4</b> Solving the Problem II: Non-constant - increasing variance</a></li>
+<li class="chapter" data-level="11.2.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-3---inference-with-both-things-corrected."><i class="fa fa-check"></i><b>11.2.5</b> Interlude 3 - Inference with both things corrected.</a></li>
+<li class="chapter" data-level="11.2.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result."><i class="fa fa-check"></i><b>11.2.6</b> Explaining the result.</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-dose-of-reality"><i class="fa fa-check"></i><b>11.3</b> A dose of reality</a></li>
+<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.4</b> A mechanistic model</a></li>
+<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.5</b> The Take Home Messages</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="a-final-overview.html"><a href="a-final-overview.html"><i class="fa fa-check"></i><b>12</b> A final Overview</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="designs-for-testing-for-interactions-factorial-designs." class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Designs for testing for interactions: factorial designs.</h1>
+<div id="introducing-interactions" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Introducing Interactions</h2>
+<p>Before jumping into an example, let’s introduce a simple statement that forms the core of both asking and interpreting <em>interactions</em>.</p>
+<p>If there is an interaction between two explanatory variables, X and Z, on our response variable Y, then:</p>
+<blockquote>
+<p>The effect of X on Y varies by Z. <strong>OR</strong> The effect of X on Y depends on Z.</p>
+</blockquote>
+<p>This use of <em>varies by</em> <strong>OR</strong> <em>depends on</em> defines context dependency and that’s what defines interactions.</p>
+<p>Now, let’s return to our CO2 and UV-B solar radiation experiment in the Arctic Tundra example to introduce the idea of an interaction again.</p>
+<p>Context: an arctic tundra study
+Increasing ultraviolet-B (+UV-B) radiation from ozone depletion (the arctic ozone hole)
+Increasing atmospheric CO2 (+CO2) from anthropogenic emissions
+For plants: UV-B potentially harmful, +CO2 potentially beneficial
+Therefore +CO2 could alleviate UV-B damage impacts.</p>
+<p>Hypotheses
++UV-B radiation will reduce the growth of arctic plants
++CO2 will increase the growth of arctic plants
++UV-B radiation impacts will be less under +CO2</p>
+<p>What is unique about these context and hypotheses? It’s the presentation of CO2 and UVB in the same statement and the use of words like “the effect of X will alleviate the impacts of Y” and words like “the effects of X will be less under Y.” These words and phrases reflect the context dependency of the effects of treatment levels.</p>
+<p>Thus, to restate what we introduced above…. when we talk about interactions, we can rely on a very simple vocabulary that is independent of the actual treatment levels: we can always describe an interaction like this:</p>
+<blockquote>
+<p>The effect of X on Y depends on Z.</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>The effect of X on Y varies by Z.</p>
+</blockquote>
+<p>In this ‘rubric,’ Y is the response variable, and X and Z are explanatory, independent variables. So, in our example above,</p>
+<blockquote>
+<p>the effect of CO2 on plant biomass yield depends on UV-B radiation levels.</p>
+</blockquote>
+<p>OR</p>
+<blockquote>
+<p>the effect of CO2 on plant biomass yield varies with UV-B radiation levels.</p>
+</blockquote>
+<p>This simple phrasing describes any interaction.</p>
+<p>Here are some numerical examples to drive home the point.</p>
+<p>Control = 20g Yield
+UV-B = 10g Yield
+C02 = 29g Yield</p>
+<p>ADDITIVE RESULT: C02 + UV-B = 39g Yield
+SYNERGISTIC RESULT: C02 + UV-B = 60g Yield
+ANTAGONISTIC RESULT: C02 + UV-B = 19g Yield</p>
+<div id="lets-design-an-experiment-again" class="section level3" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Let’s design an experiment, again…</h3>
+<p>Your resources:</p>
+<p>The arctic research station has given permission for 16 plots (each 2m x 2m) in the natural vegetation nearby.
+- One UV-B plot (2m x 2m) costs £4000 (this provides the UV-B lamps, frame, power and control system, wooden walkways around the plots)
+- One CO2 plot (2m x 2m) costs £6000 (this provides a CO2 release system, CO2 control and covers CO2 purchase costs, wooden walkways around the plots)
+- One control plot (2m x 2m) costs £200 (marking posts, wooden walkways around the plots)
+- Yes, the CO2 supply system does fit underneath the UV-B lamps.</p>
+<p>You have a budget of £86,000</p>
+<p>Design an experiment to test the hypotheses. (An answer is on the BB Site)</p>
+</div>
+<div id="the-factorial-design-how-and-why-study-interactions" class="section level3" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> The Factorial Design: How and Why Study Interactions?</h3>
+<p>The UV-B and C02 experiment could be thought of as two experiments a Control vs UV-B and a Control vs C02 experiment. If we combine these we get a Factorial Experiment where the treatments are</p>
+<ul>
+<li>Control</li>
+<li>UV-B</li>
+<li>C02</li>
+<li>UV-B + C02</li>
+</ul>
+<p>So we have all combinations of treatments.</p>
+<p>But do we treat each of these as unique treatments (e.g. the one-way ANOVA example)? No, we don’t. We design and analyse the data we collect in a two-way analysis - a factorial design. Two-way ANOVA (and ANCOVA - see later), are the toolboxes.</p>
+<p>Factorial treatments have two main advantages. When factors <em>DO interact</em> – so the effect of C02 depends on UV-B – then we can estimate the interaction - the dependency. <em>One-way designs</em> cannot do this, and can lead to serious misunderstandings (because we are assuming that the effect of one thing DOES NOT depend on the other).</p>
+<p>Furthermore, when factors <em>DON’T interact</em>, <em>factorial designs</em> are more efficient (smaller error variance) than one-way designs experiments.</p>
+<p>Hence ALWAYS use factorial designs when you can!</p>
+</div>
+</div>
+<div id="a-factorial-design-and-the-two-way-anova" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> A Factorial Design and the Two-Way ANOVA</h2>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb70-2"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb70-3" aria-hidden="true" tabindex="-1"></a>Nreps <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># 4 replicates per treatment level</span></span>
+<span id="cb70-4"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb70-4" aria-hidden="true" tabindex="-1"></a>trt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>) <span class="co"># sets out the 2-way design</span></span>
+<span id="cb70-5"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb70-5" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> <span class="fu">design.ab</span>(trt,<span class="at">r=</span>Nreps,<span class="at">serie=</span><span class="dv">0</span>,<span class="at">design=</span><span class="st">&quot;crd&quot;</span>)<span class="sc">$</span>book</span>
+<span id="cb70-6"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design)</span></code></pre></div>
+<pre><code>##   plots r A B
+## 1     1 1 2 1
+## 2     2 1 1 2
+## 3     3 1 1 1
+## 4     4 1 2 2
+## 5     5 2 2 2
+## 6     6 2 2 1</code></pre>
+<p>So, the <code>design.ab</code> function generates a nice picture, but uses numbers instead of words for the various treatments and has set Letters as the treatments.</p>
+<p>We don’t support this approach - you WILL forget what the numbers and letters mean, so lets change these to represent CO2 and UVB things.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb72-1" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span></span>
+<span id="cb72-2"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">UVB =</span> A, <span class="at">CO2 =</span> B) <span class="sc">%&gt;%</span> </span>
+<span id="cb72-3"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">UVB =</span> <span class="fu">fct_recode</span>(UVB, <span class="st">&quot;Con&quot;</span> <span class="ot">=</span> <span class="st">&quot;1&quot;</span>, <span class="st">&quot;UVB+&quot;</span> <span class="ot">=</span> <span class="st">&quot;2&quot;</span>),</span>
+<span id="cb72-4"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb72-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">CO2 =</span> <span class="fu">fct_recode</span>(CO2, <span class="st">&quot;Con&quot;</span> <span class="ot">=</span> <span class="st">&quot;1&quot;</span>,<span class="st">&quot;CO2+&quot;</span> <span class="ot">=</span> <span class="st">&quot;2&quot;</span>))</span>
+<span id="cb72-5"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb72-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-6"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design, <span class="dv">10</span>) <span class="co"># is this what you expect</span></span></code></pre></div>
+<pre><code>##    plots r  UVB  CO2
+## 1      1 1 UVB+  Con
+## 2      2 1  Con CO2+
+## 3      3 1  Con  Con
+## 4      4 1 UVB+ CO2+
+## 5      5 2 UVB+ CO2+
+## 6      6 2 UVB+  Con
+## 7      7 3 UVB+ CO2+
+## 8      8 2  Con  Con
+## 9      9 3  Con  Con
+## 10    10 4  Con  Con</code></pre>
+<blockquote>
+<p>NOTE 1: this is using the <code>fct_recode</code> function from the <em>forcats</em> package in the <em>tidyverse</em> collection.</p>
+</blockquote>
+<blockquote>
+<p>NOTE 2: we used the design = “crd” argument to specify a completely randomised, 2-way factorial design… you could make this a block design with the “rcbd”…. see the help file for <code>design.ab</code></p>
+</blockquote>
+<div id="build-the-data" class="section level3" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Build the Data</h3>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Sample Sizes and errors</span></span>
+<span id="cb74-2"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-2" aria-hidden="true" tabindex="-1"></a>Total.units <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> Nreps</span>
+<span id="cb74-3"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-3" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(Total.units,<span class="dv">0</span>,<span class="dv">3</span>)</span>
+<span id="cb74-4"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-5"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-5" aria-hidden="true" tabindex="-1"></a><span class="co"># the data with no interaction</span></span>
+<span id="cb74-6"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-6" aria-hidden="true" tabindex="-1"></a>design<span class="sc">$</span>obs <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> </span>
+<span id="cb74-7"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-7" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;UVB&quot;</span><span class="sc">==</span><span class="st">&quot;UVB+&quot;</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
+<span id="cb74-8"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-8" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;CO2&quot;</span> <span class="sc">==</span> <span class="st">&quot;CO2+&quot;</span>) <span class="sc">*</span> <span class="dv">9</span> <span class="sc">+</span> </span>
+<span id="cb74-9"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-9" aria-hidden="true" tabindex="-1"></a>  error</span>
+<span id="cb74-10"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-11"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-11" aria-hidden="true" tabindex="-1"></a><span class="co"># the data with interaction</span></span>
+<span id="cb74-12"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-12" aria-hidden="true" tabindex="-1"></a>design<span class="sc">$</span>obs2 <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> </span>
+<span id="cb74-13"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-13" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;UVB&quot;</span><span class="sc">==</span><span class="st">&quot;UVB+&quot;</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
+<span id="cb74-14"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-14" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;CO2&quot;</span> <span class="sc">==</span> <span class="st">&quot;CO2+&quot;</span>) <span class="sc">*</span> <span class="dv">9</span> <span class="sc">+</span> </span>
+<span id="cb74-15"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># when both are together add 8 more (synergy)</span></span>
+<span id="cb74-16"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-16" aria-hidden="true" tabindex="-1"></a>  ((design<span class="sc">$</span><span class="st">&quot;UVB&quot;</span><span class="sc">==</span><span class="st">&quot;UVB+&quot;</span>) <span class="sc">&amp;</span> (design<span class="sc">$</span><span class="st">&quot;CO2&quot;</span> <span class="sc">==</span> <span class="st">&quot;CO2+&quot;</span>)) <span class="sc">*</span> <span class="dv">8</span> <span class="sc">+</span> </span>
+<span id="cb74-17"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-17" aria-hidden="true" tabindex="-1"></a>  error</span>
+<span id="cb74-18"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-19"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb74-19" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design)</span></code></pre></div>
+<pre><code>##   plots r  UVB  CO2      obs     obs2
+## 1     1 1 UVB+  Con 12.82805 12.82805
+## 2     2 1  Con CO2+ 25.38908 25.38908
+## 3     3 1  Con  Con 19.17974 19.17974
+## 4     4 1 UVB+ CO2+ 25.85980 33.85980
+## 5     5 2 UVB+ CO2+ 15.92984 23.92984
+## 6     6 2 UVB+  Con  7.75704  7.75704</code></pre>
+</div>
+<div id="plot-the-data" class="section level3" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Plot the data!</h3>
+<p>Here we combine some dplyr magic (calcuating means in each group), some ggplot magic (adding the lines connecting the means on top of the raw data) and the beauty of patchwork, the package for plot layouts</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-1" aria-hidden="true" tabindex="-1"></a>sumDat1 <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span> </span>
+<span id="cb76-2"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(UVB, CO2) <span class="sc">%&gt;%</span> </span>
+<span id="cb76-3"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb76-4"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs =</span> <span class="fu">mean</span>(obs)</span>
+<span id="cb76-5"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb76-6"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-7"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-7" aria-hidden="true" tabindex="-1"></a>sumDat2 <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span> </span>
+<span id="cb76-8"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(UVB, CO2) <span class="sc">%&gt;%</span> </span>
+<span id="cb76-9"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb76-10"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs2 =</span> <span class="fu">mean</span>(obs2)</span>
+<span id="cb76-11"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb76-12"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-13"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-13" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(design, <span class="fu">aes</span>(<span class="at">x =</span> UVB, <span class="at">y =</span> obs, <span class="at">colour =</span> CO2, <span class="at">shape =</span> CO2, <span class="at">group =</span> CO2))<span class="sc">+</span></span>
+<span id="cb76-14"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb76-15"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> sumDat1)</span>
+<span id="cb76-16"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-17"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-17" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(design, <span class="fu">aes</span>(<span class="at">x =</span> UVB, <span class="at">y =</span> obs2, <span class="at">colour =</span> CO2, <span class="at">shape =</span> CO2, <span class="at">group =</span> CO2))<span class="sc">+</span></span>
+<span id="cb76-18"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb76-19"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> sumDat2)</span>
+<span id="cb76-20"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-21"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb76-21" aria-hidden="true" tabindex="-1"></a>p1<span class="sc">+</span>p2</span></code></pre></div>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p>What you see above on the left, is a pattern that suggest that the effect of</p>
+</div>
+<div id="analyse-the-data" class="section level3" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Analyse the data</h3>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># model with no interaction</span></span>
+<span id="cb77-2"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb77-2" aria-hidden="true" tabindex="-1"></a>int_mod_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> CO2<span class="sc">*</span>UVB, <span class="at">data =</span> design)</span>
+<span id="cb77-3"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb77-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-4"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="co"># model with interaction</span></span>
+<span id="cb77-5"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb77-5" aria-hidden="true" tabindex="-1"></a>int_mod_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs2 <span class="sc">~</span> CO2<span class="sc">*</span>UVB, <span class="at">data =</span> design)</span>
+<span id="cb77-6"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb77-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-7"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb77-7" aria-hidden="true" tabindex="-1"></a><span class="co"># model with interaction specified wrong</span></span>
+<span id="cb77-8"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb77-8" aria-hidden="true" tabindex="-1"></a>int_mod_3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs2 <span class="sc">~</span> CO2 <span class="sc">+</span> UVB, <span class="at">data =</span> design)</span>
+<span id="cb77-9"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb77-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-10"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb77-10" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(int_mod_1)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: obs
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## CO2        1 321.00  321.00  33.469 8.671e-05 ***
+## UVB        1 241.27  241.27  25.156 0.0003013 ***
+## CO2:UVB    1   1.13    1.13   0.118 0.7371854    
+## Residuals 12 115.09    9.59                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(int_mod_2)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: obs2
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## CO2        1 671.67  671.67 70.0311 2.364e-06 ***
+## UVB        1  56.75   56.75  5.9165   0.03159 *  
+## CO2:UVB    1  82.15   82.15  8.5654   0.01268 *  
+## Residuals 12 115.09    9.59                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(int_mod_3)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: obs2
+##           Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## CO2        1 671.67  671.67  44.269 1.58e-05 ***
+## UVB        1  56.75   56.75   3.740  0.07519 .  
+## Residuals 13 197.24   15.17                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+<div id="final-figuring" class="section level3" number="8.2.4">
+<h3><span class="header-section-number">8.2.4</span> final figuring</h3>
+<p>Don’t forget that the corred standard error for the ‘result’ is the residuals mean squared. You can use the dplyr+ggplot2 method, or visreg.</p>
+<p>Here we use visreg and put the figure next to our original ggplot for the interaction data.</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb83-1" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">visreg</span>(int_mod_2,<span class="st">&quot;CO2&quot;</span>,<span class="at">by=</span><span class="st">&quot;UVB&quot;</span>,<span class="at">gg=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb83-2"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb83-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb83-3"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb83-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-4"><a href="designs-for-testing-for-interactions-factorial-designs-.html#cb83-4" aria-hidden="true" tabindex="-1"></a>p2<span class="sc">+</span>p3</span></code></pre></div>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-latin-square-design-lsd.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="experimental-design-and-anova-a-summary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Introduction to Experimental Design and Analysis.pdf", "Introduction to Experimental Design and Analysis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

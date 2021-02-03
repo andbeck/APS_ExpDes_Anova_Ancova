@@ -1,4 +1,3 @@
-# APS_ExpDes_Anova_Ancova
- Introduction to Experimental Design and Analysis
+# READ ME: Experimental Design ANOVA ANCOVA
 
-A book of sorts based on notes from Mark Rees and Gareth Phoenix.
+A sort of book based on notes from Rees and Phoenix.
