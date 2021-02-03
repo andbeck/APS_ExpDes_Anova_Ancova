@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Randomized Complete Block design (RCB) | An Introduction to Experimental Design</title>
+  <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Randomized Complete Block design (RCB) | An Introduction to Experimental Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Randomized Complete Block design (RCB) | An Introduction to Experimental Design" />
+  
+  <meta name="twitter:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
+  
+
+<meta name="author" content="Andrew P Beckerman (based on text from Mark Rees and Gareth Phoenix)" />
+
+
+<meta name="date" content="2021-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="design-and-analysis-of-experiments.html"/>
+<link rel="next" href="the-latin-square-design-lsd.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">And Introduction to Experimental Design and Analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#the-three-rs"><i class="fa fa-check"></i><b>1.0.1</b> The Three Rs</a></li>
+<li class="chapter" data-level="1.0.2" data-path="index.html"><a href="index.html#the-general-linear-model"><i class="fa fa-check"></i><b>1.0.2</b> The General Linear Model</a></li>
+<li class="chapter" data-level="1.0.3" data-path="index.html"><a href="index.html#section-readings--"><i class="fa fa-check"></i><b>1.0.3</b> Section Readings —-</a></li>
+<li class="chapter" data-level="1.0.4" data-path="index.html"><a href="index.html#install-some-extra-packages--"><i class="fa fa-check"></i><b>1.0.4</b> Install some extra packages —-</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction To Experiments (Some Philosophy)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#how-to-think-about-experiments-components-of-an-experiment"><i class="fa fa-check"></i><b>2.1</b> How to think about experiments: Components of an Experiment</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#how-do-we-increase-precision-and-reduce-bias"><i class="fa fa-check"></i><b>2.1.1</b> How do we increase precision and reduce bias?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#experimental-vs-measurement-units"><i class="fa fa-check"></i><b>2.2</b> Experimental vs Measurement units</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#take-home-message-randomization-properly-with-replication-protects-against-confounding"><i class="fa fa-check"></i><b>2.2.1</b> Take Home Message: Randomization properly with Replication protects against Confounding</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro.html"><a href="intro.html#a-non-randomized-experiment-haphazard-is-not-randomized"><i class="fa fa-check"></i><b>2.2.2</b> A non-randomized experiment – <strong>haphazard</strong> is NOT randomized</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#mini-quiz"><i class="fa fa-check"></i><b>2.3</b> Mini-Quiz</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#replication-how-many"><i class="fa fa-check"></i><b>2.4</b> Replication: How many?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html"><i class="fa fa-check"></i><b>3</b> Standard Errors, Precision and Sampling</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#standard-errors-and-precision"><i class="fa fa-check"></i><b>3.1</b> Standard Errors and precision</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#se-of-a-difference-and-balance."><i class="fa fa-check"></i><b>3.1.1</b> SE of a Difference and Balance.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#however-sometimes-unbalanced-designs-are-better."><i class="fa fa-check"></i><b>3.1.2</b> However sometimes unbalanced designs are better.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="standard-errors-precision-and-sampling.html"><a href="standard-errors-precision-and-sampling.html#the-crd-completely-randomised-design"><i class="fa fa-check"></i><b>3.2</b> The CRD: Completely Randomised Design</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="examples-and-challenge-questions.html"><a href="examples-and-challenge-questions.html"><i class="fa fa-check"></i><b>4</b> Examples and Challenge Questions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="examples-and-challenge-questions.html"><a href="examples-and-challenge-questions.html#designing-your-first-experiment"><i class="fa fa-check"></i><b>4.1</b> Designing your first experiment</a></li>
+<li class="chapter" data-level="4.2" data-path="examples-and-challenge-questions.html"><a href="examples-and-challenge-questions.html#using-r-to-generate-experimental-designs"><i class="fa fa-check"></i><b>4.2</b> Using R to generate Experimental Designs</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html"><i class="fa fa-check"></i><b>5</b> Design and Analysis of Experiments</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#making-up-data"><i class="fa fa-check"></i><b>5.1.1</b> Making up data</a></li>
+<li class="chapter" data-level="5.1.2" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#into-the-dplyr-and-ggplot-pipeline."><i class="fa fa-check"></i><b>5.1.2</b> Into the dplyr and ggplot pipeline.</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#the-one-way-anova."><i class="fa fa-check"></i><b>5.2</b> The One-Way ANOVA.</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#making-insight-and-inference"><i class="fa fa-check"></i><b>5.2.1</b> Making insight and inference</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#a-priori-vs.-post-hoc-contrasts"><i class="fa fa-check"></i><b>5.3</b> A priori vs. Post-Hoc Contrasts</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#the-more-appropriate-approach."><i class="fa fa-check"></i><b>5.3.1</b> The more appropriate approach.</a></li>
+<li class="chapter" data-level="5.3.2" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#comparing-the-average-of-the-herbicide-effect-with-the-control."><i class="fa fa-check"></i><b>5.3.2</b> comparing the average of the herbicide effect with the control.</a></li>
+<li class="chapter" data-level="5.3.3" data-path="design-and-analysis-of-experiments.html"><a href="design-and-analysis-of-experiments.html#writing-this-up"><i class="fa fa-check"></i><b>5.3.3</b> writing this up…</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html"><i class="fa fa-check"></i><b>6</b> Randomized Complete Block design (RCB)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#and-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> And example of the RCBD</a></li>
+<li class="chapter" data-level="6.2" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#analysing-the-crbd"><i class="fa fa-check"></i><b>6.2</b> Analysing the CRBD</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#building-the-model"><i class="fa fa-check"></i><b>6.2.1</b> Building the model</a></li>
+<li class="chapter" data-level="6.2.2" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#are-the-estimates-of-the-parameters-what-we-expect"><i class="fa fa-check"></i><b>6.2.2</b> Are the estimates of the parameters what we expect?</a></li>
+<li class="chapter" data-level="6.2.3" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#correct-standard-errors-for-a-figure"><i class="fa fa-check"></i><b>6.2.3</b> Correct Standard Errors for a Figure</a></li>
+<li class="chapter" data-level="6.2.4" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#making-inference-confidence-intervals-and-contrasts"><i class="fa fa-check"></i><b>6.2.4</b> Making inference: confidence intervals and contrasts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="the-latin-square-design-lsd.html"><a href="the-latin-square-design-lsd.html"><i class="fa fa-check"></i><b>7</b> The Latin Square Design (LSD)</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="the-latin-square-design-lsd.html"><a href="the-latin-square-design-lsd.html#fitting-the-model"><i class="fa fa-check"></i><b>7.0.1</b> Fitting the model</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html"><i class="fa fa-check"></i><b>8</b> Designs for testing for interactions: factorial designs.</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#introducing-interactions"><i class="fa fa-check"></i><b>8.1</b> Introducing Interactions</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#lets-design-an-experiment-again"><i class="fa fa-check"></i><b>8.1.1</b> Let’s design an experiment, again…</a></li>
+<li class="chapter" data-level="8.1.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#the-factorial-design-how-and-why-study-interactions"><i class="fa fa-check"></i><b>8.1.2</b> The Factorial Design: How and Why Study Interactions?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#a-factorial-design-and-the-two-way-anova"><i class="fa fa-check"></i><b>8.2</b> A Factorial Design and the Two-Way ANOVA</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#build-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Build the Data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#plot-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Plot the data!</a></li>
+<li class="chapter" data-level="8.2.3" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#analyse-the-data"><i class="fa fa-check"></i><b>8.2.3</b> Analyse the data</a></li>
+<li class="chapter" data-level="8.2.4" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#final-figuring"><i class="fa fa-check"></i><b>8.2.4</b> final figuring</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html"><i class="fa fa-check"></i><b>9</b> Experimental Design and ANOVA - A Summary</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
+<li class="chapter" data-level="9.2" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
+<li class="chapter" data-level="9.3" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html"><i class="fa fa-check"></i><b>10</b> Introducing the ANCOVA - the analysis of covariance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#setting-up-the-various-ideas."><i class="fa fa-check"></i><b>10.1</b> Setting up the various ideas.</a></li>
+<li class="chapter" data-level="10.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#working-through-and-example."><i class="fa fa-check"></i><b>10.2</b> Working through and example.</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#get-the-data-and-make-your-picture"><i class="fa fa-check"></i><b>10.2.1</b> Get the data and make your picture</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#building-the-model-and-understanding-it"><i class="fa fa-check"></i><b>10.3</b> Building the model (and understanding it)</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#dealing-with-some-issues-with-residuals."><i class="fa fa-check"></i><b>10.3.1</b> Dealing with some issues with residuals.</a></li>
+<li class="chapter" data-level="10.3.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#making-inference-on-the-ancova"><i class="fa fa-check"></i><b>10.3.2</b> Making inference on the ANCOVA</a></li>
+<li class="chapter" data-level="10.3.3" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#the-summary-table-and-making-sense-of-the-log-stuff."><i class="fa fa-check"></i><b>10.3.3</b> The summary table and making sense of the log stuff.</a></li>
+<li class="chapter" data-level="10.3.4" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#the-equations-supported-by-the-model."><i class="fa fa-check"></i><b>10.3.4</b> The equations supported by the model.</a></li>
+<li class="chapter" data-level="10.3.5" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#making-even-more-inference-and-drawing-the-picture"><i class="fa fa-check"></i><b>10.3.5</b> Making even more inference and drawing the picture</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#some-general-principles"><i class="fa fa-check"></i><b>10.4</b> Some General Principles</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#ancova-always-tests-the-interaction-against-the-additive-model"><i class="fa fa-check"></i><b>10.4.1</b> ANCOVA always tests the interaction against the additive model</a></li>
+<li class="chapter" data-level="10.4.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#specifying-models-in-r"><i class="fa fa-check"></i><b>10.4.2</b> Specifying models in R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html"><i class="fa fa-check"></i><b>11</b> Nonlinearities, polynomials and regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#transformations---a-reminder-and-starting-point."><i class="fa fa-check"></i><b>11.1</b> Transformations - a reminder and starting point.</a></li>
+<li class="chapter" data-level="11.2" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#working-through-an-example."><i class="fa fa-check"></i><b>11.2</b> Working through an example.</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-1---inference-before-fixing-the-problem"><i class="fa fa-check"></i><b>11.2.1</b> Interlude 1 - Inference before fixing the problem</a></li>
+<li class="chapter" data-level="11.2.2" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#solving-the-problem-i-the-non-linearity"><i class="fa fa-check"></i><b>11.2.2</b> Solving the Problem I: The Non-linearity</a></li>
+<li class="chapter" data-level="11.2.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-2---inference-before-fixing-both-problems"><i class="fa fa-check"></i><b>11.2.3</b> Interlude 2 - Inference before fixing both problems</a></li>
+<li class="chapter" data-level="11.2.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#solving-the-problem-ii-non-constant---increasing-variance"><i class="fa fa-check"></i><b>11.2.4</b> Solving the Problem II: Non-constant - increasing variance</a></li>
+<li class="chapter" data-level="11.2.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-3---inference-with-both-things-corrected."><i class="fa fa-check"></i><b>11.2.5</b> Interlude 3 - Inference with both things corrected.</a></li>
+<li class="chapter" data-level="11.2.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result."><i class="fa fa-check"></i><b>11.2.6</b> Explaining the result.</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-dose-of-reality"><i class="fa fa-check"></i><b>11.3</b> A dose of reality</a></li>
+<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.4</b> A mechanistic model</a></li>
+<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.5</b> The Take Home Messages</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="a-final-overview.html"><a href="a-final-overview.html"><i class="fa fa-check"></i><b>12</b> A final Overview</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="randomized-complete-block-design-rcb" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Randomized Complete Block design (RCB)</h1>
+<p>Blocking allows us to reduce the experimental error.</p>
+<p>A block is a group of experimental units that are homogeneous in some sense – in the same place, or measured at the same time, or by the same person. So when constructing blocks we try and select experimental units that are homogeneous within blocks but units in different blocks may be dissimilar.</p>
+<p>Why block? When we use a completely randomised design, the location or timing of our treatment ‘plots’ (patches, incubators, locations in a 96 well plate) can generate heterogeneity in experimental error (variation). As the variance of the Experimental Error increases, confidence intervals get wider and the power of our analysis decreases - it’s harder to detect effects of our treatments against the background noise. Ideally we would like to use experimental units that are homogeneous so the experimental error will be small. Blocking does this.</p>
+<p>The simplest blocked design is the <strong>Randomized Complete Block design (RCB)</strong></p>
+<p>We have one complete set of treatments in each block. Say you have g Treatments and r Blocks then the total number of experimental units is?</p>
+<p>In the first block, we randomly assign the g treatments to the n units; we do an independent randomization, assigning treatments to units in each of the other blocks. This is the RCB design.</p>
+<p>For example, consider the following matrix: the rows are the blocks, the letters the different treatments. In each block, each treatment is represented, but it is in a different location in the block (randomisation of the g treatments in the n units). The blocks are in a sequence - left to right - this could be different days, different locations or different positions on a hillside, for example representing an elevation or soil moisture gradient.</p>
+<p>The Blocks are designed to ‘capture’ that underlying source of variability and allow us to detect among treatment differences more effectively.</p>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,] &quot;A&quot;  &quot;B&quot;  &quot;A&quot;  &quot;E&quot;  &quot;D&quot; 
+## [2,] &quot;C&quot;  &quot;A&quot;  &quot;D&quot;  &quot;C&quot;  &quot;A&quot; 
+## [3,] &quot;D&quot;  &quot;E&quot;  &quot;B&quot;  &quot;D&quot;  &quot;C&quot; 
+## [4,] &quot;E&quot;  &quot;C&quot;  &quot;E&quot;  &quot;B&quot;  &quot;E&quot; 
+## [5,] &quot;B&quot;  &quot;D&quot;  &quot;C&quot;  &quot;A&quot;  &quot;B&quot;</code></pre>
+<p>It is important to note that blocks exist at the time of the randomization of treatments to units. We cannot impose blocking structure on a completely randomized design after the fact; either the randomization was blocked or it was not.</p>
+<p>We use an RCB to increase the power and precision of an experiment by decreasing the error variance. This decrease in error variance is achieved by finding groups of units that are homogeneous (blocks) and, in effect, repeating the experiment independently in the different blocks. The RCB is an effective design when there is a single source of extraneous variation in the responses that we can identify ahead of time and use to partition the units into blocks.</p>
+<p>In short ALWAYS block your experiment, if you can.</p>
+<p>You can have spatial blocks, or temporal blocks where you repeat the experiment at different times, or block by batch.</p>
+<p>In general, any source of variation that you think may influence the response and which can be identified prior to the experiment is a candidate for blocking.</p>
+<div id="and-example-of-the-rcbd" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> And example of the RCBD</h2>
+<p>Lets modify our previous example to including blocking.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="randomized-complete-block-design-rcb.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Randomised Complete Block Design</span></span>
+<span id="cb39-2"><a href="randomized-complete-block-design-rcb.html#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="randomized-complete-block-design-rcb.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure allocation is the same</span></span>
+<span id="cb39-4"><a href="randomized-complete-block-design-rcb.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb39-5"><a href="randomized-complete-block-design-rcb.html#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="randomized-complete-block-design-rcb.html#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># define the treatments</span></span>
+<span id="cb39-7"><a href="randomized-complete-block-design-rcb.html#cb39-7" aria-hidden="true" tabindex="-1"></a>treat <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Control&quot;</span>,<span class="st">&quot;Herb1&quot;</span>,<span class="st">&quot;Herb2&quot;</span>,<span class="st">&quot;Placebo&quot;</span>)</span>
+<span id="cb39-8"><a href="randomized-complete-block-design-rcb.html#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="randomized-complete-block-design-rcb.html#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="co"># define the number of blocks</span></span>
+<span id="cb39-10"><a href="randomized-complete-block-design-rcb.html#cb39-10" aria-hidden="true" tabindex="-1"></a>Nblocks <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb39-11"><a href="randomized-complete-block-design-rcb.html#cb39-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-12"><a href="randomized-complete-block-design-rcb.html#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co"># consider this</span></span>
+<span id="cb39-13"><a href="randomized-complete-block-design-rcb.html#cb39-13" aria-hidden="true" tabindex="-1"></a>Total.units <span class="ot">&lt;-</span> Nblocks <span class="sc">*</span> <span class="fu">length</span>(treat)</span>
+<span id="cb39-14"><a href="randomized-complete-block-design-rcb.html#cb39-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-15"><a href="randomized-complete-block-design-rcb.html#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="co"># build the design</span></span>
+<span id="cb39-16"><a href="randomized-complete-block-design-rcb.html#cb39-16" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> <span class="fu">design.rcbd</span>(treat, Nblocks, <span class="at">serie =</span> <span class="dv">0</span>)<span class="sc">$</span>book</span>
+<span id="cb39-17"><a href="randomized-complete-block-design-rcb.html#cb39-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-18"><a href="randomized-complete-block-design-rcb.html#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="co"># look at it</span></span>
+<span id="cb39-19"><a href="randomized-complete-block-design-rcb.html#cb39-19" aria-hidden="true" tabindex="-1"></a>design</span></code></pre></div>
+<pre><code>##    plots block   treat
+## 1     11     1 Placebo
+## 2     12     1 Control
+## 3     13     1   Herb2
+## 4     14     1   Herb1
+## 5     21     2 Control
+## 6     22     2   Herb1
+## 7     23     2   Herb2
+## 8     24     2 Placebo
+## 9     31     3   Herb2
+## 10    32     3   Herb1
+## 11    33     3 Control
+## 12    34     3 Placebo
+## 13    41     4 Control
+## 14    42     4   Herb2
+## 15    43     4 Placebo
+## 16    44     4   Herb1
+## 17    51     5 Placebo
+## 18    52     5 Control
+## 19    53     5   Herb1
+## 20    54     5   Herb2</code></pre>
+<p>This is like the matrix above, but in tidy format! Excellent.</p>
+<p>Now, lets generate some data again.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="randomized-complete-block-design-rcb.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed again ... </span></span>
+<span id="cb41-2"><a href="randomized-complete-block-design-rcb.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb41-3"><a href="randomized-complete-block-design-rcb.html#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="randomized-complete-block-design-rcb.html#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># define the error - note how we use the variable Total.units to get the number of observations</span></span>
+<span id="cb41-5"><a href="randomized-complete-block-design-rcb.html#cb41-5" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(Total.units, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) <span class="co"># is this more or less variation than before?</span></span>
+<span id="cb41-6"><a href="randomized-complete-block-design-rcb.html#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="randomized-complete-block-design-rcb.html#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># generate the observations</span></span>
+<span id="cb41-8"><a href="randomized-complete-block-design-rcb.html#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co"># note that we are now generating larger differences (10 and 9) among treatments</span></span>
+<span id="cb41-9"><a href="randomized-complete-block-design-rcb.html#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. Herb1 is 10 units larger than the control.</span></span>
+<span id="cb41-10"><a href="randomized-complete-block-design-rcb.html#cb41-10" aria-hidden="true" tabindex="-1"></a>design<span class="sc">$</span>obs <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">+</span> </span>
+<span id="cb41-11"><a href="randomized-complete-block-design-rcb.html#cb41-11" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>treat<span class="sc">==</span><span class="st">&quot;Herb1&quot;</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
+<span id="cb41-12"><a href="randomized-complete-block-design-rcb.html#cb41-12" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>treat <span class="sc">==</span> <span class="st">&quot;Herb2&quot;</span>) <span class="sc">*</span> <span class="dv">9</span> <span class="sc">+</span> </span>
+<span id="cb41-13"><a href="randomized-complete-block-design-rcb.html#cb41-13" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>treat <span class="sc">==</span> <span class="st">&quot;Placebo&quot;</span>) <span class="sc">*</span> <span class="dv">1</span> <span class="sc">+</span> </span>
+<span id="cb41-14"><a href="randomized-complete-block-design-rcb.html#cb41-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># note that we are defining variation among blocks here</span></span>
+<span id="cb41-15"><a href="randomized-complete-block-design-rcb.html#cb41-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># block 1 is on average 10 units higher.... and block 5 is...</span></span>
+<span id="cb41-16"><a href="randomized-complete-block-design-rcb.html#cb41-16" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>block<span class="sc">==</span><span class="dv">1</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">-</span> (design<span class="sc">$</span>block<span class="sc">==</span><span class="dv">5</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
+<span id="cb41-17"><a href="randomized-complete-block-design-rcb.html#cb41-17" aria-hidden="true" tabindex="-1"></a>  error</span>
+<span id="cb41-18"><a href="randomized-complete-block-design-rcb.html#cb41-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-19"><a href="randomized-complete-block-design-rcb.html#cb41-19" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design, <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##    plots block   treat      obs
+## 1     11     1 Placebo 31.18707
+## 2     12     1 Control 31.99603
+## 3     13     1   Herb2 41.29937
+## 4     14     1   Herb1 41.12746
+## 5     21     2 Control 21.08111
+## 6     22     2   Herb1 30.56917
+## 7     23     2   Herb2 28.09290
+## 8     24     2 Placebo 21.02990
+## 9     31     3   Herb2 27.44097
+## 10    32     3   Herb1 30.29749</code></pre>
+</div>
+<div id="analysing-the-crbd" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Analysing the CRBD</h2>
+<p>I’ll leave it to you now to generate the following picture. This requires thinking hard about the use of dplyr tools and ggplot. Can you see our generation of block 1 and 5’s variation?</p>
+<pre><code>## Rows: 20
+## Columns: 4
+## $ plots &lt;dbl&gt; 11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44,…
+## $ block &lt;fct&gt; 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5
+## $ treat &lt;fct&gt; Placebo, Control, Herb2, Herb1, Control, Herb1, Herb2, Placebo,…
+## $ obs   &lt;dbl&gt; 31.18707, 31.99603, 41.29937, 41.12746, 21.08111, 30.56917, 28.…</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<div id="building-the-model" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Building the model</h3>
+<p>In order to understand what’s going on with blocking, and it’s importance, lets build the naive model that ignores block - treating this as a CRB - and the correct model, letting block absorb some of the variation.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="randomized-complete-block-design-rcb.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># models</span></span>
+<span id="cb45-2"><a href="randomized-complete-block-design-rcb.html#cb45-2" aria-hidden="true" tabindex="-1"></a>naive_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> treat, design)</span>
+<span id="cb45-3"><a href="randomized-complete-block-design-rcb.html#cb45-3" aria-hidden="true" tabindex="-1"></a>block_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> block <span class="sc">+</span> treat, design) <span class="co"># note the order is important</span></span>
+<span id="cb45-4"><a href="randomized-complete-block-design-rcb.html#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="randomized-complete-block-design-rcb.html#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co"># anova tables</span></span>
+<span id="cb45-6"><a href="randomized-complete-block-design-rcb.html#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(naive_model)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: obs
+##           Df Sum Sq Mean Sq F value  Pr(&gt;F)  
+## treat      3 417.82 139.274  2.5085 0.09579 .
+## Residuals 16 888.34  55.521                  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="randomized-complete-block-design-rcb.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(block_model)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: obs
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## block      4 877.08 219.270  233.68 2.871e-11 ***
+## treat      3 417.82 139.274  148.43 9.469e-10 ***
+## Residuals 12  11.26   0.938                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>The first important thing to focus on here is the difference in the Mean Sq Residual Errors - in the <code>naive_model</code>, it is <span class="math inline">\(55.43\)</span>. In the <code>block_model</code>, it is <span class="math inline">\(0.86\)</span>.</p>
+<p>The second important thing to notice is that haveing allocated variation to block in the <code>block_model</code>, and thus reducing the error variation, the <em>treatment</em> effect shifts from being insignificant to significant.</p>
+</div>
+<div id="are-the-estimates-of-the-parameters-what-we-expect" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Are the estimates of the parameters what we expect?</h3>
+<p>Lets check that the model is estimating differences as we might have expected. We can do this using the summary table.</p>
+<p>Let’s remember that, for example, the mean of Herb1 is expected to be 10 units higher than control with a yield of 20, and block 1 is supposed to be ~10 units higher than 2,3,4.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="randomized-complete-block-design-rcb.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(block_model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = obs ~ block + treat, data = design)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.3505 -0.7196  0.2147  0.6396  1.0719 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   31.2184     0.6126  50.957 2.14e-15 ***
+## block2       -11.2092     0.6850 -16.365 1.43e-09 ***
+## block3       -12.1132     0.6850 -17.685 5.84e-10 ***
+## block4       -11.3415     0.6850 -16.558 1.25e-09 ***
+## block5       -20.8449     0.6850 -30.433 9.94e-13 ***
+## treatHerb1    10.3450     0.6126  16.886 9.96e-10 ***
+## treatHerb2     9.0721     0.6126  14.808 4.50e-09 ***
+## treatPlacebo   1.3192     0.6126   2.153   0.0523 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.9687 on 12 degrees of freedom
+## Multiple R-squared:  0.9914, Adjusted R-squared:  0.9864 
+## F-statistic: 197.1 on 7 and 12 DF,  p-value: 2.009e-11</code></pre>
+<p>In this table, the <em>INTERCEPT</em> is specifying the <strong>FIRST BLOCK</strong> and the <strong>CONTROL</strong> - we know this because it’s these words that are missing from the rest of the table, and they are each the first alphanumerially in the list of blocks and treatments.</p>
+<p>The value of the control, block 1 is approximately 30! Which is 20+10, which is what we expected.
+The value of Herb1 is ~10 units higher than this (remember, the value 9.84 is the DIFFERENCE between the control and treatment)
+And the value of block 5 is reported as 20 unites lower than block 1 control. This too is correct because, as above, block 1 control is 10 units higher than the control mean (20+10) and block 5 10 unites lower…. Make sure you get this logic!</p>
+<p>The take home message here is that these numbers make complete sense with respect to what we simulated, and controlling for the among block variation gave us more power to detect a treatment effect, something we would have missed had we not estimated the block source of variation.</p>
+</div>
+<div id="correct-standard-errors-for-a-figure" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Correct Standard Errors for a Figure</h3>
+<p>When we made our initial plot above, we calculated the standard error based on all observations among blocks. However, the variation we really wish to represent is the variation after having controlled for the blocking effects.</p>
+<p>This means that the standard deviation we should probably use is of the error variance from the model: <span class="math inline">\(0.88\)</span>.</p>
+<p>The standard deviation is the <span class="math inline">\(\sqrt{Var}\)</span> and thus, our correct standard errors from the model are <span class="math inline">\(\sqrt{0.88}\)</span></p>
+<p>There is a very nice plotting function in the package <em>visreg</em> that delivers these proper standard errors in a nice ggplot framework. It presents points are partial residuals (deviation from the mean for each replicate), lines depciting the means, and shaded area as a 95% confidence interval, calculated 1.96*SE, where the SE is estimated from the model error variance (just above). Compare this to your first graph.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="randomized-complete-block-design-rcb.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(block_model, <span class="st">&quot;treat&quot;</span>, <span class="at">gg=</span><span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb51-2"><a href="randomized-complete-block-design-rcb.html#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Yield&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb51-3"><a href="randomized-complete-block-design-rcb.html#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Treatment&quot;</span>) </span></code></pre></div>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+</div>
+<div id="making-inference-confidence-intervals-and-contrasts" class="section level3" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> Making inference: confidence intervals and contrasts</h3>
+<p>We are now in a very strong position to make inference.</p>
+<p>Let’s start with a rule of thumb linked to the 95% confidence interval. If the CIs don’t overlap, they are different; if they do, they are not. This indicates that Cont and Placebo are not significantly different (95% confidence intervals overlap). Herb1 and Herb 2 are significantly different from these, but not each other.</p>
+<p>This is OK. But it’s not robust. Let’s revisit our <em>post-hoc</em> and <em>a priori</em> methods for evaluating differnces among treatments. We can apply a tukey test and calculate all pairwise differences. This is not a good idea, but let’s do it.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="randomized-complete-block-design-rcb.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use agricolae HSD.test()</span></span>
+<span id="cb52-2"><a href="randomized-complete-block-design-rcb.html#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="randomized-complete-block-design-rcb.html#cb52-3" aria-hidden="true" tabindex="-1"></a>tukey_out <span class="ot">&lt;-</span> <span class="fu">HSD.test</span>(block_model, <span class="st">&quot;treat&quot;</span>, <span class="at">group =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb52-4"><a href="randomized-complete-block-design-rcb.html#cb52-4" aria-hidden="true" tabindex="-1"></a>tukey_out<span class="sc">$</span>groups</span></code></pre></div>
+<pre><code>##              obs groups
+## Herb1   30.46167      a
+## Herb2   29.18874      a
+## Placebo 21.43581      b
+## Control 20.11665      b</code></pre>
+<p>This confirms our intuition and 95% Confidence Interval insights. But is it correct?</p>
+<p>Let’s make a formal test of one of the pairwise tests that looks obvious - between Herb1 and Herb2</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="randomized-complete-block-design-rcb.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fit.contrast from gmodels package</span></span>
+<span id="cb54-2"><a href="randomized-complete-block-design-rcb.html#cb54-2" aria-hidden="true" tabindex="-1"></a>contrast <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb54-3"><a href="randomized-complete-block-design-rcb.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(block_model, <span class="st">&quot;treat&quot;</span>, contrast)</span></code></pre></div>
+<pre><code>##                       Estimate Std. Error   t value   Pr(&gt;|t|)
+## treat c=( 0 -1 1 0 ) -1.272934  0.6126423 -2.077777 0.05985811
+## attr(,&quot;class&quot;)
+## [1] &quot;fit_contrast&quot;</code></pre>
+<p>Amazing. The contrast defining a specific test provides a different answer than the post-hoc Tukey test and our guess based on the 95% CIs. Why is that? Which is right?</p>
+<p>Of course the contrast is the correct and most reliable result. While both <em>fit.contrast</em> and <em>HSD.test</em> both manage the model complexity and variance estimates properly, only the contrast reduces the probability of finding a significant difference by chance or failing to find one.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="design-and-analysis-of-experiments.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-latin-square-design-lsd.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Introduction to Experimental Design and Analysis.pdf", "Introduction to Experimental Design and Analysis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
