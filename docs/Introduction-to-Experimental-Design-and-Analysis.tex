@@ -246,9 +246,9 @@ Here is the code to make that figure.
 \CommentTok{\# set x range}
 \NormalTok{x }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\DecValTok{100}\SpecialCharTok{:}\DecValTok{100}
 \CommentTok{\# define y without error}
-\NormalTok{y\_det }\OtherTok{\textless{}{-}} \FloatTok{0.01}\SpecialCharTok{*}\NormalTok{x}\SpecialCharTok{\^{}}\DecValTok{2}
+\NormalTok{y\_det }\OtherTok{\textless{}{-}} \FloatTok{0.01}\SpecialCharTok{+}\NormalTok{x}\SpecialCharTok{\^{}}\DecValTok{2}
 \CommentTok{\# add some random variation}
-\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ y\_det}\SpecialCharTok{+}\FunctionTok{rnorm}\NormalTok{(}\FunctionTok{length}\NormalTok{(x),}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ y\_det}\SpecialCharTok{+}\FunctionTok{rnorm}\NormalTok{(}\FunctionTok{length}\NormalTok{(x),}\DecValTok{0}\NormalTok{,}\DecValTok{1000}\NormalTok{)}
 
 \CommentTok{\# create dataframe and plot}
 \NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(x, y)}
