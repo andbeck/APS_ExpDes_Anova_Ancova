@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 The Latin Square Design (LSD) | An Introduction to Experimental Design</title>
+  <title>Chapter 7 The Latin Square Design (LSD) | An Introduction to Experimental Design and Linear Models</title>
   <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 The Latin Square Design (LSD) | An Introduction to Experimental Design" />
+  <meta property="og:title" content="Chapter 7 The Latin Square Design (LSD) | An Introduction to Experimental Design and Linear Models" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 The Latin Square Design (LSD) | An Introduction to Experimental Design" />
+  <meta name="twitter:title" content="Chapter 7 The Latin Square Design (LSD) | An Introduction to Experimental Design and Linear Models" />
   
   <meta name="twitter:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   
 
-<meta name="author" content="Andrew P Beckerman (based on text from Mark Rees and Gareth Phoenix)" />
+<meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html"><i class="fa fa-check"></i><b>6</b> Randomized Complete Block design (RCB)</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#and-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> And example of the RCBD</a></li>
+<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#an-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> An example of the RCBD</a></li>
 <li class="chapter" data-level="6.2" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#analysing-the-crbd"><i class="fa fa-check"></i><b>6.2</b> Analysing the CRBD</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#building-the-model"><i class="fa fa-check"></i><b>6.2.1</b> Building the model</a></li>
@@ -256,11 +256,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-2---inference-before-fixing-both-problems"><i class="fa fa-check"></i><b>11.2.3</b> Interlude 2 - Inference before fixing both problems</a></li>
 <li class="chapter" data-level="11.2.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#solving-the-problem-ii-non-constant---increasing-variance"><i class="fa fa-check"></i><b>11.2.4</b> Solving the Problem II: Non-constant - increasing variance</a></li>
 <li class="chapter" data-level="11.2.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-3---inference-with-both-things-corrected."><i class="fa fa-check"></i><b>11.2.5</b> Interlude 3 - Inference with both things corrected.</a></li>
-<li class="chapter" data-level="11.2.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result."><i class="fa fa-check"></i><b>11.2.6</b> Explaining the result.</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-dose-of-reality"><i class="fa fa-check"></i><b>11.3</b> A dose of reality</a></li>
-<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.4</b> A mechanistic model</a></li>
-<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.5</b> The Take Home Messages</a></li>
+<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#anova-tables-with-multiple-explantory-variables."><i class="fa fa-check"></i><b>11.3</b> Anova Tables with multiple explantory variables.</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-trick"><i class="fa fa-check"></i><b>11.3.1</b> Explaining the Trick</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#types-of-anova"><i class="fa fa-check"></i><b>11.4</b> Types of ANOVA</a></li>
+<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result---a-dose-of-reality"><i class="fa fa-check"></i><b>11.5</b> Explaining the result - a dose of reality</a></li>
+<li class="chapter" data-level="11.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.6</b> A mechanistic model</a></li>
+<li class="chapter" data-level="11.7" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.7</b> The Take Home Messages</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="a-final-overview.html"><a href="a-final-overview.html"><i class="fa fa-check"></i><b>12</b> A final Overview</a></li>
 <li class="divider"></li>
@@ -275,7 +279,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design and Linear Models</a>
           </h1>
         </div>
 
@@ -288,14 +292,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Sometimes you will have two sources of variation in space or time, or perhaps space and time. Perhaps there is a gradient of elevation up and down a hillside, and a gradient of sun incidence orthoganol (90˚) to that. There are innumerable examples one could imagine. The principle is that in an LSD, the treatments are allocated randomly in ‘rows’ and ‘columns.’</p>
 <p><img src="images/lsd.png" width="584" /></p>
 <p>A Latin Square blocks on both rows and columns simultaneously.</p>
-<p>Agricolae has a built in function for helping generate these designs, obvio.</p>
+<p>Agricolae has a built in function for helping generate these designs, obvio. Again, new section or new script…..</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="the-latin-square-design-lsd.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># makes sure random allocation happens the same for everyone.</span></span>
 <span id="cb56-2"><a href="the-latin-square-design-lsd.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb56-3"><a href="the-latin-square-design-lsd.html#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-4"><a href="the-latin-square-design-lsd.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
 <span id="cb56-5"><a href="the-latin-square-design-lsd.html#cb56-5" aria-hidden="true" tabindex="-1"></a>treat<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Cont&quot;</span>,<span class="st">&quot;Herb1&quot;</span>,<span class="st">&quot;Herb2&quot;</span>,<span class="st">&quot;Placebo&quot;</span>)</span>
-<span id="cb56-6"><a href="the-latin-square-design-lsd.html#cb56-6" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> <span class="fu">design.lsd</span>(treat,<span class="at">serie =</span> <span class="dv">0</span>)<span class="sc">$</span>book</span>
-<span id="cb56-7"><a href="the-latin-square-design-lsd.html#cb56-7" aria-hidden="true" tabindex="-1"></a>design</span></code></pre></div>
+<span id="cb56-6"><a href="the-latin-square-design-lsd.html#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="the-latin-square-design-lsd.html#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co"># design.lsd</span></span>
+<span id="cb56-8"><a href="the-latin-square-design-lsd.html#cb56-8" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> <span class="fu">design.lsd</span>(treat,<span class="at">serie =</span> <span class="dv">0</span>)<span class="sc">$</span>book</span>
+<span id="cb56-9"><a href="the-latin-square-design-lsd.html#cb56-9" aria-hidden="true" tabindex="-1"></a>design</span></code></pre></div>
 <pre><code>##    plots row col   treat
 ## 1     11   1   1    Cont
 ## 2     12   1   2   Herb1
@@ -313,7 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 14    42   4   2 Placebo
 ## 15    43   4   3    Cont
 ## 16    44   4   4   Herb1</code></pre>
-<p>Make sure you think the double-blocking has happened! See the figure above with 4 letters. Can you create the matrix from this design</p>
+<p>Make sure you understand that the double-blocking has happened! See the figure above with 4 letters. Can you create on a piece of paper the matrix from this design you’ve made in R?</p>
 <p>Now, lets generate some data, as before.</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="the-latin-square-design-lsd.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for fun, set again.</span></span>
 <span id="cb58-2"><a href="the-latin-square-design-lsd.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
@@ -390,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Residual standard error: 0.9824 on 6 degrees of freedom
 ## Multiple R-squared:  0.9947, Adjusted R-squared:  0.9868 
 ## F-statistic: 125.3 on 9 and 6 DF,  p-value: 3.921e-06</code></pre>
-<p>Finally, we can use contrasts to test a few of our key hypotheses.</p>
+<p>Finally, we can use contrasts to test a few of our key hypotheses. Make some notes on what these things mean!</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="the-latin-square-design-lsd.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">#first the set of comparisons with control</span></span>
 <span id="cb66-2"><a href="the-latin-square-design-lsd.html#cb66-2" aria-hidden="true" tabindex="-1"></a>contrast1 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
 <span id="cb66-3"><a href="the-latin-square-design-lsd.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;C v H1&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),</span>

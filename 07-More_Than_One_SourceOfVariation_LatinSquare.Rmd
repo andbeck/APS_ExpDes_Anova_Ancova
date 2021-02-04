@@ -15,7 +15,7 @@ knitr::include_graphics("images/lsd.png")
 
 A Latin Square blocks on both rows and columns simultaneously. 
 
-Agricolae has a built in function for helping generate these designs, obvio.
+Agricolae has a built in function for helping generate these designs, obvio.  Again, new section or new script.....
 
 ```{r}
 # makes sure random allocation happens the same for everyone.
@@ -23,11 +23,13 @@ set.seed(123)
 
 #
 treat<- c("Cont","Herb1","Herb2","Placebo")
+
+# design.lsd
 design <- design.lsd(treat,serie = 0)$book
 design
 ```
 
-Make sure you think the double-blocking has happened!  See the figure above with 4 letters.  Can you create the matrix from this design
+Make sure you understand that the double-blocking has happened!  See the figure above with 4 letters.  Can you create on a piece of paper the matrix from this design you've made in R?
 
 Now, lets generate some data, as before.
 
@@ -69,7 +71,7 @@ Take a look above at the `design$obs` object.  Can you review the `summary` outp
 summary(full_lsd)
 ```
 
-Finally, we can use contrasts to test a few of our key hypotheses.
+Finally, we can use contrasts to test a few of our key hypotheses.  Make some notes on what these things mean!
 
 ```{r}
 #first the set of comparisons with control

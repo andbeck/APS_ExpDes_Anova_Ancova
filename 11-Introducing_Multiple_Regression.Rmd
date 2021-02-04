@@ -142,7 +142,7 @@ Super.  We now have a model where we capture the non-linearity using a polynomia
 
 OK.  Now we are ready for using the anova table and summary table to make inference and update our figure.
 
-#### Anova Tables with multiple explantory variables.
+## Anova Tables with multiple explantory variables.
 
 In previous exercises, we've used `anova()` to generate the anova table, F-statistics and p-values to test our hypotheses.  It's very important to note that `anova()` makes a sequential sums of square calculation.
 
@@ -169,7 +169,7 @@ The trick is `Anova()` - not the big A.  We call it **Big-A Anova**.  It's in th
 Anova(mod_dist_nonLin_weight)
 ```
 
-#### Explaining the Trick
+### Explaining the Trick
 
 So, this table is actually constructed by fitting two different models.  One of those models is where $speed$ is first and $speed^{2}$ is second.  The other model is where $speed^{2}$ is first and $speed$ is second.
 
@@ -184,21 +184,35 @@ Technically, this is called a Type II anova table.  Technically, it means that w
 
 For unbalanced data Type II ANOVA is recommended.  In many cases the biology can be used to settle the question. Say for example if you’re interested in the effect of a flower type on pollination after correcting for the effects of plant size - you know plant size affects the number of pollinator visits. Or if you have blocks (what are they?) then you might be interested in treatment affects after correcting for the effect of block.
 
-This diagram may be valuable in helping you understand this idea.
+## Types of ANOVA
+
+There are 3 types of ANOVA model based on how the sums of squares are divided.  They hinge a bit on understanding **The Principle of Marginality **:
+
+-A model with the A:B interaction must contain both the A and B main effects. 
+-The main effects are said to be marginal to the interaction.
+-More generally if a higher-level interaction is included then all lower level interactions and main effects must be included.
+-See Hector et al. 2010 Analysis of variance with unbalanced data: an update for ecology & evolution. J Anim Ecol for a clear discussion of the different approaches.
+
+The types of ANOVA:
+
+Type I – this is a sequential anova so order matters – not very useful with unbalanced data or correlated predictors.  Just fine for manipulative experiments and specific hypotheses captured by the 'last term in the model'.
+
+Type II – measures effect of a predictor with all other predictors in the model, but obeys marginality principle. More sensible and conservative.  A good standard.
+
+Type III – can test main effects after interactions, so test the main effect of A after the main effect of B and the A:B interaction ignores marginality principle.
+
+This diagram may be valuable in helping you understand these ideas.
 
 ```{r, echo = FALSE}
 knitr::include_graphics("images/VennModels.png")
 ```
 
-### Explaining the result.
+## Explaining the result - a dose of reality
 
 So, hopefully that makes sense.  We'll review more of that in the generalised linear model module with Dylan Childs.
 
 What you might be wondering, however, is what the result means.  We have no p-values that are < 0.05.  Controlling for speed, there is no effect of speed^2 and vice-versa.  We kind of new that from our initial 'sequential' assessment above.... 
-
 OK.  Whoa.  This is weird, right?
-
-## A dose of reality
 
 Let's plot all of these three models we've made together with the data
 
@@ -256,7 +270,7 @@ ggplot(plotMech, aes(x = speed, y = dist))+
 
 ## The Take Home Messages
 
-This example is not out of the ordinary of what you might face with your own data.  The recipe for success in data analysis is a but different from what you might expect.
+This example is not out of the ordinary of what you might face with your own data.  The recipe for success in data analysis is a bit different from what you might expect.
 
 1. Design experiments to test hypotheses with Randomisation, Replication and Reducing Error in mind.
 2. Think about your question and the mechanisms expected to give rise to the pattern

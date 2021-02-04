@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>An Introduction to Experimental Design</title>
+  <title>An Introduction to Experimental Design and Linear Models</title>
   <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="An Introduction to Experimental Design" />
+  <meta property="og:title" content="An Introduction to Experimental Design and Linear Models" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="An Introduction to Experimental Design" />
+  <meta name="twitter:title" content="An Introduction to Experimental Design and Linear Models" />
   
   <meta name="twitter:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   
 
-<meta name="author" content="Andrew P Beckerman (based on text from Mark Rees and Gareth Phoenix)" />
+<meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html"><i class="fa fa-check"></i><b>6</b> Randomized Complete Block design (RCB)</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#and-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> And example of the RCBD</a></li>
+<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#an-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> An example of the RCBD</a></li>
 <li class="chapter" data-level="6.2" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#analysing-the-crbd"><i class="fa fa-check"></i><b>6.2</b> Analysing the CRBD</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#building-the-model"><i class="fa fa-check"></i><b>6.2.1</b> Building the model</a></li>
@@ -256,11 +256,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-2---inference-before-fixing-both-problems"><i class="fa fa-check"></i><b>11.2.3</b> Interlude 2 - Inference before fixing both problems</a></li>
 <li class="chapter" data-level="11.2.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#solving-the-problem-ii-non-constant---increasing-variance"><i class="fa fa-check"></i><b>11.2.4</b> Solving the Problem II: Non-constant - increasing variance</a></li>
 <li class="chapter" data-level="11.2.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-3---inference-with-both-things-corrected."><i class="fa fa-check"></i><b>11.2.5</b> Interlude 3 - Inference with both things corrected.</a></li>
-<li class="chapter" data-level="11.2.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result."><i class="fa fa-check"></i><b>11.2.6</b> Explaining the result.</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-dose-of-reality"><i class="fa fa-check"></i><b>11.3</b> A dose of reality</a></li>
-<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.4</b> A mechanistic model</a></li>
-<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.5</b> The Take Home Messages</a></li>
+<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#anova-tables-with-multiple-explantory-variables."><i class="fa fa-check"></i><b>11.3</b> Anova Tables with multiple explantory variables.</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-trick"><i class="fa fa-check"></i><b>11.3.1</b> Explaining the Trick</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#types-of-anova"><i class="fa fa-check"></i><b>11.4</b> Types of ANOVA</a></li>
+<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result---a-dose-of-reality"><i class="fa fa-check"></i><b>11.5</b> Explaining the result - a dose of reality</a></li>
+<li class="chapter" data-level="11.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.6</b> A mechanistic model</a></li>
+<li class="chapter" data-level="11.7" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.7</b> The Take Home Messages</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="a-final-overview.html"><a href="a-final-overview.html"><i class="fa fa-check"></i><b>12</b> A final Overview</a></li>
 <li class="divider"></li>
@@ -275,7 +279,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design and Linear Models</a>
           </h1>
         </div>
 
@@ -284,14 +288,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">An Introduction to Experimental Design</h1>
-<p class="author"><em>Andrew P Beckerman (based on text from Mark Rees and Gareth Phoenix)</em></p>
-<p class="date"><em>2021-02-03</em></p>
+<h1 class="title">An Introduction to Experimental Design and Linear Models</h1>
+<p class="author"><em>Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)</em></p>
+<p class="date"><em>2021-02-04</em></p>
 </div>
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>Welcome to the Design and Analysis of ANOVA and ANCOVA experiments.</p>
-<p>This module is compulsory for all, because it forms the foundation for most of the more complex experiments you will do as a researcher. It is the foundational step beyond the t-test, 1-way ANOVA, simple regression and chi-square contingency table analyses we covered in semester 1.</p>
+<p>Welcome to An Introduction to Experimental Design and Linear Models</p>
+<p>In this mini-module, you’ll be learning about the design and analysis of ANOVA and ANCOVA experiments.</p>
+<p>This module is compulsory for all, because it forms the foundation for most of the more complex experiments you will do as a researcher. And it is the major step beyond the t-test, 1-way ANOVA, simple regression and chi-square contingency table analyses we covered in semester 1.</p>
+<p>If you found Semester 1 ideas hard, please return to the sections on the 1-way ANOVA and the Regression model. Chapter 5 in Getting Started with R (available as an online Resource via STARPlus) covers the material you should know.</p>
+<p>You will also need to feel comfortable with dplyr and ggplot - well be reinforcing the old stuff and introducing a few new tricks.</p>
+<p>There are 12 Chapters to the book, some only a page or two and some quite a but longer. The majority contain R code that you should recreated in your own scripts as you work along. You should use your scripts to add annotation and notes about the core ideas.</p>
+<p>The learning outcome for this mini-module are that you will understand the basic ideas about</p>
+<ul>
+<li>Replication, Randomisation and Reducing Noise</li>
+<li>Experimental Design and Analysis - The Completely Randomised Design</li>
+<li>Experimental Design and Analysis - The Randomised Block Design</li>
+<li>Experimental Design and Analysis - The Latin Square Design</li>
+<li>Experimental Design and Analysis - The ANCOVA Design</li>
+<li>Multiple Regression and Non-linearity.</li>
+</ul>
+<p>A note on time allocation: In a ‘normal semester,’ you’d be in the computer room working on these topics for ~12 hours over the course of 3 days in a week.</p>
+<p>You should plan on allocating 9-12 hours of your week to this section. You should expect to do the same for the other mini-modules.</p>
 <div id="the-three-rs" class="section level3" number="1.0.1">
 <h3><span class="header-section-number">1.0.1</span> The Three Rs</h3>
 <p>Before we get started, it’s vital that you understand that there are some very basic principles needed to ensure that your experiments can provide robust and reliable inference (answers to your questions). The “3 R’s.”</p>
@@ -327,7 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math inline">\(y = 0.01 + x + x^{2} + \epsilon\)</span></p>
 <p>Referring to our generic model structure above,</p>
 <p><span class="math inline">\(y = \beta_{0}+\beta_{1}*X_{1}+\beta_{2}*X_{2}+\epsilon\)</span></p>
-<p>we hopefully can see that <span class="math inline">\(\beta_{0} = 0.01\)</span>, <span class="math inline">\(\beta_{1}*X_{1} = 0\)</span> and <span class="math inline">\(\beta_{2} = 1\)</span>, where <span class="math inline">\(X_{2} = X^{2}\)</span>!</p>
+<p>we hopefully can see that <span class="math inline">\(\beta_{0} = 0.01\)</span>, <span class="math inline">\(\beta_{1} = 0\)</span> and <span class="math inline">\(\beta_{2} = 1\)</span>, where <span class="math inline">\(X_{2} = X^{2}\)</span>!</p>
 <p>Linear models are perfectly capable of being used to estimate non-linear relationships.</p>
 <p>Here is the code to make that figure.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set x range</span></span>

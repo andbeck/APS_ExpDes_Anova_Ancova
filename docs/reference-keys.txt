@@ -36,7 +36,7 @@ the-more-appropriate-approach.
 comparing-the-average-of-the-herbicide-effect-with-the-control.
 writing-this-up
 randomized-complete-block-design-rcb
-and-example-of-the-rcbd
+an-example-of-the-rcbd
 analysing-the-crbd
 building-the-model
 are-the-estimates-of-the-parameters-what-we-expect
@@ -80,8 +80,8 @@ solving-the-problem-ii-non-constant---increasing-variance
 interlude-3---inference-with-both-things-corrected.
 anova-tables-with-multiple-explantory-variables.
 explaining-the-trick
-explaining-the-result.
-a-dose-of-reality
+types-of-anova
+explaining-the-result---a-dose-of-reality
 a-mechanistic-model
 the-take-home-messages
 a-final-overview

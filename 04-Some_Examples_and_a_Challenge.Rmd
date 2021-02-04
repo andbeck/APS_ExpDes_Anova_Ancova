@@ -35,7 +35,13 @@ Write an answer down, before moving to the next section.  We'll provide the answ
 
 ## Using R to generate Experimental Designs
 
-Let's set up a script to do this. As with every script last semester, we start with a preamble and some libraries
+This is the place to stop for a moment and organise your R-course life.  My suggestion is to do the following.
+
+Create an Experimental Design folder on your computer.  Put a data folder inside that.  Use RStudio to create an RStudio Project file inside the Experimental Design folder.  This will be the only place you need to focus for this mini-module.
+
+Now, let's set up a script to do build this experimental design and actually generate soome data and do an analysis. 
+
+As with every script last semester, we start with a preamble and some libraries
 
 ```{r, warning = FALSE, message=FALSE}
 # Designing experiments with R: and introduction
@@ -54,16 +60,18 @@ library(visreg)
 
 That's alot of packages, but you'll see how we use them for designing and then analysing data.
 
-To design and experiment, we are going to use the `design.csd` function from the _agricolae_ package.
+To design and experiment, we are going to use the `design.csd` function from the _agricolae_ package, which we used last term to help with the tukey tests.  It does WAY MORE!
+
+This package has a great online help resource: https://myaseen208.github.io/agricolae/articles/Intro_agricolae.html
 
 ```{r}
-# use this to make sure the random allocation pattern is the same for you and me
+# use this to make sure the random allocation pattern created for the design is the same for you and me
 set.seed(123)
 
 # define the treatments
 treatments <- c("Control","UVB","CO2")
 
-# define the design
+# define the design (this does some randomisation for you!)
 design <- design.crd(treatments, r = c(6,5,5), serie = 0)
 
 # view the design - note that the actual data are in $book
@@ -76,7 +84,9 @@ use_design <- design$book
 use_design
 ```
 
-Great scott!  So, we have 16 plots and we've randomly allocated the set of treatments to these plots, with 6 controls, and 5 of the non-control treatments.
+Great scott!  So, we have 16 plots and we've randomly allocated the set of treatments to these plots, with 6 controls, and 5 of the non-control treatments.  This is just what we wanted.
+
+Time to move on to the next chapter, but stick with this script!  We will come back to this example later.
 
 
 

@@ -40,9 +40,11 @@ You can have spatial blocks, or temporal blocks where you repeat the experiment 
 
 In general, any source of variation that you think may influence the response and which can be identified prior to the experiment is a candidate for blocking. 
 
-## And example of the RCBD
+## An example of the RCBD
 
-Lets modify our previous example to including blocking.
+Lets modify our previous example to including blocking.  Start another section with some ## and call it Blocking Example.
+
+Of course, if you want to start another script, you can, but make sure you include all of the library()'s again!
 
 ```{r}
 #Randomised Complete Block Design
@@ -67,7 +69,7 @@ design
 
 ```
 
-This is like the matrix above, but in tidy format!  Excellent.
+This is like the matrix above, but in tidy format!  Excellent.  This is how a block design looks in tidy-land.
 
 Now, lets generate some data again.
 
@@ -95,7 +97,11 @@ head(design, 10)
 
 ## Analysing the CRBD
 
-I'll leave it to you now to generate the following picture.  This requires thinking hard about the use of dplyr tools and ggplot.  Can you see our generation of block 1 and 5's variation?
+I'll leave it to you now to generate the following picture of the means ± standard errors.  
+
+This requires thinking hard about the use of dplyr tools (`group_by()` and `summarise()`) and ggplot (adding more than one layer from two different sources of data - the summary data and the raw data).  
+
+Can you see our generation of block 1 and 5's variation?
 
 ```{r, echo = FALSE}
 # check the data
@@ -147,7 +153,7 @@ Let's remember that, for example, the mean of Herb1 is expected to be 10 units h
 summary(block_model)
 ```
 
-In this table, the _INTERCEPT_ is specifying the **FIRST BLOCK** and the **CONTROL** - we know this because it's these words that are missing from the rest of the table, and they are each the first alphanumerially in the list of blocks and treatments.
+In this table, the _INTERCEPT_ is specifying the **FIRST BLOCK** and the **CONTROL TREATMENT LEVEL** - we know this because it's these words that are missing from the rest of the table, and they are each the first alphanumerially in the list of blocks and treatments.
 
 The value of the control, block 1 is approximately 30!  Which is 20+10, which is what we expected.
 The value of Herb1 is ~10 units higher than this (remember, the value 9.84 is the DIFFERENCE between the control and treatment)

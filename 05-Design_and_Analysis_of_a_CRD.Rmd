@@ -11,7 +11,9 @@ We are now going to cheat by generating artificial data we we don’t have time 
 
 The experiment is about plant biomass yield under several herbicide treatments: a control and two herbicides, and a third treatment that is a placebo - applied water but no herbicide.  The hypothesis is....?
 
-Enter the following code in your script file, then run it. 
+Start a new section of your script (some hashes) called Herbicide Example.
+
+Now, enter the following code in your script file, then run it. 
 
 ```{r, echo = FALSE, warning = FALSE, message=FALSE}
 library(tidyverse)

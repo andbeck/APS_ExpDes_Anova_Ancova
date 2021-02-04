@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 Nonlinearities, polynomials and regression | An Introduction to Experimental Design</title>
+  <title>Chapter 11 Nonlinearities, polynomials and regression | An Introduction to Experimental Design and Linear Models</title>
   <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 Nonlinearities, polynomials and regression | An Introduction to Experimental Design" />
+  <meta property="og:title" content="Chapter 11 Nonlinearities, polynomials and regression | An Introduction to Experimental Design and Linear Models" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 Nonlinearities, polynomials and regression | An Introduction to Experimental Design" />
+  <meta name="twitter:title" content="Chapter 11 Nonlinearities, polynomials and regression | An Introduction to Experimental Design and Linear Models" />
   
   <meta name="twitter:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   
 
-<meta name="author" content="Andrew P Beckerman (based on text from Mark Rees and Gareth Phoenix)" />
+<meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html"><i class="fa fa-check"></i><b>6</b> Randomized Complete Block design (RCB)</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#and-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> And example of the RCBD</a></li>
+<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#an-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> An example of the RCBD</a></li>
 <li class="chapter" data-level="6.2" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#analysing-the-crbd"><i class="fa fa-check"></i><b>6.2</b> Analysing the CRBD</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#building-the-model"><i class="fa fa-check"></i><b>6.2.1</b> Building the model</a></li>
@@ -256,11 +256,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-2---inference-before-fixing-both-problems"><i class="fa fa-check"></i><b>11.2.3</b> Interlude 2 - Inference before fixing both problems</a></li>
 <li class="chapter" data-level="11.2.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#solving-the-problem-ii-non-constant---increasing-variance"><i class="fa fa-check"></i><b>11.2.4</b> Solving the Problem II: Non-constant - increasing variance</a></li>
 <li class="chapter" data-level="11.2.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-3---inference-with-both-things-corrected."><i class="fa fa-check"></i><b>11.2.5</b> Interlude 3 - Inference with both things corrected.</a></li>
-<li class="chapter" data-level="11.2.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result."><i class="fa fa-check"></i><b>11.2.6</b> Explaining the result.</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-dose-of-reality"><i class="fa fa-check"></i><b>11.3</b> A dose of reality</a></li>
-<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.4</b> A mechanistic model</a></li>
-<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.5</b> The Take Home Messages</a></li>
+<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#anova-tables-with-multiple-explantory-variables."><i class="fa fa-check"></i><b>11.3</b> Anova Tables with multiple explantory variables.</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-trick"><i class="fa fa-check"></i><b>11.3.1</b> Explaining the Trick</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#types-of-anova"><i class="fa fa-check"></i><b>11.4</b> Types of ANOVA</a></li>
+<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result---a-dose-of-reality"><i class="fa fa-check"></i><b>11.5</b> Explaining the result - a dose of reality</a></li>
+<li class="chapter" data-level="11.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.6</b> A mechanistic model</a></li>
+<li class="chapter" data-level="11.7" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.7</b> The Take Home Messages</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="a-final-overview.html"><a href="a-final-overview.html"><i class="fa fa-check"></i><b>12</b> A final Overview</a></li>
 <li class="divider"></li>
@@ -275,7 +279,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design and Linear Models</a>
           </h1>
         </div>
 
@@ -417,8 +421,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="interlude-3---inference-with-both-things-corrected." class="section level3" number="11.2.5">
 <h3><span class="header-section-number">11.2.5</span> Interlude 3 - Inference with both things corrected.</h3>
 <p>OK. Now we are ready for using the anova table and summary table to make inference and update our figure.</p>
-<div id="anova-tables-with-multiple-explantory-variables." class="section level4" number="11.2.5.1">
-<h4><span class="header-section-number">11.2.5.1</span> Anova Tables with multiple explantory variables.</h4>
+</div>
+</div>
+<div id="anova-tables-with-multiple-explantory-variables." class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> Anova Tables with multiple explantory variables.</h2>
 <p>In previous exercises, we’ve used <code>anova()</code> to generate the anova table, F-statistics and p-values to test our hypotheses. It’s very important to note that <code>anova()</code> makes a sequential sums of square calculation.</p>
 <p>In our ANCOVA example, the model we fit was <code>lm(log(weight) ~ log(height) * sex, data = Davis)</code>. We know this expanded to <code>log(height) + sex + log(height):sex</code>.</p>
 <p>When we reviewed the Anova Table, there were four rows corresponding to each of these three terms (2 main effects and 1 interaction) and the residual (remaining) variation.</p>
@@ -438,9 +444,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## speed       12.72  1  0.9009 0.3474
 ## I(speed^2)  34.44  1  2.4402 0.1250
 ## Residuals  663.42 47</code></pre>
-</div>
-<div id="explaining-the-trick" class="section level4" number="11.2.5.2">
-<h4><span class="header-section-number">11.2.5.2</span> Explaining the Trick</h4>
+<div id="explaining-the-trick" class="section level3" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Explaining the Trick</h3>
 <p>So, this table is actually constructed by fitting two different models. One of those models is where <span class="math inline">\(speed\)</span> is first and <span class="math inline">\(speed^{2}\)</span> is second. The other model is where <span class="math inline">\(speed^{2}\)</span> is first and <span class="math inline">\(speed\)</span> is second.</p>
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="nonlinearities-polynomials-and-regression.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">lm</span>(dist <span class="sc">~</span> speed <span class="sc">+</span><span class="fu">I</span>(speed<span class="sc">^</span><span class="dv">2</span>), <span class="at">weights =</span> <span class="dv">1</span><span class="sc">/</span>speed, <span class="at">data =</span> cars))</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
@@ -465,19 +470,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Pay close attention…. can you see which of the <span class="math inline">\(speed\)</span> and <span class="math inline">\(speed^{2}\)</span> F and p-values from EACH of the two models are combined in the Big-A Anova table? It’s from when the are <em>last in the model</em>.</p>
 <p>Technically, this is called a Type II anova table. Technically, it means that we are estimating the effects of each term, controlling for the other and respecting ‘marginality.’ The Big-A Anova takes care of this <em>‘rotation of the position of the terms’</em> for us and produces the accurate test table we need.</p>
 <p>For unbalanced data Type II ANOVA is recommended. In many cases the biology can be used to settle the question. Say for example if you’re interested in the effect of a flower type on pollination after correcting for the effects of plant size - you know plant size affects the number of pollinator visits. Or if you have blocks (what are they?) then you might be interested in treatment affects after correcting for the effect of block.</p>
-<p>This diagram may be valuable in helping you understand this idea.</p>
+</div>
+</div>
+<div id="types-of-anova" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Types of ANOVA</h2>
+<p>There are 3 types of ANOVA model based on how the sums of squares are divided. They hinge a bit on understanding <strong>The Principle of Marginality </strong>:</p>
+<p>-A model with the A:B interaction must contain both the A and B main effects.
+-The main effects are said to be marginal to the interaction.
+-More generally if a higher-level interaction is included then all lower level interactions and main effects must be included.
+-See Hector et al. 2010 Analysis of variance with unbalanced data: an update for ecology &amp; evolution. J Anim Ecol for a clear discussion of the different approaches.</p>
+<p>The types of ANOVA:</p>
+<p>Type I – this is a sequential anova so order matters – not very useful with unbalanced data or correlated predictors. Just fine for manipulative experiments and specific hypotheses captured by the ‘last term in the model.’</p>
+<p>Type II – measures effect of a predictor with all other predictors in the model, but obeys marginality principle. More sensible and conservative. A good standard.</p>
+<p>Type III – can test main effects after interactions, so test the main effect of A after the main effect of B and the A:B interaction ignores marginality principle.</p>
+<p>This diagram may be valuable in helping you understand these ideas.</p>
 <p><img src="images/VennModels.png" width="368" /></p>
 </div>
-</div>
-<div id="explaining-the-result." class="section level3" number="11.2.6">
-<h3><span class="header-section-number">11.2.6</span> Explaining the result.</h3>
+<div id="explaining-the-result---a-dose-of-reality" class="section level2" number="11.5">
+<h2><span class="header-section-number">11.5</span> Explaining the result - a dose of reality</h2>
 <p>So, hopefully that makes sense. We’ll review more of that in the generalised linear model module with Dylan Childs.</p>
-<p>What you might be wondering, however, is what the result means. We have no p-values that are &lt; 0.05. Controlling for speed, there is no effect of speed^2 and vice-versa. We kind of new that from our initial ‘sequential’ assessment above….</p>
-<p>OK. Whoa. This is weird, right?</p>
-</div>
-</div>
-<div id="a-dose-of-reality" class="section level2" number="11.3">
-<h2><span class="header-section-number">11.3</span> A dose of reality</h2>
+<p>What you might be wondering, however, is what the result means. We have no p-values that are &lt; 0.05. Controlling for speed, there is no effect of speed^2 and vice-versa. We kind of new that from our initial ‘sequential’ assessment above….
+OK. Whoa. This is weird, right?</p>
 <p>Let’s plot all of these three models we’ve made together with the data</p>
 <p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
 <p>At this point, we should ask, is the non-linear model makeing sense? We think it probably should, right? It’s what the data look like and there was a hint of it in the residuals. But in the end, there is no evidence for a relationship.</p>
@@ -486,8 +499,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Nothing beats a good question and an understanding of the mechanism you are actually evlauating.</p>
 </blockquote>
 </div>
-<div id="a-mechanistic-model" class="section level2" number="11.4">
-<h2><span class="header-section-number">11.4</span> A mechanistic model</h2>
+<div id="a-mechanistic-model" class="section level2" number="11.6">
+<h2><span class="header-section-number">11.6</span> A mechanistic model</h2>
 <p>Here we have a mechanistic model stopping distance in made of:</p>
 <ul>
 <li>Thinking distance – distance travelled while driver reacts so this is reaction time * speed</li>
@@ -548,9 +561,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb146-7"><a href="nonlinearities-polynomials-and-regression.html#cb146-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> preds))</span></code></pre></div>
 <p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
 </div>
-<div id="the-take-home-messages" class="section level2" number="11.5">
-<h2><span class="header-section-number">11.5</span> The Take Home Messages</h2>
-<p>This example is not out of the ordinary of what you might face with your own data. The recipe for success in data analysis is a but different from what you might expect.</p>
+<div id="the-take-home-messages" class="section level2" number="11.7">
+<h2><span class="header-section-number">11.7</span> The Take Home Messages</h2>
+<p>This example is not out of the ordinary of what you might face with your own data. The recipe for success in data analysis is a bit different from what you might expect.</p>
 <ol style="list-style-type: decimal">
 <li>Design experiments to test hypotheses with Randomisation, Replication and Reducing Error in mind.</li>
 <li>Think about your question and the mechanisms expected to give rise to the pattern</li>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 12 A final Overview | An Introduction to Experimental Design</title>
+  <title>Chapter 12 A final Overview | An Introduction to Experimental Design and Linear Models</title>
   <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 12 A final Overview | An Introduction to Experimental Design" />
+  <meta property="og:title" content="Chapter 12 A final Overview | An Introduction to Experimental Design and Linear Models" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 12 A final Overview | An Introduction to Experimental Design" />
+  <meta name="twitter:title" content="Chapter 12 A final Overview | An Introduction to Experimental Design and Linear Models" />
   
   <meta name="twitter:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   
 
-<meta name="author" content="Andrew P Beckerman (based on text from Mark Rees and Gareth Phoenix)" />
+<meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html"><i class="fa fa-check"></i><b>6</b> Randomized Complete Block design (RCB)</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#and-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> And example of the RCBD</a></li>
+<li class="chapter" data-level="6.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#an-example-of-the-rcbd"><i class="fa fa-check"></i><b>6.1</b> An example of the RCBD</a></li>
 <li class="chapter" data-level="6.2" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#analysing-the-crbd"><i class="fa fa-check"></i><b>6.2</b> Analysing the CRBD</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="randomized-complete-block-design-rcb.html"><a href="randomized-complete-block-design-rcb.html#building-the-model"><i class="fa fa-check"></i><b>6.2.1</b> Building the model</a></li>
@@ -256,11 +256,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-2---inference-before-fixing-both-problems"><i class="fa fa-check"></i><b>11.2.3</b> Interlude 2 - Inference before fixing both problems</a></li>
 <li class="chapter" data-level="11.2.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#solving-the-problem-ii-non-constant---increasing-variance"><i class="fa fa-check"></i><b>11.2.4</b> Solving the Problem II: Non-constant - increasing variance</a></li>
 <li class="chapter" data-level="11.2.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#interlude-3---inference-with-both-things-corrected."><i class="fa fa-check"></i><b>11.2.5</b> Interlude 3 - Inference with both things corrected.</a></li>
-<li class="chapter" data-level="11.2.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result."><i class="fa fa-check"></i><b>11.2.6</b> Explaining the result.</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-dose-of-reality"><i class="fa fa-check"></i><b>11.3</b> A dose of reality</a></li>
-<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.4</b> A mechanistic model</a></li>
-<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.5</b> The Take Home Messages</a></li>
+<li class="chapter" data-level="11.3" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#anova-tables-with-multiple-explantory-variables."><i class="fa fa-check"></i><b>11.3</b> Anova Tables with multiple explantory variables.</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-trick"><i class="fa fa-check"></i><b>11.3.1</b> Explaining the Trick</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#types-of-anova"><i class="fa fa-check"></i><b>11.4</b> Types of ANOVA</a></li>
+<li class="chapter" data-level="11.5" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#explaining-the-result---a-dose-of-reality"><i class="fa fa-check"></i><b>11.5</b> Explaining the result - a dose of reality</a></li>
+<li class="chapter" data-level="11.6" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#a-mechanistic-model"><i class="fa fa-check"></i><b>11.6</b> A mechanistic model</a></li>
+<li class="chapter" data-level="11.7" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html#the-take-home-messages"><i class="fa fa-check"></i><b>11.7</b> The Take Home Messages</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="a-final-overview.html"><a href="a-final-overview.html"><i class="fa fa-check"></i><b>12</b> A final Overview</a></li>
 <li class="divider"></li>
@@ -275,7 +279,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Experimental Design and Linear Models</a>
           </h1>
         </div>
 

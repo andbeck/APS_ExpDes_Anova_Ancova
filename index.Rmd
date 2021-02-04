@@ -1,6 +1,6 @@
 --- 
-title: "An Introduction to Experimental Design"
-author: "Andrew P Beckerman (based on text from Mark Rees and Gareth Phoenix)"
+title: "An Introduction to Experimental Design and Linear Models"
+author: "Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -17,9 +17,30 @@ library(tidyverse)
 
 # Introduction
 
-Welcome to the Design and Analysis of ANOVA and ANCOVA experiments.
+Welcome to An Introduction to Experimental Design and Linear Models
 
-This module is compulsory for all, because it forms the foundation for most of the more complex experiments you will do as a researcher.  It is the foundational step beyond the t-test, 1-way ANOVA, simple regression and chi-square contingency table analyses we covered in semester 1.
+In this mini-module, you'll be learning about the design and analysis of ANOVA and ANCOVA experiments.
+
+This module is compulsory for all, because it forms the foundation for most of the more complex experiments you will do as a researcher.  And it is the major step beyond the t-test, 1-way ANOVA, simple regression and chi-square contingency table analyses we covered in semester 1.  
+
+If you found Semester 1 ideas hard, please return to the sections on the 1-way ANOVA and the Regression model.  Chapter 5 in Getting Started with R (available as an online Resource via STARPlus) covers the material you should know. 
+
+You will also need to feel comfortable with dplyr and ggplot - well be reinforcing the old stuff and introducing a few new tricks.
+
+There are 12 Chapters to the book, some only a page or two and some quite a but longer.  The majority contain R code that you should recreated in your own scripts as you work along.  You should use your scripts to add annotation and notes about the core ideas.
+
+The learning outcome for this mini-module are that you will understand the basic ideas about
+
+- Replication, Randomisation and Reducing Noise
+- Experimental Design and Analysis - The Completely Randomised Design
+- Experimental Design and Analysis - The Randomised Block Design
+- Experimental Design and Analysis - The Latin Square Design
+- Experimental Design and Analysis - The ANCOVA Design
+- Multiple Regression and Non-linearity.
+
+A note on time allocation: In a 'normal semester', you'd be in the computer room working on these topics for ~12 hours over the course of 3 days in a week.  
+
+You should plan on allocating 9-12 hours of your week to this section.  You should expect to do the same for the other mini-modules.
 
 ### The Three Rs
 
@@ -82,7 +103,7 @@ Referring to our generic model structure above,
 
 $y = \beta_{0}+\beta_{1}*X_{1}+\beta_{2}*X_{2}+\epsilon$
 
-we hopefully can see that $\beta_{0} = 0.01$, $\beta_{1}*X_{1} = 0$ and $\beta_{2} = 1$, where $X_{2} = X^{2}$!
+we hopefully can see that $\beta_{0} = 0.01$, $\beta_{1} = 0$ and $\beta_{2} = 1$, where $X_{2} = X^{2}$!
 
 Linear models are perfectly capable of being used to estimate non-linear relationships.
 
@@ -101,7 +122,6 @@ df <- data.frame(x, y)
 ggplot(df, aes(x = x, y = y))+
   geom_point()
 ```
-
 
 ### Section Readings ----
 

@@ -99,6 +99,8 @@ Hence ALWAYS use factorial designs when you can!
 
 ## A Factorial Design and the Two-Way ANOVA
 
+I'd recommend a new script now for this section.  It's a pretty distinct example.  Don't forget to use library() at the top to get all those packages working for this script.  And don't forget, this script can live in the same R Project as the other one(s).
+
 ```{r}
 set.seed(123)
 
@@ -110,7 +112,7 @@ head(design)
 
 So, the `design.ab` function generates a nice picture, but uses numbers instead of words for the various treatments and has set Letters as the treatments.  
 
-We don't support this approach - you WILL forget what the numbers and letters mean, so lets change these to represent CO2 and UVB things. 
+We don't support this approach - you WILL forget what the numbers and letters mean, so let's change these CODES to represent CO2 and UVB REALITY.  We'll use `fct_recode` from the tidyverse package called `forcats` (for categories, but we like cats). 
 
 ```{r}
 design <- design %>%
@@ -126,6 +128,8 @@ head(design, 10) # is this what you expect
 >NOTE 2: we used the design = "crd" argument to specify a completely randomised, 2-way factorial design... you could make this a block design with the "rcbd".... see the help file for `design.ab`
 
 ### Build the Data
+
+Here we will build two sources of data - one that has NO INTERACTION, and one that DOES.
 
 ```{r}
 #Sample Sizes and errors
@@ -151,25 +155,30 @@ head(design)
 
 ### Plot the data!
 
-Here we combine some dplyr magic (calcuating means in each group), some ggplot magic (adding the lines connecting the means on top of the raw data) and the beauty of patchwork, the package for plot layouts
+Here we combine some dplyr magic (calcuating means in each group - there are two grouping variables!), some ggplot magic (adding the lines connecting the means on top of the raw data) and the beauty of patchwork, the package for plot layouts.  Don't forget to check that you've got all of the `library()` calls at the top of your script, and that you ran them!
 
 ```{r, message = FALSE}
+
+# No interaction summary
 sumDat1 <- design %>% 
   group_by(UVB, CO2) %>% 
   summarise(
     obs = mean(obs)
   )
 
+# with interaction summary
 sumDat2 <- design %>% 
   group_by(UVB, CO2) %>% 
   summarise(
     obs2 = mean(obs2)
   )
 
+# no interaction
 p1 <- ggplot(design, aes(x = UVB, y = obs, colour = CO2, shape = CO2, group = CO2))+
   geom_point()+
   geom_line(data = sumDat1)
 
+# with interaction
 p2 <- ggplot(design, aes(x = UVB, y = obs2, colour = CO2, shape = CO2, group = CO2))+
   geom_point()+
   geom_line(data = sumDat2)
@@ -177,7 +186,7 @@ p2 <- ggplot(design, aes(x = UVB, y = obs2, colour = CO2, shape = CO2, group = C
 p1+p2
 ```
 
-What you see above on the left, is a pattern that suggest that the effect of 
+What you see above on the left, is a pattern that suggest that the effect of ______ on ________ does not vary by ________. In contrast, on the right.....: 
 
 ### Analyse the data
 
@@ -188,7 +197,7 @@ int_mod_1 <- lm(obs ~ CO2*UVB, data = design)
 # model with interaction
 int_mod_2 <- lm(obs2 ~ CO2*UVB, data = design)
 
-# model with interaction specified wrong
+# model with interaction, but specified incorrectly.
 int_mod_3 <- lm(obs2 ~ CO2 + UVB, data = design)
 
 anova(int_mod_1)
@@ -196,11 +205,16 @@ anova(int_mod_2)
 anova(int_mod_3)
 ```
 
+Note the differences in the outputs.  Not what we infer if we model the interaction data incorrectly.  There is no free lunch.  You must understand your data and your question!
+
+
 ### final figuring
 
-Don't forget that the corred standard error for the 'result' is the residuals mean squared.  You can use the dplyr+ggplot2 method, or visreg.
+Don't forget that the correct standard error for the 'result' is the residuals mean squared.  You can use the dplyr+ggplot2 method, or visreg.
 
 Here we use visreg and put the figure next to our original ggplot for the interaction data.
+
+We plot the correct model for the interaction data.
 
 ```{r}
 p3 <- visreg(int_mod_2,"CO2",by="UVB",gg=TRUE) +
