@@ -63,7 +63,7 @@ To do this, we have to think about the mean of the yield (we'll set it to 20), t
 ```{r}
 #the observations of yield
 design$obs <- 
-  # mean yield overall
+  # mean yield Control
   20 + 
   # deviation caused by Herbicide 1
   (design$treat=="Herb1") * 5 + 

@@ -124,7 +124,7 @@
 
 \title{An Introduction to Experimental Design and Linear Models}
 \author{Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)}
-\date{2021-02-04}
+\date{2021-02-08}
 
 \begin{document}
 \maketitle
@@ -758,7 +758,7 @@ To do this, we have to think about the mean of the yield (we'll set it to 20), t
 \begin{Highlighting}[]
 \CommentTok{\#the observations of yield}
 \NormalTok{design}\SpecialCharTok{$}\NormalTok{obs }\OtherTok{\textless{}{-}} 
-  \CommentTok{\# mean yield overall}
+  \CommentTok{\# mean yield Control}
   \DecValTok{20} \SpecialCharTok{+} 
   \CommentTok{\# deviation caused by Herbicide 1}
 \NormalTok{  (design}\SpecialCharTok{$}\NormalTok{treat}\SpecialCharTok{==}\StringTok{"Herb1"}\NormalTok{) }\SpecialCharTok{*} \DecValTok{5} \SpecialCharTok{+} 
