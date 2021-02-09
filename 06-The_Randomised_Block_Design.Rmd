@@ -139,7 +139,7 @@ anova(naive_model)
 anova(block_model)
 ```
 
-The first important thing to focus on here is the difference in the Mean Sq Residual Errors - in the `naive_model`, it is $55.43$.  In the `block_model`, it is $0.86$.
+The first important thing to focus on here is the difference in the Mean Sq Residual Errors - in the `naive_model`, it is $55.52$.  In the `block_model`, it is $0.94$.
 
 The second important thing to notice is that haveing allocated variation to block in the `block_model`, and thus reducing the error variation, the _treatment_ effect shifts from being insignificant to significant.
 
@@ -165,9 +165,9 @@ The take home message here is that these numbers make complete sense with respec
 
 When we made our initial plot above, we calculated the standard error based on all observations among blocks.  However, the variation we really wish to represent is the variation after having controlled for the blocking effects.
 
-This means that the standard deviation we should probably use is of the error variance from the correct model: $0.86$.
+This means that the standard deviation we should probably use is of the error variance from the correct model: $0.94$.
 
-The standard deviation is the $\sqrt{Var}$ and thus, our correct standard errors from the model are $\sqrt{0.86}$
+The standard deviation is the $\sqrt{Var}$ and thus, our correct standard errors from the model are $\sqrt{0.94}$
 
 There is a very nice plotting function in the package _visreg_ that delivers these proper standard errors in a nice ggplot framework.  It presents points are partial residuals (deviation from the mean for each replicate), lines depciting the means, and shaded area as a 95% confidence interval, calculated 1.96*SE, where the SE is estimated from the model error variance (just above). Compare this to your first graph.
 

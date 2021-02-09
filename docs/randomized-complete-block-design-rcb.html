@@ -425,7 +425,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Residuals 12  11.26   0.938                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>The first important thing to focus on here is the difference in the Mean Sq Residual Errors - in the <code>naive_model</code>, it is <span class="math inline">\(55.43\)</span>. In the <code>block_model</code>, it is <span class="math inline">\(0.86\)</span>.</p>
+<p>The first important thing to focus on here is the difference in the Mean Sq Residual Errors - in the <code>naive_model</code>, it is <span class="math inline">\(55.52\)</span>. In the <code>block_model</code>, it is <span class="math inline">\(0.94\)</span>.</p>
 <p>The second important thing to notice is that haveing allocated variation to block in the <code>block_model</code>, and thus reducing the error variation, the <em>treatment</em> effect shifts from being insignificant to significant.</p>
 </div>
 <div id="are-the-estimates-of-the-parameters-what-we-expect" class="section level3" number="6.2.2">
@@ -466,8 +466,8 @@ And the value of block 5 is reported as 20 unites lower than block 1 control. Th
 <div id="correct-standard-errors-for-a-figure" class="section level3" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Correct Standard Errors for a Figure</h3>
 <p>When we made our initial plot above, we calculated the standard error based on all observations among blocks. However, the variation we really wish to represent is the variation after having controlled for the blocking effects.</p>
-<p>This means that the standard deviation we should probably use is of the error variance from the correct model: <span class="math inline">\(0.86\)</span>.</p>
-<p>The standard deviation is the <span class="math inline">\(\sqrt{Var}\)</span> and thus, our correct standard errors from the model are <span class="math inline">\(\sqrt{0.86}\)</span></p>
+<p>This means that the standard deviation we should probably use is of the error variance from the correct model: <span class="math inline">\(0.94\)</span>.</p>
+<p>The standard deviation is the <span class="math inline">\(\sqrt{Var}\)</span> and thus, our correct standard errors from the model are <span class="math inline">\(\sqrt{0.94}\)</span></p>
 <p>There is a very nice plotting function in the package <em>visreg</em> that delivers these proper standard errors in a nice ggplot framework. It presents points are partial residuals (deviation from the mean for each replicate), lines depciting the means, and shaded area as a 95% confidence interval, calculated 1.96*SE, where the SE is estimated from the model error variance (just above). Compare this to your first graph.</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="randomized-complete-block-design-rcb.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(block_model, <span class="st">&quot;treat&quot;</span>, <span class="at">gg=</span><span class="cn">TRUE</span>)<span class="sc">+</span></span>
 <span id="cb51-2"><a href="randomized-complete-block-design-rcb.html#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Yield&quot;</span>) <span class="sc">+</span> </span>
