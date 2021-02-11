@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.2.3)  9 FEB 2021 12:06
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.2.3)  11 FEB 2021 16:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -826,7 +826,7 @@ File: images/IceCream_Shark.png Graphic file (type bmp)
 File: images/Autism_Organic.png Graphic file (type bmp)
 <images/Autism_Organic.png>
 
-Overfull \hbox (247.47931pt too wide) in paragraph at lines 323--325
+Overfull \hbox (247.47931pt too wide) in paragraph at lines 321--323
 [][] [] 
  []
 
@@ -875,7 +875,7 @@ Chapter 3.
 File: images/Standard_Error.png Graphic file (type bmp)
 <images/Standard_Error.png>
 
-Overfull \hbox (609.76399pt too wide) in paragraph at lines 511--512
+Overfull \hbox (609.76399pt too wide) in paragraph at lines 509--510
 [][] 
  []
 
@@ -886,7 +886,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/SE2.png Graphic file (type bmp)
 <images/SE2.png>
 
-Overfull \hbox (633.72725pt too wide) in paragraph at lines 520--521
+Overfull \hbox (633.72725pt too wide) in paragraph at lines 518--519
 [][] 
  []
 
@@ -907,121 +907,121 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Chapter 5.
 [31] [32]
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##   [1] 25.56702 23.32992 23.39985 21.54529 20.96267 22.3431
 4 24.19572 15.45247[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##   [9] 28.25849 28.09586 25.03735 26.36961 20.44643 16.3018
 6 25.99108 29.62076[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [17] 24.05645 22.01011 25.48992 29.60826 25.83590 23.7799
 5 21.06598 21.85137[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [25] 19.10903 20.54631 21.71607 24.78175 15.84089 24.5650
 0 26.21161 19.96028[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [33] 16.21851 24.50682 17.80657 23.74981 30.64518 24.9052
 2 27.33204 18.15174[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [41] 13.41104 27.87253 19.64131 22.48390 25.17527 15.4103
 7 16.58438 15.85613[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [49] 20.56557 20.75066 19.84848 19.97868 22.47068 25.1175
 9 25.55048 24.92058[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [57] 18.45873 22.02616 23.09377 15.56172 26.78291 18.2002
 4 21.20411 25.58635[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [65] 25.67710 26.29930 22.20238 20.63010 30.71839 18.3710
 4 29.64641 14.20080[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [73] 30.80997 22.67665 29.92778 20.63348 21.45997 20.3232
 8 25.25901 18.08680[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [81] 18.75511 24.83941 27.00049 23.06356 27.87863 18.6381
 3 16.75083 24.45870[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [89] 19.76979 23.40537 21.49970 21.09057 18.48304 18.6425
 6 23.66625 28.52046[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ##  [97] 18.82317 29.38274 22.55174 26.41338 25.95806 24.8607
 8 21.90836 20.61218[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ## [105] 25.47680 21.99004 23.06115 20.40581 15.70540 23.3023
 2 28.04868 18.26389[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 790--790
+Overfull \hbox (75.0pt too wide) in paragraph at lines 788--788
 []\TU/lmtt/m/n/10 ## [113] 30.76203 24.50311 19.17553 25.11028 26.65809 18.8420
 3 26.01325 26.79324[] 
  []
 
 [33]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 839--839
+Overfull \hbox (80.25pt too wide) in paragraph at lines 837--837
 []\TU/lmtt/m/n/10 ## $ plots <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1
 4, 15, 16, 17, 18...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 839--839
+Overfull \hbox (80.25pt too wide) in paragraph at lines 837--837
 []\TU/lmtt/m/n/10 ## $ r     <int> 1, 1, 2, 1, 2, 3, 3, 2, 1, 2, 3, 4, 4, 4, 5,
  5, 6, 3, 5, 6, 7...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 839--839
+Overfull \hbox (80.25pt too wide) in paragraph at lines 837--837
 []\TU/lmtt/m/n/10 ## $ treat <chr> "Cont", "Herb1", "Herb1", "Placebo", "Placeb
 o", "Placebo", "H...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 839--839
+Overfull \hbox (80.25pt too wide) in paragraph at lines 837--837
 []\TU/lmtt/m/n/10 ## $ obs   <dbl> 25.56702, 23.32992, 23.39985, 21.54529, 20.9
 6267, 22.34314, 2...[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 855--855
+Overfull \hbox (17.25pt too wide) in paragraph at lines 853--853
 []\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
 rgument)[] 
  []
@@ -1036,13 +1036,13 @@ ed-chunk-15-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
 d-chunk-15-1.pdf>
 [35] [36] [37] [38] [39]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1129--1129
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1127--1127
 []\TU/lmtt/m/n/10 ##                          Estimate Std. Error  t value     
 Pr(>|t|)[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1129--1129
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1127--1127
 []\TU/lmtt/m/n/10 ## treat c=( -1 0.5 0.5 0 ) 5.803375  0.6805605 8.527346 6.48
 4593e-14[] 
  []
@@ -1052,31 +1052,31 @@ Overfull \hbox (17.25pt too wide) in paragraph at lines 1129--1129
 ]
 Chapter 6.
 [43] [44] [45]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1311--1311
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1309--1309
 []\TU/lmtt/m/n/10 ## $ plots <dbl> 11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 
 34, 41, 42, 43, 4...[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 1311--1311
+Overfull \hbox (48.75pt too wide) in paragraph at lines 1309--1309
 []\TU/lmtt/m/n/10 ## $ block <fct> 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4,
  4, 5, 5, 5, 5[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1311--1311
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1309--1309
 []\TU/lmtt/m/n/10 ## $ treat <fct> Placebo, Control, Herb2, Herb1, Control, Her
 b1, Herb2, Placeb...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1311--1311
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1309--1309
 []\TU/lmtt/m/n/10 ## $ obs   <dbl> 31.18707, 31.99603, 41.29937, 41.12746, 21.0
 8111, 30.56917, 2...[] 
  []
 
 [46]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1315--1315
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1313--1313
 []\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
 rgument)[] 
  []
@@ -1097,7 +1097,7 @@ Chapter 7.
 File: images/lsd.png Graphic file (type bmp)
 <images/lsd.png>
 
-Overfull \hbox (241.26344pt too wide) in paragraph at lines 1491--1492
+Overfull \hbox (241.26344pt too wide) in paragraph at lines 1489--1490
 [][] 
  []
 
@@ -1112,7 +1112,7 @@ ONS: FACTORIAL DESIGNS.
  []
 
 [60]
-Underfull \hbox (badness 4048) in paragraph at lines 1794--1794
+Underfull \hbox (badness 4048) in paragraph at lines 1792--1792
 []\TU/lmr/bx/n/14.4 A Factorial Design and the Two-Way
  []
 
@@ -1165,7 +1165,7 @@ Chapter 10.
 File: images/ANCOVA_1.png Graphic file (type bmp)
 <images/ANCOVA_1.png>
 
-Overfull \hbox (436.89824pt too wide) in paragraph at lines 2080--2081
+Overfull \hbox (436.89824pt too wide) in paragraph at lines 2078--2079
 [][] 
  []
 
@@ -1188,31 +1188,31 @@ LYSIS OF COVARIANCE
  []
 
 [74]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2141--2141
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2139--2139
 []\TU/lmtt/m/n/10 ## $ sex    <fct> M, F, F, M, F, M, M, M, M, M, M, F, F, F, F
 , F, M, F, M, F, ...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2141--2141
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2139--2139
 []\TU/lmtt/m/n/10 ## $ weight <int> 77, 58, 53, 68, 59, 76, 76, 69, 71, 65, 70,
  166, 51, 64, 52,...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2141--2141
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2139--2139
 []\TU/lmtt/m/n/10 ## $ height <int> 182, 161, 161, 177, 157, 170, 167, 186, 178
 , 171, 175, 57, 1...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2141--2141
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2139--2139
 []\TU/lmtt/m/n/10 ## $ repwt  <int> 77, 51, 54, 70, 59, 76, 77, 73, 71, 64, 75,
  56, 52, 64, 57, ...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2141--2141
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2139--2139
 []\TU/lmtt/m/n/10 ## $ repht  <int> 180, 159, 158, 175, 155, 165, 165, 180, 175
 , 170, 174, 163, ...[] 
  []
@@ -1268,7 +1268,7 @@ LYSIS OF COVARIANCE
 File: images/ANCOVA_1.png Graphic file (type bmp)
 <images/ANCOVA_1.png>
 
-Overfull \hbox (436.89824pt too wide) in paragraph at lines 2360--2361
+Overfull \hbox (436.89824pt too wide) in paragraph at lines 2358--2359
 [][] 
  []
 
@@ -1305,12 +1305,12 @@ LYSIS OF COVARIANCE
 File: images/GSwithR_Grid.png Graphic file (type bmp)
 <images/GSwithR_Grid.png>
 
-Overfull \hbox (364.1255pt too wide) in paragraph at lines 2602--2602
+Overfull \hbox (364.1255pt too wide) in paragraph at lines 2600--2600
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 24.1114pt on input line 2603.
+LaTeX Warning: Float too large for page by 24.1114pt on input line 2601.
 
 
 Overfull \hbox (49.82344pt too wide) has occurred while \output is active
@@ -1319,7 +1319,7 @@ LYSIS OF COVARIANCE
  []
 
 [88] [89]
-Underfull \hbox (badness 3229) in paragraph at lines 2653--2655
+Underfull \hbox (badness 3229) in paragraph at lines 2651--2653
 []\TU/lmr/m/n/10 Have crossed terms \TU/lmtt/m/n/10 weight ~ sex * height \TU/l
 mr/m/n/10 which is \TU/lmtt/m/n/10 weight ~ sex +
  []
@@ -1339,13 +1339,13 @@ d-chunk-63-1.pdf>
 [91
 
 ]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2708--2708
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2706--2706
 []\TU/lmtt/m/n/10 ## $ speed <dbl> 4, 4, 7, 7, 8, 9, 10, 10, 10, 11, 11, 12, 12
 , 12, 12, 13, 13,...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2708--2708
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2706--2706
 []\TU/lmtt/m/n/10 ## $ dist  <dbl> 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14
 , 20, 24, 28, 26,...[] 
  []
@@ -1384,18 +1384,18 @@ ed-chunk-72-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
 d-chunk-72-1.pdf>
 
-Underfull \hbox (badness 1297) in paragraph at lines 2903--2903
+Underfull \hbox (badness 1297) in paragraph at lines 2901--2901
 []\TU/lmr/bx/n/14.4 Anova Tables with multiple explantory
  []
 
 
-Underfull \hbox (badness 3058) in paragraph at lines 2907--2908
+Underfull \hbox (badness 3058) in paragraph at lines 2905--2906
 []\TU/lmr/m/n/10 In our ANCOVA example, the model we fit was \TU/lmtt/m/n/10 lm
 (log(weight) ~
  []
 
 
-Overfull \hbox (1.83002pt too wide) in paragraph at lines 2907--2908
+Overfull \hbox (1.83002pt too wide) in paragraph at lines 2905--2906
 \TU/lmtt/m/n/10 log(height) * sex, data = Davis)\TU/lmr/m/n/10 . We know this e
 xpanded to \TU/lmtt/m/n/10 log(height)
  []
@@ -1410,7 +1410,7 @@ Overfull \hbox (3.48782pt too wide) has occurred while \output is active
 File: images/VennModels.pdf Graphic file (type pdf)
 <use images/VennModels.pdf>
 
-Overfull \hbox (24.40163pt too wide) in paragraph at lines 3009--3010
+Overfull \hbox (24.40163pt too wide) in paragraph at lines 3007--3008
 [][] 
  []
 
@@ -1435,7 +1435,7 @@ Overfull \hbox (3.48782pt too wide) has occurred while \output is active
  []
 
 [104]
-Overfull \hbox (64.5pt too wide) in paragraph at lines 3115--3115
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3113--3113
 []\TU/lmtt/m/n/10 ## lm(formula = dist ~ speed + I(speed^2) - 1, data = cars, w
 eights = 1/speed)[] 
  []
@@ -1461,8 +1461,9 @@ Overfull \hbox (3.48782pt too wide) has occurred while \output is active
 
 ]
 Chapter 12.
+[109]
 No file Introduction-to-Experimental-Design-and-Analysis.bbl.
-[109] (./Introduction-to-Experimental-Design-and-Analysis.aux)
+[110] (./Introduction-to-Experimental-Design-and-Analysis.aux)
 Package rerunfilecheck Info: File `Introduction-to-Experimental-Design-and-Anal
 ysis.out' has not changed.
 (rerunfilecheck)             Checksum: 2535B057FAA4884A5EDA928FEBF06E1D;8900.
@@ -1476,5 +1477,5 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  98i,6n,122p,721b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Introduction-to-Experimental-Design-and-Analysis.pdf (109 pag
+Output written on Introduction-to-Experimental-Design-and-Analysis.pdf (110 pag
 es).

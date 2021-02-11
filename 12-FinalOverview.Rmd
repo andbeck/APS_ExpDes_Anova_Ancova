@@ -1,12 +1,31 @@
 # A final Overview    
 
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-library(tidyverse)
-library(ggfortify)
-library(agricolae)
-library(car)
-library(gmodels)
-library(visreg)
-library(patchwork)
-```
+In this set of chapters, you've learned about 
 
+- the basics of experimental design, including
+  - Randomisation, replication and reducing error
+  - Confounding, placebos and blinding
+  - bias and systematic error
+  - the standard error
+- the use of agricolae to
+  - build an understanding of different experimental designs, such as the
+    - completely randomised designs
+    - randomised block designs
+    - the latin square design
+  - create data that represent a variety of effects of treatments on response variables.
+    - including additive effects, block effects and interactions
+  - analyse these data using our workflow of plot, model, diagnostics, inference
+- develop a deep understanding of the 2-way ANOVA and the ANCOVA
+- develop an understanding of regression modelling 
+
+I come back to one of the central ideas in chapter 2 to finish.
+
+Experiments help us answer questions, but there are also non-experimental techniques. What is so special about experiments? 
+
+1. Experiments allow us to set up a direct comparison between the treatments of interest.
+2. We can design experiments to minimize any bias in the comparison.
+3. We can design experiments so that the error in the comparison is small.
+4. Most important, we are in control of experiments, and having that control allows us to make stronger inferences about the nature of differences
+that we see in the experiment. Specifically, we may make inferences about causation.
+
+This last point distinguishes an experiment from an observational study. In an observational study we merely observe which units are in which treatment groups; we don’t get to control that assignment.  This underpins the classic issue with assigning _causation to correlation_ - in the following two examples, there is a strong association between the variables, but there has been no control/manipulation.

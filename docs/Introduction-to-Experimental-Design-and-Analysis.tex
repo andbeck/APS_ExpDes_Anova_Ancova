@@ -124,7 +124,7 @@
 
 \title{An Introduction to Experimental Design and Linear Models}
 \author{Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)}
-\date{2021-02-09}
+\date{2021-02-11}
 
 \begin{document}
 \maketitle
@@ -312,10 +312,8 @@ Experiments help us answer questions, but there are also non-experimental techni
 \item
   We can design experiments so that the error in the comparison is small.
 \item
-  Most important, we are in control of experiments, and having that control
-  allows us to make stronger inferences about the nature of differences
-  that we see in the experiment. Specifically, we may make inferences
-  about causation.
+  Most important, we are in control of experiments, and having that control allows us to make stronger inferences about the nature of differences
+  that we see in the experiment. Specifically, we may make inferences about causation.
 \end{enumerate}
 
 This last point distinguishes an experiment from an observational study. In an observational study we merely observe which units are in which treatment groups; we don't get to control that assignment. This underpins the classic issue with assigning \emph{causation to correlation} - in the following two examples, there is a strong association between the variables, but there has been no control/manipulation.
@@ -3152,6 +3150,78 @@ This example is not out of the ordinary of what you might face with your own dat
 
 \hypertarget{a-final-overview}{%
 \chapter{A final Overview}\label{a-final-overview}}
+
+In this set of chapters, you've learned about
+
+\begin{itemize}
+\tightlist
+\item
+  the basics of experimental design, including
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Randomisation, replication and reducing error
+  \item
+    Confounding, placebos and blinding
+  \item
+    bias and systematic error
+  \item
+    the standard error
+  \end{itemize}
+\item
+  the use of agricolae to
+
+  \begin{itemize}
+  \tightlist
+  \item
+    build an understanding of different experimental designs, such as the
+
+    \begin{itemize}
+    \tightlist
+    \item
+      completely randomised designs
+    \item
+      randomised block designs
+    \item
+      the latin square design
+    \end{itemize}
+  \item
+    create data that represent a variety of effects of treatments on response variables.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      including additive effects, block effects and interactions
+    \end{itemize}
+  \item
+    analyse these data using our workflow of plot, model, diagnostics, inference
+  \end{itemize}
+\item
+  develop a deep understanding of the 2-way ANOVA and the ANCOVA
+\item
+  develop an understanding of regression modelling
+\end{itemize}
+
+I come back to one of the central ideas in chapter 2 to finish.
+
+Experiments help us answer questions, but there are also non-experimental techniques. What is so special about experiments?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Experiments allow us to set up a direct comparison between the treatments of interest.
+\item
+  We can design experiments to minimize any bias in the comparison.
+\item
+  We can design experiments so that the error in the comparison is small.
+\item
+  Most important, we are in control of experiments, and having that control allows us to make stronger inferences about the nature of differences
+  that we see in the experiment. Specifically, we may make inferences about causation.
+\end{enumerate}
+
+This last point distinguishes an experiment from an observational study. In an observational study we merely observe which units are in which treatment groups; we don't get to control that assignment. This underpins the classic issue with assigning \emph{causation to correlation} - in the following two examples, there is a strong association between the variables, but there has been no control/manipulation.
 
   \bibliography{book.bib,packages.bib}
 
