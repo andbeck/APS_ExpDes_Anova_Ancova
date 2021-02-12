@@ -24,7 +24,7 @@
 <meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2021-02-11" />
+<meta name="date" content="2021-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,7 +291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 11</span> Nonlinearities, polynomials and regression</h1>
 <p>If you recall from chapter 1, we introduced the general linear model, and finished with an example where the data were highly non-linear and based on the following equation</p>
 <p><span class="math inline">\(y = 0.01 + x^{2} + \epsilon\)</span></p>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
 <p>In this final section of the module, we are going to analyse a nonlinear relationship using a linear model. This exercise should accomplish two tasks. First, it will show you how to build models to capture non-linearity. Second, it will reinforce how we use the diagnostic tools to critique our model before moving on to make inference.</p>
 <div id="transformations---a-reminder-and-starting-point." class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> Transformations - a reminder and starting point.</h2>
@@ -316,15 +316,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="nonlinearities-polynomials-and-regression.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cars, <span class="fu">aes</span>(<span class="at">x =</span> speed, <span class="at">y =</span> dist))<span class="sc">+</span></span>
 <span id="cb120-2"><a href="nonlinearities-polynomials-and-regression.html#cb120-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
 <span id="cb120-3"><a href="nonlinearities-polynomials-and-regression.html#cb120-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Speed (km/hour&quot;</span>)<span class="sc">+</span><span class="fu">xlab</span>(<span class="st">&quot;Stopping Distance (m)&quot;</span>)</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
 <p>There are a three things we should immediately notice in this figure. The first is that there is a positive relationship. The second is that it appears to be a bit non-linear, even <em>exponential</em>. Third, it looks like there is more variation out at high speeds than at low speeds.</p>
 <p>Let’s ignore all of this for the moment and fit the model and acquire the diagnostics.</p>
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="nonlinearities-polynomials-and-regression.html#cb121-1" aria-hidden="true" tabindex="-1"></a>mod_dist <span class="ot">&lt;-</span> <span class="fu">lm</span>(dist <span class="sc">~</span> speed, <span class="at">data =</span> cars)</span>
 <span id="cb121-2"><a href="nonlinearities-polynomials-and-regression.html#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mod_dist)</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 <p>OK - our preliminary assessment about non-linearity and non-constant variance appears to be spot on! There are systematic departures from the linear model indicated by the upper left plot.</p>
 <p>Here we add a line to the data (plot) to understand why the residuals in the upper-left panel is u-shaped. Make sure you get the idea that the majority of the <strong>data</strong> are <em>above</em> then <em>below</em> then <em>above</em> the line as you move across the graph. This generates residuals that have the pattern we see!</p>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 <p>The lower left panel of the residuals/diagnostics indicates that the variance does increase with the mean.</p>
 <div id="interlude-1---inference-before-fixing-the-problem" class="section level3" number="11.2.1">
 <h3><span class="header-section-number">11.2.1</span> Interlude 1 - Inference before fixing the problem</h3>
@@ -363,7 +363,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In order to fix this problem, we can take note from our first example in chapter 1 and fit a multiple regression model with a polynomial!</p>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="nonlinearities-polynomials-and-regression.html#cb126-1" aria-hidden="true" tabindex="-1"></a>mod_dist_nonLin <span class="ot">&lt;-</span> <span class="fu">lm</span>(dist <span class="sc">~</span> speed <span class="sc">+</span> <span class="fu">I</span>(speed<span class="sc">^</span><span class="dv">2</span>), <span class="at">data =</span> cars)</span>
 <span id="cb126-2"><a href="nonlinearities-polynomials-and-regression.html#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mod_dist_nonLin)</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
 <p>Wow. That’s a massive improvement on the diagnostic that indicated a systematic departure from the linear relationship between dist and speed. But…. we still have non-constant variance - the variation in predicted distance is still increasing with the mean.</p>
 </div>
 <div id="interlude-2---inference-before-fixing-both-problems" class="section level3" number="11.2.3">
@@ -415,7 +415,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>To do this in the model, we can use the <em>weights</em> argument:</p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="nonlinearities-polynomials-and-regression.html#cb133-1" aria-hidden="true" tabindex="-1"></a>mod_dist_nonLin_weight <span class="ot">&lt;-</span> <span class="fu">lm</span>(dist <span class="sc">~</span> speed <span class="sc">+</span><span class="fu">I</span>(speed<span class="sc">^</span><span class="dv">2</span>), <span class="at">weights =</span> <span class="dv">1</span><span class="sc">/</span>speed, <span class="at">data =</span> cars)</span>
 <span id="cb133-2"><a href="nonlinearities-polynomials-and-regression.html#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mod_dist_nonLin_weight)</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
 <p>Super. We now have a model where we capture the non-linearity using a polynomial and capture the issue of increasing variance by making the model reflect our assumption that different observations have different variances.</p>
 </div>
 <div id="interlude-3---inference-with-both-things-corrected." class="section level3" number="11.2.5">
@@ -492,7 +492,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>What you might be wondering, however, is what the result means. We have no p-values that are &lt; 0.05. Controlling for speed, there is no effect of speed^2 and vice-versa. We kind of new that from our initial ‘sequential’ assessment above….
 OK. Whoa. This is weird, right?</p>
 <p>Let’s plot all of these three models we’ve made together with the data</p>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
 <p>At this point, we should ask, is the non-linear model makeing sense? We think it probably should, right? It’s what the data look like and there was a hint of it in the residuals. But in the end, there is no evidence for a relationship.</p>
 <p>Perhaps there is a better way to go about this. And in this better way a lesson in p-values and statistics.</p>
 <blockquote>
@@ -559,7 +559,7 @@ OK. Whoa. This is weird, right?</p>
 <span id="cb146-5"><a href="nonlinearities-polynomials-and-regression.html#cb146-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plotMech, <span class="fu">aes</span>(<span class="at">x =</span> speed, <span class="at">y =</span> dist))<span class="sc">+</span></span>
 <span id="cb146-6"><a href="nonlinearities-polynomials-and-regression.html#cb146-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
 <span id="cb146-7"><a href="nonlinearities-polynomials-and-regression.html#cb146-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> preds))</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-78-1.png" width="672" /></p>
 </div>
 <div id="the-take-home-messages" class="section level2" number="11.7">
 <h2><span class="header-section-number">11.7</span> The Take Home Messages</h2>

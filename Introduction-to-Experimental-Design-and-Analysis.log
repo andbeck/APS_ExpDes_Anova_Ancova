@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.2.3)  11 FEB 2021 16:27
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.2.3)  12 FEB 2021 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1051,121 +1051,132 @@ Overfull \hbox (17.25pt too wide) in paragraph at lines 1127--1127
 
 ]
 Chapter 6.
-[43] [44] [45]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1309--1309
+[43]
+File: images/BlockDesignGraphic.png Graphic file (type bmp)
+<images/BlockDesignGraphic.png>
+
+Overfull \hbox (290.38986pt too wide) in paragraph at lines 1188--1189
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[44] [45] [46] [47]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1315--1315
 []\TU/lmtt/m/n/10 ## $ plots <dbl> 11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 
 34, 41, 42, 43, 4...[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 1309--1309
+Overfull \hbox (48.75pt too wide) in paragraph at lines 1315--1315
 []\TU/lmtt/m/n/10 ## $ block <fct> 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4,
  4, 5, 5, 5, 5[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1309--1309
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1315--1315
 []\TU/lmtt/m/n/10 ## $ treat <fct> Placebo, Control, Herb2, Herb1, Control, Her
 b1, Herb2, Placeb...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1309--1309
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1315--1315
 []\TU/lmtt/m/n/10 ## $ obs   <dbl> 31.18707, 31.99603, 41.29937, 41.12746, 21.0
 8111, 30.56917, 2...[] 
  []
 
-[46]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1313--1313
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1319--1319
 []\TU/lmtt/m/n/10 ## `summarise()` ungrouping output (override with `.groups` a
 rgument)[] 
  []
 
 File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-25-1.pdf Graphic file (type pdf)
+ed-chunk-26-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-25-1.pdf>
-[47] [48] [49]
+d-chunk-26-1.pdf>
+[48] [49] [50] [51]
 File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-28-1.pdf Graphic file (type pdf)
+ed-chunk-29-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-28-1.pdf>
-[50] [51] [52
+d-chunk-29-1.pdf>
+[52] [53] [54
 
 ]
 Chapter 7.
 File: images/lsd.png Graphic file (type bmp)
 <images/lsd.png>
 
-Overfull \hbox (241.26344pt too wide) in paragraph at lines 1489--1490
+Overfull \hbox (241.26344pt too wide) in paragraph at lines 1495--1496
 [][] 
  []
 
-[53] [54] [55] [56] [57] [58
+[55] [56] [57] [58] [59] [60
 
 ]
 Chapter 8.
-[59]
-Overfull \hbox (66.38452pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 60 \TU/lmr/m/sl/10 CHAPTER 8.  DESIGNS FOR TESTING FOR INTERACTI
-ONS: FACTORIAL DESIGNS.
- []
-
-[60]
-Underfull \hbox (badness 4048) in paragraph at lines 1792--1792
-[]\TU/lmr/bx/n/14.4 A Factorial Design and the Two-Way
- []
-
 [61]
 Overfull \hbox (66.38452pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 62 \TU/lmr/m/sl/10 CHAPTER 8.  DESIGNS FOR TESTING FOR INTERACTI
 ONS: FACTORIAL DESIGNS.
  []
 
-[62] [63]
-File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-42-1.pdf Graphic file (type pdf)
-<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-42-1.pdf>
+[62]
+Underfull \hbox (badness 4048) in paragraph at lines 1798--1798
+[]\TU/lmr/bx/n/14.4 A Factorial Design and the Two-Way
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+[63]
 Overfull \hbox (66.38452pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 64 \TU/lmr/m/sl/10 CHAPTER 8.  DESIGNS FOR TESTING FOR INTERACTI
 ONS: FACTORIAL DESIGNS.
  []
 
 [64] [65]
+File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
+ed-chunk-43-1.pdf Graphic file (type pdf)
+<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
+d-chunk-43-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (66.38452pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 66 \TU/lmr/m/sl/10 CHAPTER 8.  DESIGNS FOR TESTING FOR INTERACTI
 ONS: FACTORIAL DESIGNS.
  []
 
-[66]
-File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-44-1.pdf Graphic file (type pdf)
-<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-44-1.pdf>
-[67]
+[66] [67]
 Overfull \hbox (66.38452pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 68 \TU/lmr/m/sl/10 CHAPTER 8.  DESIGNS FOR TESTING FOR INTERACTI
 ONS: FACTORIAL DESIGNS.
  []
 
-[68
+[68]
+File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
+ed-chunk-45-1.pdf Graphic file (type pdf)
+<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
+d-chunk-45-1.pdf>
+[69]
+Overfull \hbox (66.38452pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 70 \TU/lmr/m/sl/10 CHAPTER 8.  DESIGNS FOR TESTING FOR INTERACTI
+ONS: FACTORIAL DESIGNS.
+ []
+
+[70
 
 ]
 Chapter 9.
-[69] [70]
+[71] [72]
 Chapter 10.
-[71
+[73
 
 ]
 File: images/ANCOVA_1.png Graphic file (type bmp)
 <images/ANCOVA_1.png>
 
-Overfull \hbox (436.89824pt too wide) in paragraph at lines 2078--2079
+Overfull \hbox (436.89824pt too wide) in paragraph at lines 2084--2085
 [][] 
  []
 
@@ -1174,74 +1185,58 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (49.82344pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 72 \TU/lmr/m/sl/10 CHAPTER 10.  INTRODUCING THE ANCOVA - THE ANA
-LYSIS OF COVARIANCE
- []
-
-[72]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[73]
-Overfull \hbox (49.82344pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 74 \TU/lmr/m/sl/10 CHAPTER 10.  INTRODUCING THE ANCOVA - THE ANA
 LYSIS OF COVARIANCE
  []
 
 [74]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2139--2139
-[]\TU/lmtt/m/n/10 ## $ sex    <fct> M, F, F, M, F, M, M, M, M, M, M, F, F, F, F
-, F, M, F, M, F, ...[] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2139--2139
-[]\TU/lmtt/m/n/10 ## $ weight <int> 77, 58, 53, 68, 59, 76, 76, 69, 71, 65, 70,
- 166, 51, 64, 52,...[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2139--2139
-[]\TU/lmtt/m/n/10 ## $ height <int> 182, 161, 161, 177, 157, 170, 167, 186, 178
-, 171, 175, 57, 1...[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2139--2139
-[]\TU/lmtt/m/n/10 ## $ repwt  <int> 77, 51, 54, 70, 59, 76, 77, 73, 71, 64, 75,
- 56, 52, 64, 57, ...[] 
- []
-
-
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2139--2139
-[]\TU/lmtt/m/n/10 ## $ repht  <int> 180, 159, 158, 175, 155, 165, 165, 180, 175
-, 170, 174, 163, ...[] 
- []
-
-File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-48-1.pdf Graphic file (type pdf)
-<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-48-1.pdf>
 [75]
-File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-49-1.pdf Graphic file (type pdf)
-<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-49-1.pdf>
-
 Overfull \hbox (49.82344pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 76 \TU/lmr/m/sl/10 CHAPTER 10.  INTRODUCING THE ANCOVA - THE ANA
 LYSIS OF COVARIANCE
  []
 
 [76]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2145--2145
+[]\TU/lmtt/m/n/10 ## $ sex    <fct> M, F, F, M, F, M, M, M, M, M, M, F, F, F, F
+, F, M, F, M, F, ...[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2145--2145
+[]\TU/lmtt/m/n/10 ## $ weight <int> 77, 58, 53, 68, 59, 76, 76, 69, 71, 65, 70,
+ 166, 51, 64, 52,...[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2145--2145
+[]\TU/lmtt/m/n/10 ## $ height <int> 182, 161, 161, 177, 157, 170, 167, 186, 178
+, 171, 175, 57, 1...[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2145--2145
+[]\TU/lmtt/m/n/10 ## $ repwt  <int> 77, 51, 54, 70, 59, 76, 77, 73, 71, 64, 75,
+ 56, 52, 64, 57, ...[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2145--2145
+[]\TU/lmtt/m/n/10 ## $ repht  <int> 180, 159, 158, 175, 155, 165, 165, 180, 175
+, 170, 174, 163, ...[] 
+ []
+
+File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
+ed-chunk-49-1.pdf Graphic file (type pdf)
+<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
+d-chunk-49-1.pdf>
+[77]
 File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
 ed-chunk-50-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
 d-chunk-50-1.pdf>
-[77]
-File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-52-1.pdf Graphic file (type pdf)
-<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-52-1.pdf>
 
 Overfull \hbox (49.82344pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 78 \TU/lmr/m/sl/10 CHAPTER 10.  INTRODUCING THE ANCOVA - THE ANA
@@ -1250,14 +1245,14 @@ LYSIS OF COVARIANCE
 
 [78]
 File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
+ed-chunk-51-1.pdf Graphic file (type pdf)
+<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
+d-chunk-51-1.pdf>
+[79]
+File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
 ed-chunk-53-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
 d-chunk-53-1.pdf>
-[79]
-File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-53-2.pdf Graphic file (type pdf)
-<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-53-2.pdf>
 
 Overfull \hbox (49.82344pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 80 \TU/lmr/m/sl/10 CHAPTER 10.  INTRODUCING THE ANCOVA - THE ANA
@@ -1265,53 +1260,52 @@ LYSIS OF COVARIANCE
  []
 
 [80]
-File: images/ANCOVA_1.png Graphic file (type bmp)
-<images/ANCOVA_1.png>
-
-Overfull \hbox (436.89824pt too wide) in paragraph at lines 2358--2359
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
+ed-chunk-54-1.pdf Graphic file (type pdf)
+<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
+d-chunk-54-1.pdf>
 [81]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
+ed-chunk-54-2.pdf Graphic file (type pdf)
+<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
+d-chunk-54-2.pdf>
 
 Overfull \hbox (49.82344pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 82 \TU/lmr/m/sl/10 CHAPTER 10.  INTRODUCING THE ANCOVA - THE ANA
 LYSIS OF COVARIANCE
  []
 
-[82] [83]
+[82]
+File: images/ANCOVA_1.png Graphic file (type bmp)
+<images/ANCOVA_1.png>
+
+Overfull \hbox (436.89824pt too wide) in paragraph at lines 2364--2365
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[83]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (49.82344pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 84 \TU/lmr/m/sl/10 CHAPTER 10.  INTRODUCING THE ANCOVA - THE ANA
 LYSIS OF COVARIANCE
  []
 
 [84] [85]
-File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-58-1.pdf Graphic file (type pdf)
-<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-58-1.pdf>
-
 Overfull \hbox (49.82344pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 86 \TU/lmr/m/sl/10 CHAPTER 10.  INTRODUCING THE ANCOVA - THE ANA
 LYSIS OF COVARIANCE
  []
 
 [86] [87]
-File: images/GSwithR_Grid.png Graphic file (type bmp)
-<images/GSwithR_Grid.png>
-
-Overfull \hbox (364.1255pt too wide) in paragraph at lines 2600--2600
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 24.1114pt on input line 2601.
-
+File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
+ed-chunk-59-1.pdf Graphic file (type pdf)
+<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
+d-chunk-59-1.pdf>
 
 Overfull \hbox (49.82344pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 88 \TU/lmr/m/sl/10 CHAPTER 10.  INTRODUCING THE ANCOVA - THE ANA
@@ -1319,10 +1313,15 @@ LYSIS OF COVARIANCE
  []
 
 [88] [89]
-Underfull \hbox (badness 3229) in paragraph at lines 2651--2653
-[]\TU/lmr/m/n/10 Have crossed terms \TU/lmtt/m/n/10 weight ~ sex * height \TU/l
-mr/m/n/10 which is \TU/lmtt/m/n/10 weight ~ sex +
+File: images/GSwithR_Grid.png Graphic file (type bmp)
+<images/GSwithR_Grid.png>
+
+Overfull \hbox (364.1255pt too wide) in paragraph at lines 2606--2606
+[][] 
  []
+
+
+LaTeX Warning: Float too large for page by 24.1114pt on input line 2607.
 
 
 Overfull \hbox (49.82344pt too wide) has occurred while \output is active
@@ -1330,39 +1329,43 @@ Overfull \hbox (49.82344pt too wide) has occurred while \output is active
 LYSIS OF COVARIANCE
  []
 
-[90]
+[90] [91]
+Underfull \hbox (badness 3229) in paragraph at lines 2657--2659
+[]\TU/lmr/m/n/10 Have crossed terms \TU/lmtt/m/n/10 weight ~ sex * height \TU/l
+mr/m/n/10 which is \TU/lmtt/m/n/10 weight ~ sex +
+ []
+
+
+Overfull \hbox (49.82344pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 92 \TU/lmr/m/sl/10 CHAPTER 10.  INTRODUCING THE ANCOVA - THE ANA
+LYSIS OF COVARIANCE
+ []
+
+[92]
 Chapter 11.
 File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-63-1.pdf Graphic file (type pdf)
+ed-chunk-64-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-63-1.pdf>
-[91
+d-chunk-64-1.pdf>
+[93
 
 ]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2706--2706
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2712--2712
 []\TU/lmtt/m/n/10 ## $ speed <dbl> 4, 4, 7, 7, 8, 9, 10, 10, 10, 11, 11, 12, 12
 , 12, 12, 13, 13,...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 2706--2706
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2712--2712
 []\TU/lmtt/m/n/10 ## $ dist  <dbl> 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14
 , 20, 24, 28, 26,...[] 
  []
 
-[92]
-File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-65-1.pdf Graphic file (type pdf)
-<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-65-1.pdf>
+[94]
 File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
 ed-chunk-66-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
 d-chunk-66-1.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[93]
 File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
 ed-chunk-67-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
@@ -1370,47 +1373,61 @@ d-chunk-67-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[94] [95]
+[95]
 File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-69-1.pdf Graphic file (type pdf)
+ed-chunk-68-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-69-1.pdf>
+d-chunk-68-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[96] [97] [98]
+[96] [97]
 File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-72-1.pdf Graphic file (type pdf)
+ed-chunk-70-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-72-1.pdf>
+d-chunk-70-1.pdf>
 
-Underfull \hbox (badness 1297) in paragraph at lines 2901--2901
-[]\TU/lmr/bx/n/14.4 Anova Tables with multiple explantory
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \hbox (badness 3058) in paragraph at lines 2905--2906
-[]\TU/lmr/m/n/10 In our ANCOVA example, the model we fit was \TU/lmtt/m/n/10 lm
-(log(weight) ~
- []
-
-
-Overfull \hbox (1.83002pt too wide) in paragraph at lines 2905--2906
-\TU/lmtt/m/n/10 log(height) * sex, data = Davis)\TU/lmr/m/n/10 . We know this e
-xpanded to \TU/lmtt/m/n/10 log(height)
- []
-
-[99]
+[98] [99]
 Overfull \hbox (3.48782pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 100 \TU/lmr/m/sl/10 CHAPTER 11.  NONLINEARITIES, POLYNOMIALS AND
  REGRESSION
  []
 
-[100] [101]
+[100]
+File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
+ed-chunk-73-1.pdf Graphic file (type pdf)
+<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
+d-chunk-73-1.pdf>
+
+Underfull \hbox (badness 1297) in paragraph at lines 2907--2907
+[]\TU/lmr/bx/n/14.4 Anova Tables with multiple explantory
+ []
+
+
+Underfull \hbox (badness 3058) in paragraph at lines 2911--2912
+[]\TU/lmr/m/n/10 In our ANCOVA example, the model we fit was \TU/lmtt/m/n/10 lm
+(log(weight) ~
+ []
+
+
+Overfull \hbox (1.83002pt too wide) in paragraph at lines 2911--2912
+\TU/lmtt/m/n/10 log(height) * sex, data = Davis)\TU/lmr/m/n/10 . We know this e
+xpanded to \TU/lmtt/m/n/10 log(height)
+ []
+
+[101]
+Overfull \hbox (3.48782pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 102 \TU/lmr/m/sl/10 CHAPTER 11.  NONLINEARITIES, POLYNOMIALS AND
+ REGRESSION
+ []
+
+[102] [103]
 File: images/VennModels.pdf Graphic file (type pdf)
 <use images/VennModels.pdf>
 
-Overfull \hbox (24.40163pt too wide) in paragraph at lines 3007--3008
+Overfull \hbox (24.40163pt too wide) in paragraph at lines 3013--3014
 [][] 
  []
 
@@ -1419,28 +1436,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (3.48782pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 102 \TU/lmr/m/sl/10 CHAPTER 11.  NONLINEARITIES, POLYNOMIALS AND
- REGRESSION
- []
-
-[102] [103]
-File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
-ed-chunk-76-1.pdf Graphic file (type pdf)
-<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
-d-chunk-76-1.pdf>
-
-Overfull \hbox (3.48782pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 104 \TU/lmr/m/sl/10 CHAPTER 11.  NONLINEARITIES, POLYNOMIALS AND
  REGRESSION
  []
 
-[104]
-Overfull \hbox (64.5pt too wide) in paragraph at lines 3113--3113
-[]\TU/lmtt/m/n/10 ## lm(formula = dist ~ speed + I(speed^2) - 1, data = cars, w
-eights = 1/speed)[] 
- []
-
-[105]
+[104] [105]
 File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
 ed-chunk-77-1.pdf Graphic file (type pdf)
 <use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
@@ -1451,31 +1451,48 @@ Overfull \hbox (3.48782pt too wide) has occurred while \output is active
  REGRESSION
  []
 
-[106] [107]
+[106]
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3119--3119
+[]\TU/lmtt/m/n/10 ## lm(formula = dist ~ speed + I(speed^2) - 1, data = cars, w
+eights = 1/speed)[] 
+ []
+
+[107]
+File: Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnam
+ed-chunk-78-1.pdf Graphic file (type pdf)
+<use Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unname
+d-chunk-78-1.pdf>
+
 Overfull \hbox (3.48782pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 108 \TU/lmr/m/sl/10 CHAPTER 11.  NONLINEARITIES, POLYNOMIALS AND
  REGRESSION
  []
 
-[108
+[108] [109]
+Overfull \hbox (3.48782pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 110 \TU/lmr/m/sl/10 CHAPTER 11.  NONLINEARITIES, POLYNOMIALS AND
+ REGRESSION
+ []
+
+[110
 
 ]
 Chapter 12.
-[109]
+[111]
 No file Introduction-to-Experimental-Design-and-Analysis.bbl.
-[110] (./Introduction-to-Experimental-Design-and-Analysis.aux)
+[112] (./Introduction-to-Experimental-Design-and-Analysis.aux)
 Package rerunfilecheck Info: File `Introduction-to-Experimental-Design-and-Anal
 ysis.out' has not changed.
 (rerunfilecheck)             Checksum: 2535B057FAA4884A5EDA928FEBF06E1D;8900.
  ) 
 Here is how much of TeX's memory you used:
- 17584 strings out of 479211
- 316209 string characters out of 5874330
- 766639 words of memory out of 5000000
- 36882 multiletter control sequences out of 15000+600000
+ 17595 strings out of 479211
+ 316527 string characters out of 5874330
+ 766642 words of memory out of 5000000
+ 36892 multiletter control sequences out of 15000+600000
  409897 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,6n,122p,721b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Introduction-to-Experimental-Design-and-Analysis.pdf (110 pag
+Output written on Introduction-to-Experimental-Design-and-Analysis.pdf (112 pag
 es).

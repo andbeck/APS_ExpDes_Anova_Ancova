@@ -30,6 +30,14 @@ set.seed(123)
 matrix(replicate(5, sample(LETTERS[1:5])), byrow = FALSE, ncol = 5)
 ```
 
+Here is another picture of a block design that moves from just letters to something more literal.
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/BlockDesignGraphic.png")
+```
+
+The blocks are arranged along a gradient, say along the side of a hill, so represent low and high elevation and associated soil moisture. The blocks capture this background variation. THEN, each treatment level (1-4) is allocated a random position in each block.  In the end, each treatment level is replicated across blocks (n = 6!). From: https://www.researchgate.net/publication/322369242_Randomized_Block_Design_probiotic_example/figures?lo=1
+
 It is important to note that blocks exist at the time of the randomization of treatments to units. We cannot impose blocking structure on a completely randomized design after the fact; either the randomization was blocked or it was not.
 
 We use an RCB to increase the power and precision of an experiment by decreasing the error variance. This decrease in error variance is achieved by finding groups of units that are homogeneous (blocks) and, in effect, repeating the experiment independently in the different blocks. The RCB is an effective design when there is a single source of extraneous variation in the responses that we can identify ahead of time and use to partition the units into blocks.

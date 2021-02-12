@@ -124,7 +124,7 @@
 
 \title{An Introduction to Experimental Design and Linear Models}
 \author{Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)}
-\date{2021-02-11}
+\date{2021-02-12}
 
 \begin{document}
 \maketitle
@@ -1183,6 +1183,12 @@ The Blocks are designed to `capture' that underlying source of variability and a
 ## [5,] "B"  "D"  "C"  "A"  "B"
 \end{verbatim}
 
+Here is another picture of a block design that moves from just letters to something more literal.
+
+\includegraphics[width=8.89in]{images/BlockDesignGraphic}
+
+The blocks are arranged along a gradient, say along the side of a hill, so represent low and high elevation and associated soil moisture. The blocks capture this background variation. THEN, each treatment level (1-4) is allocated a random position in each block.~~In the end, each treatment level is replicated across blocks (n = 6!). From: \url{https://www.researchgate.net/publication/322369242_Randomized_Block_Design_probiotic_example/figures?lo=1}
+
 It is important to note that blocks exist at the time of the randomization of treatments to units. We cannot impose blocking structure on a completely randomized design after the fact; either the randomization was blocked or it was not.
 
 We use an RCB to increase the power and precision of an experiment by decreasing the error variance. This decrease in error variance is achieved by finding groups of units that are homogeneous (blocks) and, in effect, repeating the experiment independently in the different blocks. The RCB is an effective design when there is a single source of extraneous variation in the responses that we can identify ahead of time and use to partition the units into blocks.
@@ -1312,7 +1318,7 @@ Can you see our generation of block 1 and 5's variation?
 ## `summarise()` ungrouping output (override with `.groups` argument)
 \end{verbatim}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-25-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-26-1.pdf}
 
 \hypertarget{building-the-model}{%
 \subsection{Building the model}\label{building-the-model}}
@@ -1430,7 +1436,7 @@ There is a very nice plotting function in the package \emph{visreg} that deliver
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-28-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-29-1.pdf}
 
 \hypertarget{making-inference-confidence-intervals-and-contrasts}{%
 \subsection{Making inference: confidence intervals and contrasts}\label{making-inference-confidence-intervals-and-contrasts}}
@@ -1925,7 +1931,7 @@ Here we combine some dplyr magic (calcuating means in each group - there are two
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-42-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-43-1.pdf}
 
 What you see above on the left, is a pattern that suggest that the effect of \_\_\_\_\_\_ on \_\_\_\_\_\_\_\_ does not vary by \_\_\_\_\_\_\_\_. In contrast, on the right\ldots..:
 
@@ -2017,7 +2023,7 @@ We plot the correct model for the interaction data.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-44-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-45-1.pdf}
 
 \hypertarget{experimental-design-and-anova---a-summary}{%
 \chapter{Experimental Design and ANOVA - A Summary}\label{experimental-design-and-anova---a-summary}}
@@ -2145,7 +2151,7 @@ The data are built into R, but embedded in the \texttt{carData} package, which w
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-48-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-49-1.pdf}
 
 Ahh\ldots. first hurdle\ldots. what's going on here? Well, always plot your data is totally justified, because it looks like one of the data points has the Height and Weight data entered incorrectly.
 
@@ -2196,7 +2202,7 @@ Let's fix that. Lets find the row, and make the change
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-49-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-50-1.pdf}
 
 Excellent. Lets look at this picture and ask ourselves whether the effect of Height on Weight appears to vary by Sex? What do you think?
 
@@ -2216,7 +2222,7 @@ We can actually get a bit of help here. We can use some ggplot magic to help us 
 ## `geom_smooth()` using formula 'y ~ x'
 \end{verbatim}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-50-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-51-1.pdf}
 
 Again, we have not `proven' anything or tested our hypothesis. What we have is a good guess though. We can guess that
 
@@ -2263,7 +2269,7 @@ To do this, we use the autplot function from the ggfortify package.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-52-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-53-1.pdf}
 
 OK. Let's walk through the three core diagnostics.
 
@@ -2293,7 +2299,7 @@ ADD DYLANS STUFF FROM MEE PAPERS and Mean - VARIANCE
 ## `geom_smooth()` using formula 'y ~ x'
 \end{verbatim}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-53-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-54-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2305,7 +2311,7 @@ ADD DYLANS STUFF FROM MEE PAPERS and Mean - VARIANCE
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-53-2.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-54-2.pdf}
 
 This is definitely flatter - you can tell by the range on the y-axis of the scale-location plot.
 
@@ -2491,7 +2497,7 @@ OK, lets use some plotting tricks and get a nice picture:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-58-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-59-1.pdf}
 
 Great. Now we can see that the full model (mod\_Davis\_log) told us. The lines are parallel. There is no interaction.
 
@@ -2597,7 +2603,7 @@ This figure highlights the various models and interpretations associated with th
 Note that just because your data looks like a particular pattern doesn't mean you should use that model. Your statistical model should be driven by your question and original design.
 
 \begin{figure}
-\includegraphics[width=20.56in]{images/GSwithR_Grid} \caption{From Getting Started with R, 2nd Edition, OUP}\label{fig:unnamed-chunk-60}
+\includegraphics[width=20.56in]{images/GSwithR_Grid} \caption{From Getting Started with R, 2nd Edition, OUP}\label{fig:unnamed-chunk-61}
 \end{figure}
 
 For example, if you design a study with an ANCOVA question in mind, you are always starting your analysis with the question of whether the effect of X on Y varies by Z. Thus, ANCOVA always starts with comparing the interaction (model E) against the additive model (model D).
@@ -2664,7 +2670,7 @@ If you recall from chapter 1, we introduced the general linear model, and finish
 
 \(y = 0.01 + x^{2} + \epsilon\)
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-63-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-64-1.pdf}
 
 In this final section of the module, we are going to analyse a nonlinear relationship using a linear model. This exercise should accomplish two tasks. First, it will show you how to build models to capture non-linearity. Second, it will reinforce how we use the diagnostic tools to critique our model before moving on to make inference.
 
@@ -2715,7 +2721,7 @@ Let's start with step 1: making a good picture.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-65-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-66-1.pdf}
 
 There are a three things we should immediately notice in this figure. The first is that there is a positive relationship. The second is that it appears to be a bit non-linear, even \emph{exponential}. Third, it looks like there is more variation out at high speeds than at low speeds.
 
@@ -2728,13 +2734,13 @@ Let's ignore all of this for the moment and fit the model and acquire the diagno
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-66-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-67-1.pdf}
 
 OK - our preliminary assessment about non-linearity and non-constant variance appears to be spot on! There are systematic departures from the linear model indicated by the upper left plot.
 
 Here we add a line to the data (plot) to understand why the residuals in the upper-left panel is u-shaped. Make sure you get the idea that the majority of the \textbf{data} are \emph{above} then \emph{below} then \emph{above} the line as you move across the graph. This generates residuals that have the pattern we see!
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-67-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-68-1.pdf}
 
 The lower left panel of the residuals/diagnostics indicates that the variance does increase with the mean.
 
@@ -2799,7 +2805,7 @@ In order to fix this problem, we can take note from our first example in chapter
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-69-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-70-1.pdf}
 
 Wow. That's a massive improvement on the diagnostic that indicated a systematic departure from the linear relationship between dist and speed. But\ldots. we still have non-constant variance - the variation in predicted distance is still increasing with the mean.
 
@@ -2888,7 +2894,7 @@ To do this in the model, we can use the \emph{weights} argument:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-72-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-73-1.pdf}
 
 Super. We now have a model where we capture the non-linearity using a polynomial and capture the issue of increasing variance by making the model reflect our assumption that different observations have different variances.
 
@@ -3016,7 +3022,7 @@ OK. Whoa. This is weird, right?
 
 Let's plot all of these three models we've made together with the data
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-76-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-77-1.pdf}
 
 At this point, we should ask, is the non-linear model makeing sense? We think it probably should, right? It's what the data look like and there was a hint of it in the residuals. But in the end, there is no evidence for a relationship.
 
@@ -3124,7 +3130,7 @@ We can fit this model really simply with that trick of -1 \ldots. and all of a s
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-77-1.pdf}
+\includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-78-1.pdf}
 
 \hypertarget{the-take-home-messages}{%
 \section{The Take Home Messages}\label{the-take-home-messages}}

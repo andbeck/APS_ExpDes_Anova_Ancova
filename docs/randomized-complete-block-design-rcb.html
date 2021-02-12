@@ -24,7 +24,7 @@
 <meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2021-02-11" />
+<meta name="date" content="2021-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -303,6 +303,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [3,] &quot;D&quot;  &quot;E&quot;  &quot;B&quot;  &quot;D&quot;  &quot;C&quot; 
 ## [4,] &quot;E&quot;  &quot;C&quot;  &quot;E&quot;  &quot;B&quot;  &quot;E&quot; 
 ## [5,] &quot;B&quot;  &quot;D&quot;  &quot;C&quot;  &quot;A&quot;  &quot;B&quot;</code></pre>
+<p>Here is another picture of a block design that moves from just letters to something more literal.</p>
+<p><img src="images/BlockDesignGraphic.png" width="320" /></p>
+<p>The blocks are arranged along a gradient, say along the side of a hill, so represent low and high elevation and associated soil moisture. The blocks capture this background variation. THEN, each treatment level (1-4) is allocated a random position in each block.  In the end, each treatment level is replicated across blocks (n = 6!). From: <a href="https://www.researchgate.net/publication/322369242_Randomized_Block_Design_probiotic_example/figures?lo=1" class="uri">https://www.researchgate.net/publication/322369242_Randomized_Block_Design_probiotic_example/figures?lo=1</a></p>
 <p>It is important to note that blocks exist at the time of the randomization of treatments to units. We cannot impose blocking structure on a completely randomized design after the fact; either the randomization was blocked or it was not.</p>
 <p>We use an RCB to increase the power and precision of an experiment by decreasing the error variance. This decrease in error variance is achieved by finding groups of units that are homogeneous (blocks) and, in effect, repeating the experiment independently in the different blocks. The RCB is an effective design when there is a single source of extraneous variation in the responses that we can identify ahead of time and use to partition the units into blocks.</p>
 <p>In short ALWAYS block your experiment, if you can.</p>
@@ -397,7 +400,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $ treat &lt;fct&gt; Placebo, Control, Herb2, Herb1, Control, Herb1, Herb2, Placebo,…
 ## $ obs   &lt;dbl&gt; 31.18707, 31.99603, 41.29937, 41.12746, 21.08111, 30.56917, 28.…</code></pre>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <div id="building-the-model" class="section level3" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Building the model</h3>
 <p>In order to understand what’s going on with blocking, and it’s importance, lets build the naive model that ignores block - treating this as a CRB - and the correct model, letting block absorb some of the variation.</p>
@@ -472,7 +475,7 @@ And the value of block 5 is reported as 20 unites lower than block 1 control. Th
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="randomized-complete-block-design-rcb.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(block_model, <span class="st">&quot;treat&quot;</span>, <span class="at">gg=</span><span class="cn">TRUE</span>)<span class="sc">+</span></span>
 <span id="cb51-2"><a href="randomized-complete-block-design-rcb.html#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Yield&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb51-3"><a href="randomized-complete-block-design-rcb.html#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Treatment&quot;</span>) </span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 </div>
 <div id="making-inference-confidence-intervals-and-contrasts" class="section level3" number="6.2.4">
 <h3><span class="header-section-number">6.2.4</span> Making inference: confidence intervals and contrasts</h3>

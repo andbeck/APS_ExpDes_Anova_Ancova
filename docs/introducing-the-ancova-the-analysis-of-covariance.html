@@ -24,7 +24,7 @@
 <meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2021-02-11" />
+<meta name="date" content="2021-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -337,7 +337,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $ repht  &lt;int&gt; 180, 159, 158, 175, 155, 165, 165, 180, 175, 170, 174, 163, 15…</code></pre>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Davis, <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> weight, <span class="at">col =</span> sex))<span class="sc">+</span></span>
 <span id="cb86-2"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb86-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 <p>Ahh…. first hurdle…. what’s going on here? Well, always plot your data is totally justified, because it looks like one of the data points has the Height and Weight data entered incorrectly.</p>
 <p>Let’s fix that. Lets find the row, and make the change</p>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co">#which row? 12</span></span>
@@ -356,7 +356,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb93-5"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb93-5" aria-hidden="true" tabindex="-1"></a><span class="co"># replot</span></span>
 <span id="cb93-6"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb93-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Davis, <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> weight, <span class="at">col =</span> sex))<span class="sc">+</span></span>
 <span id="cb93-7"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb93-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <p>Excellent. Lets look at this picture and ask ourselves whether the effect of Height on Weight appears to vary by Sex? What do you think?</p>
 <p>We can actually get a bit of help here. We can use some ggplot magic to help us make this GUESS.
 &gt; NOTE: this is not doing statistics. This is using graphics to help guide our expectation of the outcome of doing the statistical test of our hypothesis.</p>
@@ -365,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb94-3"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add a best fit line to each group (the sex category)</span></span>
 <span id="cb94-4"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb94-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 <p>Again, we have not ‘proven’ anything or tested our hypothesis. What we have is a good guess though. We can guess that</p>
 <ol style="list-style-type: decimal">
 <li>Males are heavier than females (what is the difference in the intercepts?)</li>
@@ -387,7 +387,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>That’s it. We’ve got the model. But before we make any attempts at actually evaluating our test of the hypothesis, we have to check the assumptions!</p>
 <p>To do this, we use the autplot function from the ggfortify package.</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mod_Davis)</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 <p>OK. Let’s walk through the three core diagnostics.</p>
 <p>In the upper left, we are evaluating the systematic part of the model - are there any systematic departures from the linear model we’ve speficied? Are there interactions missing or specific nonlinearities? Nope.</p>
 <p>In the upper right, we are evaluating the normality of the residuals. These too look pretty good.</p>
@@ -401,13 +401,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb98-3"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
 <span id="cb98-4"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb98-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fit the model - note we can specify the transformation RIGHT IN THE MODEL</span></span>
 <span id="cb100-2"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb100-2" aria-hidden="true" tabindex="-1"></a>mod_Davis_log <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(weight) <span class="sc">~</span> <span class="fu">log</span>(height) <span class="sc">*</span> sex, <span class="at">data =</span> Davis)</span>
 <span id="cb100-3"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb100-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-4"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb100-4" aria-hidden="true" tabindex="-1"></a><span class="co"># check the new residuals</span></span>
 <span id="cb100-5"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb100-5" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mod_Davis_log)</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-53-2.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-54-2.png" width="672" /></p>
 <p>This is definitely flatter - you can tell by the range on the y-axis of the scale-location plot.</p>
 <p>So, we can now move to evaluating the model. You are probably thinking about what it means to analyse the data on the log-log axis…. we will come to that shortly.</p>
 </div>
@@ -526,7 +526,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb107-10"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb107-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plotThis, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(height), <span class="at">y =</span> preds, <span class="at">col =</span> sex))<span class="sc">+</span></span>
 <span id="cb107-11"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb107-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
 <span id="cb107-12"><a href="introducing-the-ancova-the-analysis-of-covariance.html#cb107-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">log</span>(weight)))</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 <p>Great. Now we can see that the full model (mod_Davis_log) told us. The lines are parallel. There is no interaction.</p>
 <p>In fact, we can do a bit more here.</p>
 <p>Remember that the model says</p>
@@ -590,7 +590,7 @@ For men log(weight)= (-6.46 + 0.12) + 2.05 * log(height)</p>
 <h3><span class="header-section-number">10.4.1</span> ANCOVA always tests the interaction against the additive model</h3>
 <p>This figure highlights the various models and interpretations associated with the pieces of an ANCOVA dataset. This is a way to envision all of the potential linear relationships among the variables that might arise in an experiment with a continuous and categorical explanatory variable.</p>
 <p>Note that just because your data looks like a particular pattern doesn’t mean you should use that model. Your statistical model should be driven by your question and original design.</p>
-<div class="figure"><span id="fig:unnamed-chunk-60"></span>
+<div class="figure"><span id="fig:unnamed-chunk-61"></span>
 <img src="images/GSwithR_Grid.png" alt="From Getting Started with R, 2nd Edition, OUP" width="740" />
 <p class="caption">
 Figure 10.1: From Getting Started with R, 2nd Edition, OUP
