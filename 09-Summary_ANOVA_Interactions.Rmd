@@ -1,4 +1,4 @@
-# Experimental Design and ANOVA - A Summary    
+# A Summary: Experimental Design and ANOVA
 
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
