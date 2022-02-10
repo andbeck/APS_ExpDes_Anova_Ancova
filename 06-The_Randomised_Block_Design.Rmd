@@ -96,8 +96,10 @@ design$obs <- 20 +
   (design$treat == "Herb2") * 9 + 
   (design$treat == "Placebo") * 1 + 
   # note that we are defining variation among blocks here
-  # block 1 is on average 10 units higher.... and block 5 is...
-  (design$block==1) * 10 - (design$block==5) * 10 + 
+  # block 1 is on average 10 units higher.... and block 5 is now 10 units lower...
+  (design$block==1) * 10 - 
+  (design$block==5) * 10 + 
+  # now add the error variation
   error
 
 head(design, 10)
@@ -105,11 +107,11 @@ head(design, 10)
 
 ## Analysing the CRBD
 
-I'll leave it to you now to generate the following picture of the means ± standard errors.  
+I'll leave it to you now to generate the following plot of the means ± standard errors.  
 
-This requires thinking hard about the use of dplyr tools (`group_by()` and `summarise()`) and ggplot (adding more than one layer from two different sources of data - the summary data and the raw data).  
+This requires thinking hard about the use of dplyr tools (`group_by()` and `summarise()`) and ggplot (adding more than one layer from two different sources of data - the summary data and the raw data).  You need to make a _sumDat_ object for the means and se's.  Then you need to plot the raw data, and overlay the mean±se info from the sumDat.
 
-Can you see our generation of block 1 and 5's variation?
+Can you see the variation we generated between block 1 and 5?  Block 2-4 are all similar.... Block 1 is 10 units more, and Block 5 is 10 units less.
 
 ```{r, echo = FALSE}
 # check the data
@@ -165,9 +167,11 @@ In this table, the _INTERCEPT_ is specifying the **FIRST BLOCK** and the **CONTR
 
 The value of the control, block 1 is approximately 30!  Which is 20+10, which is what we expected.
 The value of Herb1 is ~10 units higher than this (remember, the value 9.84 is the DIFFERENCE between the control and treatment)
-And the value of block 5 is reported as 20 unites lower than block 1 control.  This too is correct because, as above, block 1 control is 10 units higher than the control mean (20+10) and block 5 10 unites lower....  Make sure you get this logic!
+And the value of block 5 is reported as 20 unites lower than block 1 control.  This too is correct because, as above, block 1 control is 10 units higher than the control mean (20+10) and block 5 is 10 units lower....  
 
-The take home message here is that these numbers make complete sense with respect to what we simulated, and controlling for the among block variation gave us more power to detect a treatment effect, something we would have missed had we not estimated the block source of variation.
+_Make sure you get this logic!_
+
+The take home message here is that these numbers from the model make complete sense with respect to the data that we simulated.  Furthermore, controlling for the among block variation gave us more power to detect a treatment effect, something we would have missed had we not estimated the block source of variation.
 
 ### Correct Standard Errors for a Figure
 
@@ -177,7 +181,7 @@ This means that the standard deviation we should probably use is of the error va
 
 The standard deviation is the $\sqrt{Var}$ and thus, our correct standard errors from the model are $\sqrt{0.94}$
 
-There is a very nice plotting function in the package _visreg_ that delivers these proper standard errors in a nice ggplot framework.  It presents points are partial residuals (deviation from the mean for each replicate), lines depciting the means, and shaded area as a 95% confidence interval, calculated 1.96*SE, where the SE is estimated from the model error variance (just above). Compare this to your first graph.
+There is a very nice plotting function in the package _visreg_ that delivers these proper standard errors in a nice ggplot framework.  It presents points that are the partial residuals (deviation from the mean for each replicate), lines depicting the means, and shaded area as a 95% confidence interval, calculated as 1.96*SE, where the SE is estimated from the model error variance (just above). Compare this to your first graph.
 
 ```{r}
 visreg(block_model, "treat", gg=TRUE)+
