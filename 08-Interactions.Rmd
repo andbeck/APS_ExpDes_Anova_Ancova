@@ -80,7 +80,7 @@ Design an experiment to test the hypotheses. (An answer is on the BB Site)
 
 ### The Factorial Design: How and Why Study Interactions?  
 
-The UV-B and C02 experiment could be thought of as two experiments a Control vs UV-B and a Control vs C02 experiment. If we combine these we get a Factorial Experiment where the treatments are
+The UV-B and C02 experiment could be thought of as two experiments -- a Control vs UV-B and a Control vs C02 experiment. If we combine these we get a Factorial Experiment where the treatments are
 
 - Control
 - UV-B
@@ -93,9 +93,9 @@ But do we treat each of these as unique treatments (e.g. the one-way ANOVA examp
 
 Factorial treatments have two main advantages.  When factors *DO interact* – so the effect of C02 depends on UV-B – then we can estimate the interaction - the dependency. _One-way designs_ cannot do this, and can lead to serious misunderstandings (because we are assuming that the effect of one thing DOES NOT depend on the other).
 
-Furthermore, when factors *DON’T interact*, _factorial designs_ are more efficient (smaller error variance) than one-way designs experiments.
+Furthermore, when factors *DON’T interact*, _factorial designs_ are more precise (smaller error variance) at estimating the main (non-interacting effects) than one-way designs experiments.
 
-Hence ALWAYS use factorial designs when you can! 
+Hence ALWAYS use factorial designs when your experimental design contains the interaction! 
 
 ## A Factorial Design and the Two-Way ANOVA
 
@@ -106,13 +106,17 @@ set.seed(123)
 
 Nreps <- 4 # 4 replicates per treatment level
 trt <- c(2,2) # sets out the 2-way design
-design <- design.ab(trt,r=Nreps,serie=0,design="crd")$book
+design <- design.ab(trt, r=Nreps, serie=0, design="crd")$book
+
+# look at it.
 head(design)
 ```
 
 So, the `design.ab` function generates a nice picture, but uses numbers instead of words for the various treatments and has set Letters as the treatments.  
 
-We don't support this approach - you WILL forget what the numbers and letters mean, so let's change these CODES to represent CO2 and UVB REALITY.  We'll use `fct_recode` from the tidyverse package called `forcats` (for categories, but we like cats). 
+We don't support this approach of using numbers to _code for_ the actual treatment level names - you WILL forget what the numbers and letters mean. So let's change these _codes_ to represent the words "CO2" and "UVB" which are our reality.  
+
+We'll use `fct_recode` from the tidyverse package called `forcats` (for categories, but we like cats) - this is part of the tidyverse, so if you're using that, it's just there! 
 
 ```{r}
 design <- design %>%
@@ -133,21 +137,25 @@ Here we will build two sources of data - one that has NO INTERACTION, and one th
 
 ```{r}
 #Sample Sizes and errors
-Total.units <- 2 * 2 * Nreps
+Total.units <- 2 * 2 * Nreps # make sure you understand the 2*2 !!
 error <- rnorm(Total.units,0,3)
 
-# the data with no interaction
+# Here we make to sets of observations - obs and obs2
+
+# the data with no interaction (obs)
 design$obs <- 20 - 
   (design$"UVB"=="UVB+") * 10 + 
   (design$"CO2" == "CO2+") * 9 + 
   error
 
-# the data with interaction
+# the data with interaction (obs2)
 design$obs2 <- 20 - 
   (design$"UVB"=="UVB+") * 10 + 
   (design$"CO2" == "CO2+") * 9 + 
   # when both are together add 8 more (synergy)
-  ((design$"UVB"=="UVB+") & (design$"CO2" == "CO2+")) * 8 + 
+  # this is the interaction.  the effect of UVB now depends on CO2.
+  ((design$"UVB"=="UVB+") & (design$"CO2" == "CO2+")) * 8 +
+  # add the variation
   error
 
 head(design)
@@ -155,7 +163,11 @@ head(design)
 
 ### Plot the data!
 
-Here we combine some dplyr magic (calcuating means in each group - there are two grouping variables!), some ggplot magic (adding the lines connecting the means on top of the raw data) and the beauty of patchwork, the package for plot layouts.  Don't forget to check that you've got all of the `library()` calls at the top of your script, and that you ran them!
+Here we combine some dplyr magic (calcuating means in each group - there are two grouping variables!), some ggplot magic (adding the lines connecting the means on top of the raw data) and the beauty of patchwork, the package for plot layouts. 
+
+Our goal here is to plot the data that does not have the interaction next to a plot of the data that does have the interaction.
+
+Don't forget to check that you've got all of the `library()` calls at the top of your script, and that you ran them!
 
 ```{r, message = FALSE}
 
@@ -173,6 +185,7 @@ sumDat2 <- design %>%
     obs2 = mean(obs2)
   )
 
+# The two plots.
 # no interaction
 p1 <- ggplot(design, aes(x = UVB, y = obs, colour = CO2, shape = CO2, group = CO2))+
   geom_point()+
@@ -183,12 +196,16 @@ p2 <- ggplot(design, aes(x = UVB, y = obs2, colour = CO2, shape = CO2, group = C
   geom_point()+
   geom_line(data = sumDat2)
 
+# use patchwork to put them side-by-side.
 p1+p2
 ```
 
-What you see above on the left, is a pattern that suggest that the effect of ______ on ________ does not vary by ________. In contrast, on the right.....: 
+What you see above on the left, is a pattern that suggest that the effect of ______ on ________ does not vary by ________. In contrast, on the right the pattern suggests that the effect of ______ on ________ ________ by ________: 
 
 ### Analyse the data
+
+As with the plotting, we now analyse each data set.  
+We also make a mistake of analysing the data that has an interaction with a model that does not specify this interaction.  This mod3 is incorrect, but fitting it helps illuminate why you should fit the interaction if your design contains the potential for an interaction (a factorial design).
 
 ```{r}
 # model with no interaction
@@ -205,7 +222,7 @@ anova(int_mod_2)
 anova(int_mod_3)
 ```
 
-Note the differences in the outputs.  Not what we infer if we model the interaction data incorrectly.  There is no free lunch.  You must understand your data and your question!
+Note the differences in the outputs.  Note what we infer if we model the interaction data incorrectly.  There is no free lunch.  You must understand your data and your question and you must fit the model that correctly matches your design!
 
 
 ### final figuring

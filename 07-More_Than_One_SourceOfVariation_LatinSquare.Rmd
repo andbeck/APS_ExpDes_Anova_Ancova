@@ -37,14 +37,22 @@ Now, lets generate some data, as before.
 # for fun, set again.
 set.seed(123)
 
+# make sure you understand why this is the total unites
+# think about the square matrix above....
 Total.units <- length(treat) * length(treat)
-error <- rnorm(Total.units,0,1)
+
+# generate some error
+error <- rnorm(Total.units, mean = 0, sd = 1)
 
 # make sure you think about where we generated variation in the blocking!
 design$obs <- 20 + 
+  # the treatment effects
   (design$treat=="Herb1") * 10 + 
   (design$treat == "Herb2") * 9 + 				
-  (design$row==1) * 10 - (design$col==4) * 10 + 
+  # the latin square blocking effects
+  (design$row==1) * 10 - 
+  (design$col==4) * 10 + 
+  # the error
   error
 
 # look at it....  there are three explanatory variables... 
@@ -65,7 +73,7 @@ anova(full_lsd)
 
 Very quickly we can see, again, that without blocking, we have a risk of not detecting differences among treatments!
 
-Take a look above at the `design$obs` object.  Can you review the `summary` output and validate that the model is estimating what we simulated?
+Take a look above at the `design$obs` object.  Can you review the `summary` output and validate that the model is estimating what we simulated?  You should see the treatment effects (+10, +9) and you should also be able to see the block effects...
 
 ```{r}
 summary(full_lsd)
@@ -74,7 +82,8 @@ summary(full_lsd)
 Finally, we can use contrasts to test a few of our key hypotheses.  Make some notes on what these things mean!
 
 ```{r}
-#first the set of comparisons with control
+#first the set of comparisons with control.  This is the same thing that 
+# the summary table does!
 contrast1 <- rbind(
   "C v H1" = c(-1,1,0,0),
   "C v H2" = c(-1,0,1,0),
