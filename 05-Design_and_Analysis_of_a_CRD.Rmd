@@ -205,9 +205,9 @@ Isn't this cool?  Note that the difference reported is the difference between th
 sumDat
 ```
 
-Here it is: $26.2 - 24.2 = 2$
+Here it is: $26.1 - 24.7 = 1.4$
 
-This says that despite the difference we created of ~1 unit of yield between Herb1 and Herb2, when we defined error and generated the data, it created a significant difference detectable with statistics.
+This says that the difference we created of ~1 unit of yield between Herb1 and Herb2 is pretty spot on in the randomly generated data. And as one might expect, it created an insignificant difference detectable with statistics.
 
 ### comparing the average of the herbicide effect with the control.
 
@@ -229,13 +229,13 @@ Again, checking sumDat
 sumDat
 ```
 
-$(24.2+26.2)/2 = 25.2$ --> $25.2 - 20 = 5.2$
+$(24.7+26.1)/2 = 25.4$ --> $25.4 - 19.6 = 5.8$
 
 ### writing this up...
 
 Fill in these blanks using the various contrasts you made above!
 
->We conclude that herbicides on average cause an _____ gram increase in yield (t = ___ , p = ___ ). We also note that there was a significant difference of _____ grams between the herbicides (t = _____  p = ______). The additional placebo treatment had no effect on yield (t = _______  p = __________).
+>We conclude that herbicides, on average, cause an _____ gram increase in yield (t = ___ , p = ___ ). We also note that there was a significant difference of _____ grams between the herbicides (t = _____  p = ______). The additional placebo treatment had no effect on yield (t = _______  p = __________).
 
 
 

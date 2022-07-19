@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | An Introduction to Experimental Design and Linear Models</title>
+  <title>Chapter 9 A Summary: Experimental Design and ANOVA | An Introduction to Experimental Design and Linear Models</title>
   <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | An Introduction to Experimental Design and Linear Models" />
+  <meta property="og:title" content="Chapter 9 A Summary: Experimental Design and ANOVA | An Introduction to Experimental Design and Linear Models" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | An Introduction to Experimental Design and Linear Models" />
+  <meta name="twitter:title" content="Chapter 9 A Summary: Experimental Design and ANOVA | An Introduction to Experimental Design and Linear Models" />
   
   <meta name="twitter:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="designs-for-testing-for-interactions-factorial-designs..html"/>
+<link rel="next" href="introducing-the-ancova---the-analysis-of-covariance.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -287,19 +287,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="a-summary-experimental-design-and-anova" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> A Summary: Experimental Design and ANOVA<a href="a-summary-experimental-design-and-anova.html#a-summary-experimental-design-and-anova" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>There are three sets of things you should now know about based on reading these chapters and working through the examples. The first set is a bunch of clever R stuff for helping generate experimental designs. The second set is a better understanding of experimental designs in general. The third set is how to analyse and interpret data from 1-way and 2-way ANOVA models, that are the toolboxes for analysing these designs.</p>
+<p>Lets review these in reverse order</p>
+<div id="how-to-analyse-anova-models" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> How To Analyse ANOVA models<a href="a-summary-experimental-design-and-anova.html#how-to-analyse-anova-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In semester 1, you were introduced to the 1-way ANOVA model, using the daphnia parasite data. Here you’ve learned more about those analyses.</p>
+<p>You now understand better what treatment contrasts are, the risk of post-hoc tests like the Tukey Test, and methods for making <em>a priori</em> contrasts to test specific hypothesis. You learned how specify specific hypoptheses and use the <code>fit.contrast</code> function from the <em>gmodels</em> package to help you be really precise in asking and answering questions.</p>
+<p>You also learned how to include a blocking factor in your models to control for environmental gradients in your experiments. You learned how to estimate the standard error that is used for the testing of among treatment level differences too.</p>
+<p>Finally, you learned about the idea of interactions - the effect of UVB on Plant Yield Varies by CO2 level. You learned how to fit these models (e.g. <code>lm(Yield ~ UVB * CO2, data = dataframe)</code>) and how to interpret the statistical outputs against the graphs you made. Speaking of which, you learned how tomake graphs that reveal the presence of interactions, or not.</p>
+</div>
+<div id="experimental-designs." class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Experimental Designs.<a href="a-summary-experimental-design-and-anova.html#experimental-designs." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You should now understand the differences between, and value of the Completely Randomised Design, the Randomised Complete Block Design and the Latin Square Design. There are plenty more designs out there to manage lots of different issues. The <em>agricolae</em> package is a great tool for generating designs (to help plan experminents) and is also a great resource for learning about them.</p>
+<p><a href="https://myaseen208.github.io/agricolae/articles/Intro_agricolae.html" class="uri">https://myaseen208.github.io/agricolae/articles/Intro_agricolae.html</a></p>
+</div>
+<div id="clever-r-stuff" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Clever R Stuff<a href="a-summary-experimental-design-and-anova.html#clever-r-stuff" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You’ve also increased your R ninja skills. You’ve learned about building ‘fake data’ using the <code>design_</code> class of functions in <em>agricolae</em> mixed with random numbers and a clear set of tools that develop understanding of how additive and interactive effects arise among treatments in your data. This is a super skill.</p>
+<p>There is nothing better than making data that has a pattern or not, to understand better where patterns are in your own data. If you can build ‘fake data’ with and without the pattern you might expect from theory, then you have the template on which to examine carefully your ‘real data’ collected via the experiments or surveys.</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="designs-for-testing-for-interactions-factorial-designs..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introducing-the-ancova---the-analysis-of-covariance.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

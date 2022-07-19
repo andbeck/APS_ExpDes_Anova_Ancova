@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Design and Analysis of Experiments | An Introduction to Experimental Design and Linear Models</title>
   <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Design and Analysis of Experiments | An Introduction to Experimental Design and Linear Models" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2021-02-12" />
+<meta name="date" content="2022-07-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="examples-and-challenge-questions.html"/>
 <link rel="next" href="randomized-complete-block-design-rcb.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -119,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -204,46 +204,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.0.1" data-path="the-latin-square-design-lsd.html"><a href="the-latin-square-design-lsd.html#fitting-the-model"><i class="fa fa-check"></i><b>7.0.1</b> Fitting the model</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html"><i class="fa fa-check"></i><b>8</b> Designs for testing for interactions: factorial designs.</a>
+<li class="chapter" data-level="8" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html"><i class="fa fa-check"></i><b>8</b> Designs for testing for interactions: factorial designs.</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#introducing-interactions"><i class="fa fa-check"></i><b>8.1</b> Introducing Interactions</a>
+<li class="chapter" data-level="8.1" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#introducing-interactions"><i class="fa fa-check"></i><b>8.1</b> Introducing Interactions</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#lets-design-an-experiment-again"><i class="fa fa-check"></i><b>8.1.1</b> Let’s design an experiment, again…</a></li>
-<li class="chapter" data-level="8.1.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#the-factorial-design-how-and-why-study-interactions"><i class="fa fa-check"></i><b>8.1.2</b> The Factorial Design: How and Why Study Interactions?</a></li>
+<li class="chapter" data-level="8.1.1" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#lets-design-an-experiment-again"><i class="fa fa-check"></i><b>8.1.1</b> Let’s design an experiment, again…</a></li>
+<li class="chapter" data-level="8.1.2" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#the-factorial-design-how-and-why-study-interactions"><i class="fa fa-check"></i><b>8.1.2</b> The Factorial Design: How and Why Study Interactions?</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#a-factorial-design-and-the-two-way-anova"><i class="fa fa-check"></i><b>8.2</b> A Factorial Design and the Two-Way ANOVA</a>
+<li class="chapter" data-level="8.2" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#a-factorial-design-and-the-two-way-anova"><i class="fa fa-check"></i><b>8.2</b> A Factorial Design and the Two-Way ANOVA</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#build-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Build the Data</a></li>
-<li class="chapter" data-level="8.2.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#plot-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Plot the data!</a></li>
-<li class="chapter" data-level="8.2.3" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#analyse-the-data"><i class="fa fa-check"></i><b>8.2.3</b> Analyse the data</a></li>
-<li class="chapter" data-level="8.2.4" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#final-figuring"><i class="fa fa-check"></i><b>8.2.4</b> final figuring</a></li>
+<li class="chapter" data-level="8.2.1" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#build-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Build the Data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#plot-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Plot the data!</a></li>
+<li class="chapter" data-level="8.2.3" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#analyse-the-data"><i class="fa fa-check"></i><b>8.2.3</b> Analyse the data</a></li>
+<li class="chapter" data-level="8.2.4" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#final-figuring"><i class="fa fa-check"></i><b>8.2.4</b> final figuring</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html"><i class="fa fa-check"></i><b>9</b> Experimental Design and ANOVA - A Summary</a>
+<li class="chapter" data-level="9" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html"><i class="fa fa-check"></i><b>9</b> A Summary: Experimental Design and ANOVA</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
-<li class="chapter" data-level="9.2" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
-<li class="chapter" data-level="9.3" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
+<li class="chapter" data-level="9.1" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
+<li class="chapter" data-level="9.2" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
+<li class="chapter" data-level="9.3" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html"><i class="fa fa-check"></i><b>10</b> Introducing the ANCOVA - the analysis of covariance</a>
+<li class="chapter" data-level="10" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html"><i class="fa fa-check"></i><b>10</b> Introducing the ANCOVA - the analysis of covariance</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#setting-up-the-various-ideas."><i class="fa fa-check"></i><b>10.1</b> Setting up the various ideas.</a></li>
-<li class="chapter" data-level="10.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#working-through-and-example."><i class="fa fa-check"></i><b>10.2</b> Working through and example.</a>
+<li class="chapter" data-level="10.1" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#setting-up-the-various-ideas."><i class="fa fa-check"></i><b>10.1</b> Setting up the various ideas.</a></li>
+<li class="chapter" data-level="10.2" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#working-through-and-example."><i class="fa fa-check"></i><b>10.2</b> Working through and example.</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#get-the-data-and-make-your-picture"><i class="fa fa-check"></i><b>10.2.1</b> Get the data and make your picture</a></li>
+<li class="chapter" data-level="10.2.1" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#get-the-data-and-make-your-picture"><i class="fa fa-check"></i><b>10.2.1</b> Get the data and make your picture</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#building-the-model-and-understanding-it"><i class="fa fa-check"></i><b>10.3</b> Building the model (and understanding it)</a>
+<li class="chapter" data-level="10.3" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#building-the-model-and-understanding-it"><i class="fa fa-check"></i><b>10.3</b> Building the model (and understanding it)</a>
 <ul>
-<li class="chapter" data-level="10.3.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#dealing-with-some-issues-with-residuals."><i class="fa fa-check"></i><b>10.3.1</b> Dealing with some issues with residuals.</a></li>
-<li class="chapter" data-level="10.3.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#making-inference-on-the-ancova"><i class="fa fa-check"></i><b>10.3.2</b> Making inference on the ANCOVA</a></li>
-<li class="chapter" data-level="10.3.3" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#the-summary-table-and-making-sense-of-the-log-stuff."><i class="fa fa-check"></i><b>10.3.3</b> The summary table and making sense of the log stuff.</a></li>
-<li class="chapter" data-level="10.3.4" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#the-equations-supported-by-the-model."><i class="fa fa-check"></i><b>10.3.4</b> The equations supported by the model.</a></li>
-<li class="chapter" data-level="10.3.5" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#making-even-more-inference-and-drawing-the-picture"><i class="fa fa-check"></i><b>10.3.5</b> Making even more inference and drawing the picture</a></li>
+<li class="chapter" data-level="10.3.1" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#dealing-with-some-issues-with-residuals."><i class="fa fa-check"></i><b>10.3.1</b> Dealing with some issues with residuals.</a></li>
+<li class="chapter" data-level="10.3.2" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#making-inference-on-the-ancova"><i class="fa fa-check"></i><b>10.3.2</b> Making inference on the ANCOVA</a></li>
+<li class="chapter" data-level="10.3.3" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#the-summary-table-and-making-sense-of-the-log-stuff."><i class="fa fa-check"></i><b>10.3.3</b> The summary table and making sense of the log stuff.</a></li>
+<li class="chapter" data-level="10.3.4" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#the-equations-supported-by-the-model."><i class="fa fa-check"></i><b>10.3.4</b> The equations supported by the model.</a></li>
+<li class="chapter" data-level="10.3.5" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#making-even-more-inference-and-drawing-the-picture"><i class="fa fa-check"></i><b>10.3.5</b> Making even more inference and drawing the picture</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#some-general-principles"><i class="fa fa-check"></i><b>10.4</b> Some General Principles</a>
+<li class="chapter" data-level="10.4" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#some-general-principles"><i class="fa fa-check"></i><b>10.4</b> Some General Principles</a>
 <ul>
-<li class="chapter" data-level="10.4.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#ancova-always-tests-the-interaction-against-the-additive-model"><i class="fa fa-check"></i><b>10.4.1</b> ANCOVA always tests the interaction against the additive model</a></li>
-<li class="chapter" data-level="10.4.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#specifying-models-in-r"><i class="fa fa-check"></i><b>10.4.2</b> Specifying models in R</a></li>
+<li class="chapter" data-level="10.4.1" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#ancova-always-tests-the-interaction-against-the-additive-model"><i class="fa fa-check"></i><b>10.4.1</b> ANCOVA always tests the interaction against the additive model</a></li>
+<li class="chapter" data-level="10.4.2" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#specifying-models-in-r"><i class="fa fa-check"></i><b>10.4.2</b> Specifying models in R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html"><i class="fa fa-check"></i><b>11</b> Nonlinearities, polynomials and regression</a>
@@ -287,13 +287,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="design-and-analysis-of-experiments" class="section level1" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Design and Analysis of Experiments</h1>
+<div id="design-and-analysis-of-experiments" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Design and Analysis of Experiments<a href="design-and-analysis-of-experiments.html#design-and-analysis-of-experiments" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this section, we will design and experiment, make up data for the experiment, and analyse the experiment.</p>
 <p>This is a very good process to go through - you will understand more fully how to generate randomisation in your experiments, and you will better understand how data that you collect is <em>structured</em> - from where does variation come in your measurements.</p>
 <p>Another way to think about this is to consider that we are learning how statistics looks at data you’ve collected. We are going to make up data, where we know the answer to the question. Then we are going to plot these data, and analyse them.</p>
-<div id="example-one" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Example one</h2>
+<div id="example-one" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Example one<a href="design-and-analysis-of-experiments.html#example-one" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We are now going to cheat by generating artificial data we we don’t have time to go run the experiment.</p>
 <p>The experiment is about plant biomass yield under several herbicide treatments: a control and two herbicides, and a third treatment that is a placebo - applied water but no herbicide. The hypothesis is….?</p>
 <p>Start a new section of your script (some hashes) called Herbicide Example.</p>
@@ -327,14 +327,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 8      8 2    Cont
 ## 9      9 1   Herb2
 ## 10    10 2   Herb2</code></pre>
-<div id="making-up-data" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Making up data</h3>
+<div id="making-up-data" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Making up data<a href="design-and-analysis-of-experiments.html#making-up-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Right, lets make up some artificial data so we know the right answers – this is a very good way of checking you understand what’s going on.</p>
 <p>First, lets define some randon variation centred around 0 with a standard deviation of 3:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="design-and-analysis-of-experiments.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Our experimental errors, normal distribution mean = 0, standard deviation = 3</span></span>
 <span id="cb9-2"><a href="design-and-analysis-of-experiments.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># rnorm is random normal distribution - the bell curve!</span></span>
 <span id="cb9-3"><a href="design-and-analysis-of-experiments.html#cb9-3" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(Total.units, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">3</span>)</span></code></pre></div>
-<p>Now we need to actually generate a response variable. The thing we ‘measured.’ For this experiment we are <em>measuring</em> yield - the grams of dry biomass at the end of the experimental season.</p>
+<p>Now we need to actually generate a response variable. The thing we ‘measured’. For this experiment we are <em>measuring</em> yield - the grams of dry biomass at the end of the experimental season.</p>
 <p>To do this, we have to think about the mean of the yield (we’ll set it to 20), the deviation caused by Herbicide 1 (+5 average yield), the deviation caused by Herbicide 2 (+6 average yield) and the deviation caused by the placebo (nothing) and the error among observations (error). If this works, there should be Controls and Placebos with values around 20, and Herbicide values around ±25-26. But keep in mind… we have a standard deviation of 3 in the error… what will that do? Let’s see.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="design-and-analysis-of-experiments.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#the observations of yield</span></span>
 <span id="cb10-2"><a href="design-and-analysis-of-experiments.html#cb10-2" aria-hidden="true" tabindex="-1"></a>design<span class="sc">$</span>obs <span class="ot">&lt;-</span> </span>
@@ -373,8 +373,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5     5 2 Placebo 20.96267
 ## 6     6 3 Placebo 22.34314</code></pre>
 </div>
-<div id="into-the-dplyr-and-ggplot-pipeline." class="section level3" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Into the dplyr and ggplot pipeline.</h3>
+<div id="into-the-dplyr-and-ggplot-pipeline." class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Into the dplyr and ggplot pipeline.<a href="design-and-analysis-of-experiments.html#into-the-dplyr-and-ggplot-pipeline." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Great stuff. Now we can move to our standard data management and visualisation pipeline.</p>
 <ol style="list-style-type: decimal">
 <li>review the data</li>
@@ -385,25 +385,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-2"><a href="design-and-analysis-of-experiments.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(design)</span></code></pre></div>
 <pre><code>## Rows: 120
 ## Columns: 4
-## $ plots &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, …
-## $ r     &lt;int&gt; 1, 1, 2, 1, 2, 3, 3, 2, 1, 2, 3, 4, 4, 4, 5, 5, 6, 3, 5, 6, 7, …
-## $ treat &lt;chr&gt; &quot;Cont&quot;, &quot;Herb1&quot;, &quot;Herb1&quot;, &quot;Placebo&quot;, &quot;Placebo&quot;, &quot;Placebo&quot;, &quot;Her…
-## $ obs   &lt;dbl&gt; 25.56702, 23.32992, 23.39985, 21.54529, 20.96267, 22.34314, 24.…</code></pre>
+## $ plots &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 1…
+## $ r     &lt;int&gt; 1, 1, 2, 1, 2, 3, 3, 2, 1, 2, 3, 4, 4, 4, 5, 5, 6, 3, 5, 6, 7, 8…
+## $ treat &lt;chr&gt; &quot;Cont&quot;, &quot;Herb1&quot;, &quot;Herb1&quot;, &quot;Placebo&quot;, &quot;Placebo&quot;, &quot;Placebo&quot;, &quot;Herb…
+## $ obs   &lt;dbl&gt; 25.56702, 23.32992, 23.39985, 21.54529, 20.96267, 22.34314, 24.1…</code></pre>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="design-and-analysis-of-experiments.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summarise to get means and ses</span></span>
 <span id="cb16-2"><a href="design-and-analysis-of-experiments.html#cb16-2" aria-hidden="true" tabindex="-1"></a>sumDat <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span> </span>
 <span id="cb16-3"><a href="design-and-analysis-of-experiments.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treat) <span class="sc">%&gt;%</span> </span>
 <span id="cb16-4"><a href="design-and-analysis-of-experiments.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb16-5"><a href="design-and-analysis-of-experiments.html#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">meanYield =</span> <span class="fu">mean</span>(obs),</span>
 <span id="cb16-6"><a href="design-and-analysis-of-experiments.html#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">seYield =</span> <span class="fu">sd</span>(obs)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">n</span>())</span>
-<span id="cb16-7"><a href="design-and-analysis-of-experiments.html#cb16-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="design-and-analysis-of-experiments.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the raw data and the mean±se</span></span>
-<span id="cb18-2"><a href="design-and-analysis-of-experiments.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># start with the mean±se and then add the raw data</span></span>
-<span id="cb18-3"><a href="design-and-analysis-of-experiments.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sumDat, <span class="fu">aes</span>(<span class="at">x =</span> treat, <span class="at">y =</span> meanYield))<span class="sc">+</span></span>
-<span id="cb18-4"><a href="design-and-analysis-of-experiments.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb18-5"><a href="design-and-analysis-of-experiments.html#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> sumDat, <span class="fu">aes</span>(<span class="at">ymin =</span> meanYield <span class="sc">-</span> seYield, <span class="at">ymax =</span> meanYield<span class="sc">+</span>seYield),</span>
-<span id="cb18-6"><a href="design-and-analysis-of-experiments.html#cb18-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
-<span id="cb18-7"><a href="design-and-analysis-of-experiments.html#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> design, <span class="fu">aes</span>(<span class="at">x =</span> treat, <span class="at">y =</span> obs), <span class="at">colour =</span> <span class="st">&#39;red&#39;</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>)</span></code></pre></div>
+<span id="cb16-7"><a href="design-and-analysis-of-experiments.html#cb16-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-8"><a href="design-and-analysis-of-experiments.html#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="design-and-analysis-of-experiments.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the raw data and the mean±se</span></span>
+<span id="cb16-10"><a href="design-and-analysis-of-experiments.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co"># start with the mean±se and then add the raw data</span></span>
+<span id="cb16-11"><a href="design-and-analysis-of-experiments.html#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sumDat, <span class="fu">aes</span>(<span class="at">x =</span> treat, <span class="at">y =</span> meanYield))<span class="sc">+</span></span>
+<span id="cb16-12"><a href="design-and-analysis-of-experiments.html#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb16-13"><a href="design-and-analysis-of-experiments.html#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> sumDat, <span class="fu">aes</span>(<span class="at">ymin =</span> meanYield <span class="sc">-</span> seYield, <span class="at">ymax =</span> meanYield<span class="sc">+</span>seYield),</span>
+<span id="cb16-14"><a href="design-and-analysis-of-experiments.html#cb16-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb16-15"><a href="design-and-analysis-of-experiments.html#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> design, <span class="fu">aes</span>(<span class="at">x =</span> treat, <span class="at">y =</span> obs), <span class="at">colour =</span> <span class="st">&#39;red&#39;</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>)</span></code></pre></div>
 <p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>A few things to notice.</p>
 <ol style="list-style-type: decimal">
@@ -413,18 +413,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 </div>
 </div>
-<div id="the-one-way-anova." class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> The One-Way ANOVA.</h2>
+<div id="the-one-way-anova." class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> The One-Way ANOVA.<a href="design-and-analysis-of-experiments.html#the-one-way-anova." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you’ve been paying attention, we’ve essentially designed and plotted the data for a 1-way ANOVA. These data are very similar to the daphnia parasite data we finished semester 1 with.</p>
 <p>To analyse these data, we use the <code>lm()</code> function to build the model, check assumptions, and then make inference. Let’s go.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="design-and-analysis-of-experiments.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the model</span></span>
-<span id="cb19-2"><a href="design-and-analysis-of-experiments.html#cb19-2" aria-hidden="true" tabindex="-1"></a>modYield <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> treat, <span class="at">data =</span> design)</span>
-<span id="cb19-3"><a href="design-and-analysis-of-experiments.html#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="design-and-analysis-of-experiments.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># assumptions</span></span>
-<span id="cb19-5"><a href="design-and-analysis-of-experiments.html#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(modYield)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="design-and-analysis-of-experiments.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the model</span></span>
+<span id="cb17-2"><a href="design-and-analysis-of-experiments.html#cb17-2" aria-hidden="true" tabindex="-1"></a>modYield <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> treat, <span class="at">data =</span> design)</span>
+<span id="cb17-3"><a href="design-and-analysis-of-experiments.html#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="design-and-analysis-of-experiments.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># assumptions</span></span>
+<span id="cb17-5"><a href="design-and-analysis-of-experiments.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(modYield)</span></code></pre></div>
 <p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="design-and-analysis-of-experiments.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inference: anova</span></span>
-<span id="cb20-2"><a href="design-and-analysis-of-experiments.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(modYield)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="design-and-analysis-of-experiments.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inference: anova</span></span>
+<span id="cb18-2"><a href="design-and-analysis-of-experiments.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(modYield)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Response: obs
@@ -433,8 +433,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Residuals 116 1074.54   9.263                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="design-and-analysis-of-experiments.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># contrasts</span></span>
-<span id="cb22-2"><a href="design-and-analysis-of-experiments.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modYield)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="design-and-analysis-of-experiments.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># contrasts</span></span>
+<span id="cb20-2"><a href="design-and-analysis-of-experiments.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modYield)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = obs ~ treat, data = design)
@@ -455,8 +455,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Residual standard error: 3.044 on 116 degrees of freedom
 ## Multiple R-squared:  0.4526, Adjusted R-squared:  0.4384 
 ## F-statistic: 31.97 on 3 and 116 DF,  p-value: 3.905e-15</code></pre>
-<div id="making-insight-and-inference" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Making insight and inference</h3>
+<div id="making-insight-and-inference" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Making insight and inference<a href="design-and-analysis-of-experiments.html#making-insight-and-inference" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Lets walks through things very discretely.</p>
 <ol style="list-style-type: decimal">
 <li>Our graph suggests that herbicide treatments have an effect of increasing yield.</li>
@@ -471,33 +471,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>However, the differnce for Placebo is close to 0 and therefore we can not reject the null hypothesis test that it differs from control. GENUIS!</p>
 </div>
 </div>
-<div id="a-priori-vs.-post-hoc-contrasts" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> A priori vs. Post-Hoc Contrasts</h2>
+<div id="a-priori-vs.-post-hoc-contrasts" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> A priori vs. Post-Hoc Contrasts<a href="design-and-analysis-of-experiments.html#a-priori-vs.-post-hoc-contrasts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the semester 1, we introduced how to do a Tukey Test.</p>
 <p>This is known as an <em>a posteriori</em> test – testing the significance of things suggested by the experiment, also known as data snooping or data dredging. These are multiple comparison methods (Bonferroni, Scheffe method, Tukey honest significant difference, Duncan’s multiple range test) which try to control the chance of getting a significant result by chance.</p>
 <p>To understand the risks of these, consider this experimental design. We have 7 treatments. With 7 treatments, there are 21 pairwise comparisons. With p-value threshold of <span class="math inline">\(0.05\)</span> we expect 1/20 (5/100) tests to be significant. So with this 7 treatment and 21 comparison design, would you expect a signficant result by chance? You betyja.</p>
 <p>This is why, unless a priori (in advance) you can justify ALL pairwise comparisons, a tukey test may not be appropriate.</p>
 <p>Some statisticians really don’t like them “In my view multiple comparison methods have no place at all in the interpretation of data” Nelder (very well respected statistician).</p>
-<div id="the-more-appropriate-approach." class="section level3" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> The more appropriate approach.</h3>
+<div id="the-more-appropriate-approach." class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> The more appropriate approach.<a href="design-and-analysis-of-experiments.html#the-more-appropriate-approach." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The classical approach is to specify a priori (before experiment) a set of hypotheses then test them using contrasts. For our experiment, as noted above, we were probably interested in what our treatment contrasts provided - tests of difference with the control.</p>
 <p>Specifying specific contrasts is easy once you get your head around the ‘structure’ of the syntax. Lets have a go with specifying a comparison JUST between Herbicide 1 and the control.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="design-and-analysis-of-experiments.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the levels and ORDERING of the treatments</span></span>
-<span id="cb24-2"><a href="design-and-analysis-of-experiments.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(design<span class="sc">$</span>treat)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="design-and-analysis-of-experiments.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the levels and ORDERING of the treatments</span></span>
+<span id="cb22-2"><a href="design-and-analysis-of-experiments.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(design<span class="sc">$</span>treat)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="design-and-analysis-of-experiments.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define the contrast you want using -1, 1 and 0&#39;s</span></span>
-<span id="cb26-2"><a href="design-and-analysis-of-experiments.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this says compare control with herbicide 1.... and ignore the Herb2 and Placebo</span></span>
-<span id="cb26-3"><a href="design-and-analysis-of-experiments.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># we give the reference -1 and the &#39;other&#39; 1.</span></span>
-<span id="cb26-4"><a href="design-and-analysis-of-experiments.html#cb26-4" aria-hidden="true" tabindex="-1"></a>contrast <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
-<span id="cb26-5"><a href="design-and-analysis-of-experiments.html#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-6"><a href="design-and-analysis-of-experiments.html#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># use the fit.contrast function from gmodels</span></span>
-<span id="cb26-7"><a href="design-and-analysis-of-experiments.html#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(modYield, <span class="st">&quot;treat&quot;</span>, contrast)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="design-and-analysis-of-experiments.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define the contrast you want using -1, 1 and 0&#39;s</span></span>
+<span id="cb24-2"><a href="design-and-analysis-of-experiments.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this says compare control with herbicide 1.... and ignore the Herb2 and Placebo</span></span>
+<span id="cb24-3"><a href="design-and-analysis-of-experiments.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># we give the reference -1 and the &#39;other&#39; 1.</span></span>
+<span id="cb24-4"><a href="design-and-analysis-of-experiments.html#cb24-4" aria-hidden="true" tabindex="-1"></a>contrast <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb24-5"><a href="design-and-analysis-of-experiments.html#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="design-and-analysis-of-experiments.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># use the fit.contrast function from gmodels</span></span>
+<span id="cb24-7"><a href="design-and-analysis-of-experiments.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(modYield, <span class="st">&quot;treat&quot;</span>, contrast)</span></code></pre></div>
 <pre><code>##                      Estimate Std. Error  t value     Pr(&gt;|t|)
 ## treat c=( -1 1 0 0 ) 5.101935  0.7858436 6.492304 2.181992e-09
 ## attr(,&quot;class&quot;)
 ## [1] &quot;fit_contrast&quot;</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="design-and-analysis-of-experiments.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remind ourselves of the contrast from the summary table</span></span>
-<span id="cb28-2"><a href="design-and-analysis-of-experiments.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modYield)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="design-and-analysis-of-experiments.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remind ourselves of the contrast from the summary table</span></span>
+<span id="cb26-2"><a href="design-and-analysis-of-experiments.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modYield)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = obs ~ treat, data = design)
@@ -522,60 +522,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Notice that the results are the same from the summary(modYield) and the fit.contrast.</p>
 </blockquote>
 <p>If we want to compare the two herbicides we can use this approach. Note in advance that this contrast DOES NOT exist in the summary table!</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="design-and-analysis-of-experiments.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define the contrast you want using -1, 1 and 0&#39;s</span></span>
-<span id="cb30-2"><a href="design-and-analysis-of-experiments.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this says compare herb1 with herb2, ignoring the control and placebo.</span></span>
-<span id="cb30-3"><a href="design-and-analysis-of-experiments.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># we give the reference -1 and the &#39;other&#39; 1.</span></span>
-<span id="cb30-4"><a href="design-and-analysis-of-experiments.html#cb30-4" aria-hidden="true" tabindex="-1"></a>contrast <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
-<span id="cb30-5"><a href="design-and-analysis-of-experiments.html#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-6"><a href="design-and-analysis-of-experiments.html#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="co"># use the fit.contrast function from gmodels</span></span>
-<span id="cb30-7"><a href="design-and-analysis-of-experiments.html#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(modYield, <span class="st">&quot;treat&quot;</span>, contrast)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="design-and-analysis-of-experiments.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define the contrast you want using -1, 1 and 0&#39;s</span></span>
+<span id="cb28-2"><a href="design-and-analysis-of-experiments.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this says compare herb1 with herb2, ignoring the control and placebo.</span></span>
+<span id="cb28-3"><a href="design-and-analysis-of-experiments.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># we give the reference -1 and the &#39;other&#39; 1.</span></span>
+<span id="cb28-4"><a href="design-and-analysis-of-experiments.html#cb28-4" aria-hidden="true" tabindex="-1"></a>contrast <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb28-5"><a href="design-and-analysis-of-experiments.html#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="design-and-analysis-of-experiments.html#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># use the fit.contrast function from gmodels</span></span>
+<span id="cb28-7"><a href="design-and-analysis-of-experiments.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(modYield, <span class="st">&quot;treat&quot;</span>, contrast)</span></code></pre></div>
 <pre><code>##                      Estimate Std. Error  t value   Pr(&gt;|t|)
 ## treat c=( 0 -1 1 0 ) 1.402879  0.7858436 1.785189 0.07684408
 ## attr(,&quot;class&quot;)
 ## [1] &quot;fit_contrast&quot;</code></pre>
 <p>Isn’t this cool? Note that the difference reported is the difference between the two means:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="design-and-analysis-of-experiments.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check our summary data</span></span>
-<span id="cb32-2"><a href="design-and-analysis-of-experiments.html#cb32-2" aria-hidden="true" tabindex="-1"></a>sumDat</span></code></pre></div>
-<pre><code>## # A tibble: 4 x 3
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="design-and-analysis-of-experiments.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check our summary data</span></span>
+<span id="cb30-2"><a href="design-and-analysis-of-experiments.html#cb30-2" aria-hidden="true" tabindex="-1"></a>sumDat</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 3
 ##   treat   meanYield seYield
 ##   &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;
 ## 1 Cont         19.6   0.580
 ## 2 Herb1        24.7   0.545
 ## 3 Herb2        26.1   0.546
 ## 4 Placebo      20.6   0.552</code></pre>
-<p>Here it is: <span class="math inline">\(26.2 - 24.2 = 2\)</span></p>
-<p>This says that despite the difference we created of ~1 unit of yield between Herb1 and Herb2, when we defined error and generated the data, it created a significant difference detectable with statistics.</p>
+<p>Here it is: <span class="math inline">\(26.1 - 24.7 = 1.4\)</span></p>
+<p>This says that the difference we created of ~1 unit of yield between Herb1 and Herb2 is pretty spot on in the randomly generated data. And as one might expect, it created an insignificant difference detectable with statistics.</p>
 </div>
-<div id="comparing-the-average-of-the-herbicide-effect-with-the-control." class="section level3" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> comparing the average of the herbicide effect with the control.</h3>
+<div id="comparing-the-average-of-the-herbicide-effect-with-the-control." class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> comparing the average of the herbicide effect with the control.<a href="design-and-analysis-of-experiments.html#comparing-the-average-of-the-herbicide-effect-with-the-control." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This might be a comparison you intended to make also… the average effect of herbicides in general. To do this, we expand the idea of -1,1 and 0’s to include 1/2s (and yes, 1/3’s and more are possible):</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="design-and-analysis-of-experiments.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define the contrast you want using -1, 1 and 0&#39;s</span></span>
-<span id="cb34-2"><a href="design-and-analysis-of-experiments.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this says compare control with the average of herbicide 1 and 2, ignoring the placebo</span></span>
-<span id="cb34-3"><a href="design-and-analysis-of-experiments.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># we give the reference -1 and the &#39;other two&#39; a 1/2 each.</span></span>
-<span id="cb34-4"><a href="design-and-analysis-of-experiments.html#cb34-4" aria-hidden="true" tabindex="-1"></a>contrast <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">0</span>)</span>
-<span id="cb34-5"><a href="design-and-analysis-of-experiments.html#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-6"><a href="design-and-analysis-of-experiments.html#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co"># use the fit.contrast function from gmodels</span></span>
-<span id="cb34-7"><a href="design-and-analysis-of-experiments.html#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(modYield, <span class="st">&quot;treat&quot;</span>, contrast)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="design-and-analysis-of-experiments.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define the contrast you want using -1, 1 and 0&#39;s</span></span>
+<span id="cb32-2"><a href="design-and-analysis-of-experiments.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this says compare control with the average of herbicide 1 and 2, ignoring the placebo</span></span>
+<span id="cb32-3"><a href="design-and-analysis-of-experiments.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># we give the reference -1 and the &#39;other two&#39; a 1/2 each.</span></span>
+<span id="cb32-4"><a href="design-and-analysis-of-experiments.html#cb32-4" aria-hidden="true" tabindex="-1"></a>contrast <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">0</span>)</span>
+<span id="cb32-5"><a href="design-and-analysis-of-experiments.html#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="design-and-analysis-of-experiments.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co"># use the fit.contrast function from gmodels</span></span>
+<span id="cb32-7"><a href="design-and-analysis-of-experiments.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(modYield, <span class="st">&quot;treat&quot;</span>, contrast)</span></code></pre></div>
 <pre><code>##                          Estimate Std. Error  t value     Pr(&gt;|t|)
 ## treat c=( -1 0.5 0.5 0 ) 5.803375  0.6805605 8.527346 6.484593e-14
 ## attr(,&quot;class&quot;)
 ## [1] &quot;fit_contrast&quot;</code></pre>
 <p>Again, checking sumDat</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="design-and-analysis-of-experiments.html#cb36-1" aria-hidden="true" tabindex="-1"></a>sumDat</span></code></pre></div>
-<pre><code>## # A tibble: 4 x 3
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="design-and-analysis-of-experiments.html#cb34-1" aria-hidden="true" tabindex="-1"></a>sumDat</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 3
 ##   treat   meanYield seYield
 ##   &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;
 ## 1 Cont         19.6   0.580
 ## 2 Herb1        24.7   0.545
 ## 3 Herb2        26.1   0.546
 ## 4 Placebo      20.6   0.552</code></pre>
-<p><span class="math inline">\((24.2+26.2)/2 = 25.2\)</span> –&gt; <span class="math inline">\(25.2 - 20 = 5.2\)</span></p>
+<p><span class="math inline">\((24.7+26.1)/2 = 25.4\)</span> –&gt; <span class="math inline">\(25.4 - 19.6 = 5.8\)</span></p>
 </div>
-<div id="writing-this-up" class="section level3" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> writing this up…</h3>
+<div id="writing-this-up" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> writing this up…<a href="design-and-analysis-of-experiments.html#writing-this-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Fill in these blanks using the various contrasts you made above!</p>
 <blockquote>
-<p>We conclude that herbicides on average cause an _____ gram increase in yield (t = ___ , p = ___ ). We also note that there was a significant difference of _____ grams between the herbicides (t = _____ p = ______). The additional placebo treatment had no effect on yield (t = _______ p = __________).</p>
+<p>We conclude that herbicides, on average, cause an _____ gram increase in yield (t = ___ , p = ___ ). We also note that there was a significant difference of _____ grams between the herbicides (t = _____ p = ______). The additional placebo treatment had no effect on yield (t = _______ p = __________).</p>
 </blockquote>
 
 </div>
@@ -591,7 +591,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -610,6 +609,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -630,6 +630,10 @@ gitbook.start({
 "text": null
 },
 "download": ["Introduction to Experimental Design and Analysis.pdf", "Introduction to Experimental Design and Analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

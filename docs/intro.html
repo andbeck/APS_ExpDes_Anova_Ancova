@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Introduction To Experiments (Some Philosophy) | An Introduction to Experimental Design and Linear Models</title>
   <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Introduction To Experiments (Some Philosophy) | An Introduction to Experimental Design and Linear Models" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2021-02-12" />
+<meta name="date" content="2022-07-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="standard-errors-precision-and-sampling.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -119,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -204,46 +204,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.0.1" data-path="the-latin-square-design-lsd.html"><a href="the-latin-square-design-lsd.html#fitting-the-model"><i class="fa fa-check"></i><b>7.0.1</b> Fitting the model</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html"><i class="fa fa-check"></i><b>8</b> Designs for testing for interactions: factorial designs.</a>
+<li class="chapter" data-level="8" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html"><i class="fa fa-check"></i><b>8</b> Designs for testing for interactions: factorial designs.</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#introducing-interactions"><i class="fa fa-check"></i><b>8.1</b> Introducing Interactions</a>
+<li class="chapter" data-level="8.1" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#introducing-interactions"><i class="fa fa-check"></i><b>8.1</b> Introducing Interactions</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#lets-design-an-experiment-again"><i class="fa fa-check"></i><b>8.1.1</b> Let’s design an experiment, again…</a></li>
-<li class="chapter" data-level="8.1.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#the-factorial-design-how-and-why-study-interactions"><i class="fa fa-check"></i><b>8.1.2</b> The Factorial Design: How and Why Study Interactions?</a></li>
+<li class="chapter" data-level="8.1.1" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#lets-design-an-experiment-again"><i class="fa fa-check"></i><b>8.1.1</b> Let’s design an experiment, again…</a></li>
+<li class="chapter" data-level="8.1.2" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#the-factorial-design-how-and-why-study-interactions"><i class="fa fa-check"></i><b>8.1.2</b> The Factorial Design: How and Why Study Interactions?</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#a-factorial-design-and-the-two-way-anova"><i class="fa fa-check"></i><b>8.2</b> A Factorial Design and the Two-Way ANOVA</a>
+<li class="chapter" data-level="8.2" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#a-factorial-design-and-the-two-way-anova"><i class="fa fa-check"></i><b>8.2</b> A Factorial Design and the Two-Way ANOVA</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#build-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Build the Data</a></li>
-<li class="chapter" data-level="8.2.2" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#plot-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Plot the data!</a></li>
-<li class="chapter" data-level="8.2.3" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#analyse-the-data"><i class="fa fa-check"></i><b>8.2.3</b> Analyse the data</a></li>
-<li class="chapter" data-level="8.2.4" data-path="designs-for-testing-for-interactions-factorial-designs-.html"><a href="designs-for-testing-for-interactions-factorial-designs-.html#final-figuring"><i class="fa fa-check"></i><b>8.2.4</b> final figuring</a></li>
+<li class="chapter" data-level="8.2.1" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#build-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Build the Data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#plot-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Plot the data!</a></li>
+<li class="chapter" data-level="8.2.3" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#analyse-the-data"><i class="fa fa-check"></i><b>8.2.3</b> Analyse the data</a></li>
+<li class="chapter" data-level="8.2.4" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#final-figuring"><i class="fa fa-check"></i><b>8.2.4</b> final figuring</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html"><i class="fa fa-check"></i><b>9</b> Experimental Design and ANOVA - A Summary</a>
+<li class="chapter" data-level="9" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html"><i class="fa fa-check"></i><b>9</b> A Summary: Experimental Design and ANOVA</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
-<li class="chapter" data-level="9.2" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
-<li class="chapter" data-level="9.3" data-path="experimental-design-and-anova-a-summary.html"><a href="experimental-design-and-anova-a-summary.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
+<li class="chapter" data-level="9.1" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
+<li class="chapter" data-level="9.2" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
+<li class="chapter" data-level="9.3" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html"><i class="fa fa-check"></i><b>10</b> Introducing the ANCOVA - the analysis of covariance</a>
+<li class="chapter" data-level="10" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html"><i class="fa fa-check"></i><b>10</b> Introducing the ANCOVA - the analysis of covariance</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#setting-up-the-various-ideas."><i class="fa fa-check"></i><b>10.1</b> Setting up the various ideas.</a></li>
-<li class="chapter" data-level="10.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#working-through-and-example."><i class="fa fa-check"></i><b>10.2</b> Working through and example.</a>
+<li class="chapter" data-level="10.1" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#setting-up-the-various-ideas."><i class="fa fa-check"></i><b>10.1</b> Setting up the various ideas.</a></li>
+<li class="chapter" data-level="10.2" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#working-through-and-example."><i class="fa fa-check"></i><b>10.2</b> Working through and example.</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#get-the-data-and-make-your-picture"><i class="fa fa-check"></i><b>10.2.1</b> Get the data and make your picture</a></li>
+<li class="chapter" data-level="10.2.1" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#get-the-data-and-make-your-picture"><i class="fa fa-check"></i><b>10.2.1</b> Get the data and make your picture</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#building-the-model-and-understanding-it"><i class="fa fa-check"></i><b>10.3</b> Building the model (and understanding it)</a>
+<li class="chapter" data-level="10.3" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#building-the-model-and-understanding-it"><i class="fa fa-check"></i><b>10.3</b> Building the model (and understanding it)</a>
 <ul>
-<li class="chapter" data-level="10.3.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#dealing-with-some-issues-with-residuals."><i class="fa fa-check"></i><b>10.3.1</b> Dealing with some issues with residuals.</a></li>
-<li class="chapter" data-level="10.3.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#making-inference-on-the-ancova"><i class="fa fa-check"></i><b>10.3.2</b> Making inference on the ANCOVA</a></li>
-<li class="chapter" data-level="10.3.3" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#the-summary-table-and-making-sense-of-the-log-stuff."><i class="fa fa-check"></i><b>10.3.3</b> The summary table and making sense of the log stuff.</a></li>
-<li class="chapter" data-level="10.3.4" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#the-equations-supported-by-the-model."><i class="fa fa-check"></i><b>10.3.4</b> The equations supported by the model.</a></li>
-<li class="chapter" data-level="10.3.5" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#making-even-more-inference-and-drawing-the-picture"><i class="fa fa-check"></i><b>10.3.5</b> Making even more inference and drawing the picture</a></li>
+<li class="chapter" data-level="10.3.1" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#dealing-with-some-issues-with-residuals."><i class="fa fa-check"></i><b>10.3.1</b> Dealing with some issues with residuals.</a></li>
+<li class="chapter" data-level="10.3.2" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#making-inference-on-the-ancova"><i class="fa fa-check"></i><b>10.3.2</b> Making inference on the ANCOVA</a></li>
+<li class="chapter" data-level="10.3.3" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#the-summary-table-and-making-sense-of-the-log-stuff."><i class="fa fa-check"></i><b>10.3.3</b> The summary table and making sense of the log stuff.</a></li>
+<li class="chapter" data-level="10.3.4" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#the-equations-supported-by-the-model."><i class="fa fa-check"></i><b>10.3.4</b> The equations supported by the model.</a></li>
+<li class="chapter" data-level="10.3.5" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#making-even-more-inference-and-drawing-the-picture"><i class="fa fa-check"></i><b>10.3.5</b> Making even more inference and drawing the picture</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#some-general-principles"><i class="fa fa-check"></i><b>10.4</b> Some General Principles</a>
+<li class="chapter" data-level="10.4" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#some-general-principles"><i class="fa fa-check"></i><b>10.4</b> Some General Principles</a>
 <ul>
-<li class="chapter" data-level="10.4.1" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#ancova-always-tests-the-interaction-against-the-additive-model"><i class="fa fa-check"></i><b>10.4.1</b> ANCOVA always tests the interaction against the additive model</a></li>
-<li class="chapter" data-level="10.4.2" data-path="introducing-the-ancova-the-analysis-of-covariance.html"><a href="introducing-the-ancova-the-analysis-of-covariance.html#specifying-models-in-r"><i class="fa fa-check"></i><b>10.4.2</b> Specifying models in R</a></li>
+<li class="chapter" data-level="10.4.1" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#ancova-always-tests-the-interaction-against-the-additive-model"><i class="fa fa-check"></i><b>10.4.1</b> ANCOVA always tests the interaction against the additive model</a></li>
+<li class="chapter" data-level="10.4.2" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html#specifying-models-in-r"><i class="fa fa-check"></i><b>10.4.2</b> Specifying models in R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="nonlinearities-polynomials-and-regression.html"><a href="nonlinearities-polynomials-and-regression.html"><i class="fa fa-check"></i><b>11</b> Nonlinearities, polynomials and regression</a>
@@ -287,8 +287,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Introduction To Experiments (Some Philosophy)</h1>
+<div id="intro" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Introduction To Experiments (Some Philosophy)<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Experiments help us answer questions, but there are also non-experimental techniques. What is so special about experiments?</p>
 <ol style="list-style-type: decimal">
 <li>Experiments allow us to set up a direct comparison between the treatments of interest.</li>
@@ -307,8 +307,8 @@ that we see in the experiment. Specifically, we may make inferences about causat
 </ul>
 <p>Let’s look at a classic example. Smoking and lung cancer – from 1922 to 1947 annual deaths for lung cancer went from 612 to 9287 (Observation).This was thought in the 1950s to be either an effect of smoking tobacco or atmospheric pollution (Hypothesis). Numerous studies showed that lung cancer was more prevalent in smokers (Observation: consistency). Chemical analyses of tobacco showed it contained carcinogens (Association: mechanism). Public health programs resulted in a reduction in smoking and lung cancer rates decreased (Intervention: responsiveness).</p>
 <p>Note the initial study was an observational study and in this case it was not ethical to do the experiment per se!</p>
-<div id="how-to-think-about-experiments-components-of-an-experiment" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> How to think about experiments: Components of an Experiment</h2>
+<div id="how-to-think-about-experiments-components-of-an-experiment" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> How to think about experiments: Components of an Experiment<a href="intro.html#how-to-think-about-experiments-components-of-an-experiment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An experiment has treatments, experimental units, responses, and a method to assign treatments to units. These specify the experimental design.</p>
 <p>Not all experimental designs are created equal. A good experimental design must adhere to the 3Rs. It should reveal consistency, responsiveness and mechanism. The way this happens is by avoiding systematic error in measuring things, and allow estimation of error in measurments with precision. In short, a good experimental design must</p>
 <ul>
@@ -323,39 +323,39 @@ that we see in the experiment. Specifically, we may make inferences about causat
 <p>Experiments are precise when this random error in the treatment comparisons is small. Precision depends on the size of the random errors in the responses, the number of units used (<strong>replication</strong>), and the experimental design used.</p>
 <p>Experiments must be designed so that we have an estimate of the size of random error. This permits statistical inference: for example, confidence intervals or tests of significance based on t- or F-statistics.</p>
 <p>We cannot do inference without an estimate of this variation. We would like our conclusions to be valid for a wide population, so we need to randomise our subjects or objects we are measuring - for example, we may need to be aware of both sexes and of young and old individuals. But there are always compromises - for example, broadening the scope of validity by using a variety of experimental units may decrease the precision of the responses.</p>
-<div id="how-do-we-increase-precision-and-reduce-bias" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> How do we increase precision and reduce bias?</h3>
+<div id="how-do-we-increase-precision-and-reduce-bias" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> How do we increase precision and reduce bias?<a href="intro.html#how-do-we-increase-precision-and-reduce-bias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are several key concepts</p>
-<div id="blinding" class="section level4" number="2.1.1.1">
-<h4><span class="header-section-number">2.1.1.1</span> Blinding</h4>
+<div id="blinding" class="section level4 hasAnchor" number="2.1.1.1">
+<h4><span class="header-section-number">2.1.1.1</span> Blinding<a href="intro.html#blinding" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><em>Blinding</em> occurs when the evaluators of a response do not know which treatment was given to which unit. Blinding helps prevent bias in the evaluation, even unconscious bias from well-intentioned evaluators. Double blinding occurs when both the evaluators of the response and the (human subject) experimental units do not know the assignment of treatments to units. Blinding the subjects can also prevent bias, because subject responses can change when subjects have expectations for certain treatments.</p>
 </div>
-<div id="placebos" class="section level4" number="2.1.1.2">
-<h4><span class="header-section-number">2.1.1.2</span> Placebos</h4>
+<div id="placebos" class="section level4 hasAnchor" number="2.1.1.2">
+<h4><span class="header-section-number">2.1.1.2</span> Placebos<a href="intro.html#placebos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><em>Placebo</em> is a null treatment that is used when the <em>act</em> of applying a treatment— any treatment — has an effect. Placebos are often used with human subjects, because people often respond to the process of receiving any treatment: for example,
 reduction in headache pain when given a sugar pill. Blinding is important when placebos are used with human subjects. Placebos are also useful for nonhuman subjects. The apparatus for spraying a field with a pesticide may compact the soil. Thus we drive the apparatus over the field, without actually spraying, as a placebo treatment.</p>
 </div>
-<div id="confounders" class="section level4" number="2.1.1.3">
-<h4><span class="header-section-number">2.1.1.3</span> Confounders</h4>
+<div id="confounders" class="section level4 hasAnchor" number="2.1.1.3">
+<h4><span class="header-section-number">2.1.1.3</span> Confounders<a href="intro.html#confounders" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><em>Confounding</em> occurs when the effect of one factor or treatment cannot be distinguished from that of another factor or treatment. The two factors or treatments are said to be confounded. Except in very special circumstances, confounding should be avoided. Consider the following example. We plant corn variety A in Yorkshire and corn variety B in Lancashire. In this experiment, we cannot distinguish location effects (Yorkshire vs. Lancashire) from variety effects (cornA vs. cornB) — the variety factor and the location factor are confounded.</p>
 <p>This is despite the fact that we know that Yorkshire will be better…. (that’s a joke)</p>
 </div>
 </div>
 </div>
-<div id="experimental-vs-measurement-units" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Experimental vs Measurement units</h2>
+<div id="experimental-vs-measurement-units" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Experimental vs Measurement units<a href="intro.html#experimental-vs-measurement-units" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A common source of difficulty in designing experiments is the distinction between experimental units and measurement units. We need to know the experimental units, as this is the key value used to generate our inference.</p>
 <p>Consider an educational study, with six classrooms of 25 pupils. Each classroom of students is then assigned, at random, to one of two different reading programmes.</p>
 <p>At the end of a 6 week term, all the students are evaluated via a common reading exam.</p>
 <p>So, are there six experimental units (the classrooms) or 150 (25*6; the students)? We measured the reading ability of the students… but they were in classroom sets of 25….</p>
-<div id="identifying-the-experimental-unit---an-example-of-pseudo-replication" class="section level4" number="2.2.0.1">
-<h4><span class="header-section-number">2.2.0.1</span> Identifying the experimental unit - an example of <strong>pseudo-replication</strong></h4>
+<div id="identifying-the-experimental-unit---an-example-of-pseudo-replication" class="section level4 hasAnchor" number="2.2.0.1">
+<h4><span class="header-section-number">2.2.0.1</span> Identifying the experimental unit - an example of <strong>pseudo-replication</strong><a href="intro.html#identifying-the-experimental-unit---an-example-of-pseudo-replication" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To identify the experimental units the key question is: What did we randomly allocate treatments to?</p>
 <p>If we randomly allocated reading programmes to students, then students would be the experimental units. But we don’t so the classroom is the experimental unit – it is the classroom to which we randomly allocated treatments. The classroom is the experimental unit. But we don’t measure how a classroom reads; we measure how students read. Thus students are the measurement units for this experiment.</p>
 <p>Confusing these two things can lead to <strong>pseudo-replication</strong>. Treating measurement units as experimental usually leads to overoptimistic analysis — we will reject null hypotheses more often than we should, and our confidence intervals will be too narrow. The usual way around this is to determine a single response for each experimental unit.</p>
 </div>
-<div id="this-really-matters." class="section level4" number="2.2.0.2">
-<h4><span class="header-section-number">2.2.0.2</span> This really matters.</h4>
+<div id="this-really-matters." class="section level4 hasAnchor" number="2.2.0.2">
+<h4><span class="header-section-number">2.2.0.2</span> This really matters.<a href="intro.html#this-really-matters." class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Consider an experiment with 2 growth chambers each containing 100 plants. One of the chambers received enhanced C02. One night after collecting data you leave the door open on the C02 chamber and the temperature drops and so the plants grow more slowly. When you come to analyze the data you get a highly significant effect but C02 results in reduced plant growth not what you expect.</p>
 <p>This is entirely plausible.</p>
 <p>Consider a second experiment where you really do have 200 growth chambers and randomly allocate plants to each. If you forget to close one door it really has no effect as just one plant is affected.</p>
@@ -363,8 +363,8 @@ reduction in headache pain when given a sugar pill. Blinding is important when p
 <p>There are 9x1058 ways selecting 100 chambers from 200 chambers so the chance of accidentally picking all the C02 chambers is 1/ 9x1058￼0 (stars in universe 7 x 1022).</p>
 <p>Proper <strong>randomization</strong> and <strong>replication</strong> is very different from <strong>pseudo-replication</strong>.</p>
 </div>
-<div id="take-home-message-randomization-properly-with-replication-protects-against-confounding" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Take Home Message: Randomization properly with Replication protects against Confounding</h3>
+<div id="take-home-message-randomization-properly-with-replication-protects-against-confounding" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Take Home Message: Randomization properly with Replication protects against Confounding<a href="intro.html#take-home-message-randomization-properly-with-replication-protects-against-confounding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>An experiment is randomized if the method for assigning treatments to units involves a known, well-understood probabilistic scheme. The probabilistic scheme is called a randomization.</p>
 </blockquote>
@@ -375,8 +375,8 @@ reduction in headache pain when given a sugar pill. Blinding is important when p
 <p>Recall our example above of considering sex and age of subjects and imagine a treatment with two levels (hot and cold). Done well, proper randomisation will put approximately half the males, half the females, half the older, half the youger etc into each of the treatment levels.</p>
 <p>The beauty of randomization is that it helps prevent confounding, even for factors that we do not know are important.</p>
 </div>
-<div id="a-non-randomized-experiment-haphazard-is-not-randomized" class="section level3" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> A non-randomized experiment – <strong>haphazard</strong> is NOT randomized</h3>
+<div id="a-non-randomized-experiment-haphazard-is-not-randomized" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> A non-randomized experiment – <strong>haphazard</strong> is NOT randomized<a href="intro.html#a-non-randomized-experiment-haphazard-is-not-randomized" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A company is evaluating two different word processing packages for use by its clerical staff. Part of the evaluation is how quickly a test document can be entered correctly using the two programs. We have 20 test secretaries, and each secretary will enter the document twice, using each program once.</p>
 <p>Suppose that all secretaries did the evaluation in the order A first and B second. Does the second program have an advantage because the secretary will be familiar with the document and thus enter it faster? Or maybe the second program will be at a disadvantage because the secretary will be tired and thus slower.</p>
 <p>Randomization generally costs little in time and trouble, but it can save us from <code>disaster</code>.</p>
@@ -388,14 +388,14 @@ reduction in headache pain when given a sugar pill. Blinding is important when p
 </ul>
 </div>
 </div>
-<div id="mini-quiz" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Mini-Quiz</h2>
+<div id="mini-quiz" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Mini-Quiz<a href="intro.html#mini-quiz" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 <p>A PhD student want to determine the effects of protein on beetle fecundity so they design an experiment with a control and protein enhanced diet. To assign beetles to each of the treatments they pour a culture onto the table and catch the first 30 beetles that run to the edge of the table, these receive the protein enhanced diet. The next 30 beetles go in the control. <strong>Is this randomized?</strong></p>
 </blockquote>
 </div>
-<div id="replication-how-many" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Replication: How many?</h2>
+<div id="replication-how-many" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Replication: How many?<a href="intro.html#replication-how-many" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>No simple rules… it depends… on….</p>
 <ul>
 <li>Resources available</li>
@@ -418,7 +418,6 @@ reduction in headache pain when given a sugar pill. Blinding is important when p
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -437,6 +436,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -457,6 +457,10 @@ gitbook.start({
 "text": null
 },
 "download": ["Introduction to Experimental Design and Analysis.pdf", "Introduction to Experimental Design and Analysis.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

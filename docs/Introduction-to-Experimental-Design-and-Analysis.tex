@@ -6,8 +6,8 @@
 ]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -116,7 +116,7 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
@@ -124,7 +124,7 @@
 
 \title{An Introduction to Experimental Design and Linear Models}
 \author{Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)}
-\date{2021-02-12}
+\date{2022-07-19}
 
 \begin{document}
 \maketitle
@@ -830,10 +830,10 @@ Great stuff. Now we can move to our standard data management and visualisation p
 \begin{verbatim}
 ## Rows: 120
 ## Columns: 4
-## $ plots <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18...
-## $ r     <int> 1, 1, 2, 1, 2, 3, 3, 2, 1, 2, 3, 4, 4, 4, 5, 5, 6, 3, 5, 6, 7...
-## $ treat <chr> "Cont", "Herb1", "Herb1", "Placebo", "Placebo", "Placebo", "H...
-## $ obs   <dbl> 25.56702, 23.32992, 23.39985, 21.54529, 20.96267, 22.34314, 2...
+## $ plots <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 1~
+## $ r     <int> 1, 1, 2, 1, 2, 3, 3, 2, 1, 2, 3, 4, 4, 4, 5, 5, 6, 3, 5, 6, 7, 8~
+## $ treat <chr> "Cont", "Herb1", "Herb1", "Placebo", "Placebo", "Placebo", "Herb~
+## $ obs   <dbl> 25.56702, 23.32992, 23.39985, 21.54529, 20.96267, 22.34314, 24.1~
 \end{verbatim}
 
 \begin{Shaded}
@@ -845,15 +845,7 @@ Great stuff. Now we can move to our standard data management and visualisation p
     \AttributeTok{meanYield =} \FunctionTok{mean}\NormalTok{(obs),}
     \AttributeTok{seYield =} \FunctionTok{sd}\NormalTok{(obs)}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(}\FunctionTok{n}\NormalTok{())}
 \NormalTok{  )}
-\end{Highlighting}
-\end{Shaded}
 
-\begin{verbatim}
-## `summarise()` ungrouping output (override with `.groups` argument)
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \CommentTok{\# plot the raw data and the mean±se}
 \CommentTok{\# start with the mean±se and then add the raw data}
 \FunctionTok{ggplot}\NormalTok{(sumDat, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ treat, }\AttributeTok{y =}\NormalTok{ meanYield))}\SpecialCharTok{+}
@@ -1098,9 +1090,9 @@ Isn't this cool? Note that the difference reported is the difference between the
 ## 4 Placebo      20.6   0.552
 \end{verbatim}
 
-Here it is: \(26.2 - 24.2 = 2\)
+Here it is: \(26.1 - 24.7 = 1.4\)
 
-This says that despite the difference we created of \textasciitilde1 unit of yield between Herb1 and Herb2, when we defined error and generated the data, it created a significant difference detectable with statistics.
+This says that the difference we created of \textasciitilde1 unit of yield between Herb1 and Herb2 is pretty spot on in the randomly generated data. And as one might expect, it created an insignificant difference detectable with statistics.
 
 \hypertarget{comparing-the-average-of-the-herbicide-effect-with-the-control.}{%
 \subsection{comparing the average of the herbicide effect with the control.}\label{comparing-the-average-of-the-herbicide-effect-with-the-control.}}
@@ -1144,7 +1136,7 @@ Again, checking sumDat
 ## 4 Placebo      20.6   0.552
 \end{verbatim}
 
-\((24.2+26.2)/2 = 25.2\) --\textgreater{} \(25.2 - 20 = 5.2\)
+\((24.7+26.1)/2 = 25.4\) --\textgreater{} \(25.4 - 19.6 = 5.8\)
 
 \hypertarget{writing-this-up}{%
 \subsection{writing this up\ldots{}}\label{writing-this-up}}
@@ -1152,7 +1144,7 @@ Again, checking sumDat
 Fill in these blanks using the various contrasts you made above!
 
 \begin{quote}
-We conclude that herbicides on average cause an \_\_\_\_\_ gram increase in yield (t = \_\_\_ , p = \_\_\_ ). We also note that there was a significant difference of \_\_\_\_\_ grams between the herbicides (t = \_\_\_\_\_ p = \_\_\_\_\_\_). The additional placebo treatment had no effect on yield (t = \_\_\_\_\_\_\_ p = \_\_\_\_\_\_\_\_\_\_).
+We conclude that herbicides, on average, cause an \_\_\_\_\_ gram increase in yield (t = \_\_\_ , p = \_\_\_ ). We also note that there was a significant difference of \_\_\_\_\_ grams between the herbicides (t = \_\_\_\_\_ p = \_\_\_\_\_\_). The additional placebo treatment had no effect on yield (t = \_\_\_\_\_\_\_ p = \_\_\_\_\_\_\_\_\_\_).
 \end{quote}
 
 \hypertarget{randomized-complete-block-design-rcb}{%
@@ -1274,8 +1266,10 @@ Now, lets generate some data again.
 \NormalTok{  (design}\SpecialCharTok{$}\NormalTok{treat }\SpecialCharTok{==} \StringTok{"Herb2"}\NormalTok{) }\SpecialCharTok{*} \DecValTok{9} \SpecialCharTok{+} 
 \NormalTok{  (design}\SpecialCharTok{$}\NormalTok{treat }\SpecialCharTok{==} \StringTok{"Placebo"}\NormalTok{) }\SpecialCharTok{*} \DecValTok{1} \SpecialCharTok{+} 
   \CommentTok{\# note that we are defining variation among blocks here}
-  \CommentTok{\# block 1 is on average 10 units higher.... and block 5 is...}
-\NormalTok{  (design}\SpecialCharTok{$}\NormalTok{block}\SpecialCharTok{==}\DecValTok{1}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{{-}}\NormalTok{ (design}\SpecialCharTok{$}\NormalTok{block}\SpecialCharTok{==}\DecValTok{5}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{+} 
+  \CommentTok{\# block 1 is on average 10 units higher.... and block 5 is now 10 units lower...}
+\NormalTok{  (design}\SpecialCharTok{$}\NormalTok{block}\SpecialCharTok{==}\DecValTok{1}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{{-}} 
+\NormalTok{  (design}\SpecialCharTok{$}\NormalTok{block}\SpecialCharTok{==}\DecValTok{5}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{+} 
+  \CommentTok{\# now add the error variation}
 \NormalTok{  error}
 
 \FunctionTok{head}\NormalTok{(design, }\DecValTok{10}\NormalTok{)}
@@ -1299,23 +1293,19 @@ Now, lets generate some data again.
 \hypertarget{analysing-the-crbd}{%
 \section{Analysing the CRBD}\label{analysing-the-crbd}}
 
-I'll leave it to you now to generate the following picture of the means ± standard errors.
+I'll leave it to you now to generate the following plot of the means ± standard errors.
 
-This requires thinking hard about the use of dplyr tools (\texttt{group\_by()} and \texttt{summarise()}) and ggplot (adding more than one layer from two different sources of data - the summary data and the raw data).
+This requires thinking hard about the use of dplyr tools (\texttt{group\_by()} and \texttt{summarise()}) and ggplot (adding more than one layer from two different sources of data - the summary data and the raw data). You need to make a \emph{sumDat} object for the means and se's. Then you need to plot the raw data, and overlay the mean±se info from the sumDat.
 
-Can you see our generation of block 1 and 5's variation?
+Can you see the variation we generated between block 1 and 5? Block 2-4 are all similar\ldots. Block 1 is 10 units more, and Block 5 is 10 units less.
 
 \begin{verbatim}
 ## Rows: 20
 ## Columns: 4
-## $ plots <dbl> 11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 4...
+## $ plots <dbl> 11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, ~
 ## $ block <fct> 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5
-## $ treat <fct> Placebo, Control, Herb2, Herb1, Control, Herb1, Herb2, Placeb...
-## $ obs   <dbl> 31.18707, 31.99603, 41.29937, 41.12746, 21.08111, 30.56917, 2...
-\end{verbatim}
-
-\begin{verbatim}
-## `summarise()` ungrouping output (override with `.groups` argument)
+## $ treat <fct> Placebo, Control, Herb2, Herb1, Control, Herb1, Herb2, Placebo, ~
+## $ obs   <dbl> 31.18707, 31.99603, 41.29937, 41.12746, 21.08111, 30.56917, 28.0~
 \end{verbatim}
 
 \includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-26-1.pdf}
@@ -1413,9 +1403,11 @@ In this table, the \emph{INTERCEPT} is specifying the \textbf{FIRST BLOCK} and t
 
 The value of the control, block 1 is approximately 30! Which is 20+10, which is what we expected.
 The value of Herb1 is \textasciitilde10 units higher than this (remember, the value 9.84 is the DIFFERENCE between the control and treatment)
-And the value of block 5 is reported as 20 unites lower than block 1 control. This too is correct because, as above, block 1 control is 10 units higher than the control mean (20+10) and block 5 10 unites lower\ldots. Make sure you get this logic!
+And the value of block 5 is reported as 20 unites lower than block 1 control. This too is correct because, as above, block 1 control is 10 units higher than the control mean (20+10) and block 5 is 10 units lower\ldots.
 
-The take home message here is that these numbers make complete sense with respect to what we simulated, and controlling for the among block variation gave us more power to detect a treatment effect, something we would have missed had we not estimated the block source of variation.
+\emph{Make sure you get this logic!}
+
+The take home message here is that these numbers from the model make complete sense with respect to the data that we simulated. Furthermore, controlling for the among block variation gave us more power to detect a treatment effect, something we would have missed had we not estimated the block source of variation.
 
 \hypertarget{correct-standard-errors-for-a-figure}{%
 \subsection{Correct Standard Errors for a Figure}\label{correct-standard-errors-for-a-figure}}
@@ -1426,7 +1418,7 @@ This means that the standard deviation we should probably use is of the error va
 
 The standard deviation is the \(\sqrt{Var}\) and thus, our correct standard errors from the model are \(\sqrt{0.94}\)
 
-There is a very nice plotting function in the package \emph{visreg} that delivers these proper standard errors in a nice ggplot framework. It presents points are partial residuals (deviation from the mean for each replicate), lines depciting the means, and shaded area as a 95\% confidence interval, calculated 1.96*SE, where the SE is estimated from the model error variance (just above). Compare this to your first graph.
+There is a very nice plotting function in the package \emph{visreg} that delivers these proper standard errors in a nice ggplot framework. It presents points that are the partial residuals (deviation from the mean for each replicate), lines depicting the means, and shaded area as a 95\% confidence interval, calculated as 1.96*SE, where the SE is estimated from the model error variance (just above). Compare this to your first graph.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1541,14 +1533,22 @@ Now, lets generate some data, as before.
 \CommentTok{\# for fun, set again.}
 \FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
 
+\CommentTok{\# make sure you understand why this is the total unites}
+\CommentTok{\# think about the square matrix above....}
 \NormalTok{Total.units }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(treat) }\SpecialCharTok{*} \FunctionTok{length}\NormalTok{(treat)}
-\NormalTok{error }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(Total.units,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)}
+
+\CommentTok{\# generate some error}
+\NormalTok{error }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(Total.units, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{)}
 
 \CommentTok{\# make sure you think about where we generated variation in the blocking!}
 \NormalTok{design}\SpecialCharTok{$}\NormalTok{obs }\OtherTok{\textless{}{-}} \DecValTok{20} \SpecialCharTok{+} 
+  \CommentTok{\# the treatment effects}
 \NormalTok{  (design}\SpecialCharTok{$}\NormalTok{treat}\SpecialCharTok{==}\StringTok{"Herb1"}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{+} 
 \NormalTok{  (design}\SpecialCharTok{$}\NormalTok{treat }\SpecialCharTok{==} \StringTok{"Herb2"}\NormalTok{) }\SpecialCharTok{*} \DecValTok{9} \SpecialCharTok{+}               
-\NormalTok{  (design}\SpecialCharTok{$}\NormalTok{row}\SpecialCharTok{==}\DecValTok{1}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{{-}}\NormalTok{ (design}\SpecialCharTok{$}\NormalTok{col}\SpecialCharTok{==}\DecValTok{4}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{+} 
+  \CommentTok{\# the latin square blocking effects}
+\NormalTok{  (design}\SpecialCharTok{$}\NormalTok{row}\SpecialCharTok{==}\DecValTok{1}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{{-}} 
+\NormalTok{  (design}\SpecialCharTok{$}\NormalTok{col}\SpecialCharTok{==}\DecValTok{4}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{+} 
+  \CommentTok{\# the error}
 \NormalTok{  error}
 
 \CommentTok{\# look at it....  there are three explanatory variables... }
@@ -1610,7 +1610,7 @@ Let's fit the naive and full models as before
 
 Very quickly we can see, again, that without blocking, we have a risk of not detecting differences among treatments!
 
-Take a look above at the \texttt{design\$obs} object. Can you review the \texttt{summary} output and validate that the model is estimating what we simulated?
+Take a look above at the \texttt{design\$obs} object. Can you review the \texttt{summary} output and validate that the model is estimating what we simulated? You should see the treatment effects (+10, +9) and you should also be able to see the block effects\ldots{}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1651,7 +1651,8 @@ Finally, we can use contrasts to test a few of our key hypotheses. Make some not
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#first the set of comparisons with control}
+\CommentTok{\#first the set of comparisons with control.  This is the same thing that }
+\CommentTok{\# the summary table does!}
 \NormalTok{contrast1 }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(}
   \StringTok{"C v H1"} \OtherTok{=} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{),}
   \StringTok{"C v H2"} \OtherTok{=} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{),}
@@ -1770,7 +1771,7 @@ Design an experiment to test the hypotheses. (An answer is on the BB Site)
 \hypertarget{the-factorial-design-how-and-why-study-interactions}{%
 \subsection{The Factorial Design: How and Why Study Interactions?}\label{the-factorial-design-how-and-why-study-interactions}}
 
-The UV-B and C02 experiment could be thought of as two experiments a Control vs UV-B and a Control vs C02 experiment. If we combine these we get a Factorial Experiment where the treatments are
+The UV-B and C02 experiment could be thought of as two experiments -- a Control vs UV-B and a Control vs C02 experiment. If we combine these we get a Factorial Experiment where the treatments are
 
 \begin{itemize}
 \tightlist
@@ -1790,9 +1791,9 @@ But do we treat each of these as unique treatments (e.g.~the one-way ANOVA examp
 
 Factorial treatments have two main advantages. When factors \emph{DO interact} -- so the effect of C02 depends on UV-B -- then we can estimate the interaction - the dependency. \emph{One-way designs} cannot do this, and can lead to serious misunderstandings (because we are assuming that the effect of one thing DOES NOT depend on the other).
 
-Furthermore, when factors \emph{DON'T interact}, \emph{factorial designs} are more efficient (smaller error variance) than one-way designs experiments.
+Furthermore, when factors \emph{DON'T interact}, \emph{factorial designs} are more precise (smaller error variance) at estimating the main (non-interacting effects) than one-way designs experiments.
 
-Hence ALWAYS use factorial designs when you can!
+Hence ALWAYS use factorial designs when your experimental design contains the interaction!
 
 \hypertarget{a-factorial-design-and-the-two-way-anova}{%
 \section{A Factorial Design and the Two-Way ANOVA}\label{a-factorial-design-and-the-two-way-anova}}
@@ -1805,7 +1806,9 @@ I'd recommend a new script now for this section. It's a pretty distinct example.
 
 \NormalTok{Nreps }\OtherTok{\textless{}{-}} \DecValTok{4} \CommentTok{\# 4 replicates per treatment level}
 \NormalTok{trt }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{) }\CommentTok{\# sets out the 2{-}way design}
-\NormalTok{design }\OtherTok{\textless{}{-}} \FunctionTok{design.ab}\NormalTok{(trt,}\AttributeTok{r=}\NormalTok{Nreps,}\AttributeTok{serie=}\DecValTok{0}\NormalTok{,}\AttributeTok{design=}\StringTok{"crd"}\NormalTok{)}\SpecialCharTok{$}\NormalTok{book}
+\NormalTok{design }\OtherTok{\textless{}{-}} \FunctionTok{design.ab}\NormalTok{(trt, }\AttributeTok{r=}\NormalTok{Nreps, }\AttributeTok{serie=}\DecValTok{0}\NormalTok{, }\AttributeTok{design=}\StringTok{"crd"}\NormalTok{)}\SpecialCharTok{$}\NormalTok{book}
+
+\CommentTok{\# look at it.}
 \FunctionTok{head}\NormalTok{(design)}
 \end{Highlighting}
 \end{Shaded}
@@ -1822,7 +1825,9 @@ I'd recommend a new script now for this section. It's a pretty distinct example.
 
 So, the \texttt{design.ab} function generates a nice picture, but uses numbers instead of words for the various treatments and has set Letters as the treatments.
 
-We don't support this approach - you WILL forget what the numbers and letters mean, so let's change these CODES to represent CO2 and UVB REALITY. We'll use \texttt{fct\_recode} from the tidyverse package called \texttt{forcats} (for categories, but we like cats).
+We don't support this approach of using numbers to \emph{code for} the actual treatment level names - you WILL forget what the numbers and letters mean. So let's change these \emph{codes} to represent the words ``CO2'' and ``UVB'' which are our reality.
+
+We'll use \texttt{fct\_recode} from the tidyverse package called \texttt{forcats} (for categories, but we like cats) - this is part of the tidyverse, so if you're using that, it's just there!
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1865,21 +1870,25 @@ Here we will build two sources of data - one that has NO INTERACTION, and one th
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#Sample Sizes and errors}
-\NormalTok{Total.units }\OtherTok{\textless{}{-}} \DecValTok{2} \SpecialCharTok{*} \DecValTok{2} \SpecialCharTok{*}\NormalTok{ Nreps}
+\NormalTok{Total.units }\OtherTok{\textless{}{-}} \DecValTok{2} \SpecialCharTok{*} \DecValTok{2} \SpecialCharTok{*}\NormalTok{ Nreps }\CommentTok{\# make sure you understand the 2*2 !!}
 \NormalTok{error }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(Total.units,}\DecValTok{0}\NormalTok{,}\DecValTok{3}\NormalTok{)}
 
-\CommentTok{\# the data with no interaction}
+\CommentTok{\# Here we make to sets of observations {-} obs and obs2}
+
+\CommentTok{\# the data with no interaction (obs)}
 \NormalTok{design}\SpecialCharTok{$}\NormalTok{obs }\OtherTok{\textless{}{-}} \DecValTok{20} \SpecialCharTok{{-}} 
 \NormalTok{  (design}\SpecialCharTok{$}\StringTok{"UVB"}\SpecialCharTok{==}\StringTok{"UVB+"}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{+} 
 \NormalTok{  (design}\SpecialCharTok{$}\StringTok{"CO2"} \SpecialCharTok{==} \StringTok{"CO2+"}\NormalTok{) }\SpecialCharTok{*} \DecValTok{9} \SpecialCharTok{+} 
 \NormalTok{  error}
 
-\CommentTok{\# the data with interaction}
+\CommentTok{\# the data with interaction (obs2)}
 \NormalTok{design}\SpecialCharTok{$}\NormalTok{obs2 }\OtherTok{\textless{}{-}} \DecValTok{20} \SpecialCharTok{{-}} 
 \NormalTok{  (design}\SpecialCharTok{$}\StringTok{"UVB"}\SpecialCharTok{==}\StringTok{"UVB+"}\NormalTok{) }\SpecialCharTok{*} \DecValTok{10} \SpecialCharTok{+} 
 \NormalTok{  (design}\SpecialCharTok{$}\StringTok{"CO2"} \SpecialCharTok{==} \StringTok{"CO2+"}\NormalTok{) }\SpecialCharTok{*} \DecValTok{9} \SpecialCharTok{+} 
   \CommentTok{\# when both are together add 8 more (synergy)}
-\NormalTok{  ((design}\SpecialCharTok{$}\StringTok{"UVB"}\SpecialCharTok{==}\StringTok{"UVB+"}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ (design}\SpecialCharTok{$}\StringTok{"CO2"} \SpecialCharTok{==} \StringTok{"CO2+"}\NormalTok{)) }\SpecialCharTok{*} \DecValTok{8} \SpecialCharTok{+} 
+  \CommentTok{\# this is the interaction.  the effect of UVB now depends on CO2.}
+\NormalTok{  ((design}\SpecialCharTok{$}\StringTok{"UVB"}\SpecialCharTok{==}\StringTok{"UVB+"}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ (design}\SpecialCharTok{$}\StringTok{"CO2"} \SpecialCharTok{==} \StringTok{"CO2+"}\NormalTok{)) }\SpecialCharTok{*} \DecValTok{8} \SpecialCharTok{+}
+  \CommentTok{\# add the variation}
 \NormalTok{  error}
 
 \FunctionTok{head}\NormalTok{(design)}
@@ -1899,7 +1908,11 @@ Here we will build two sources of data - one that has NO INTERACTION, and one th
 \hypertarget{plot-the-data}{%
 \subsection{Plot the data!}\label{plot-the-data}}
 
-Here we combine some dplyr magic (calcuating means in each group - there are two grouping variables!), some ggplot magic (adding the lines connecting the means on top of the raw data) and the beauty of patchwork, the package for plot layouts. Don't forget to check that you've got all of the \texttt{library()} calls at the top of your script, and that you ran them!
+Here we combine some dplyr magic (calcuating means in each group - there are two grouping variables!), some ggplot magic (adding the lines connecting the means on top of the raw data) and the beauty of patchwork, the package for plot layouts.
+
+Our goal here is to plot the data that does not have the interaction next to a plot of the data that does have the interaction.
+
+Don't forget to check that you've got all of the \texttt{library()} calls at the top of your script, and that you ran them!
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1917,6 +1930,7 @@ Here we combine some dplyr magic (calcuating means in each group - there are two
     \AttributeTok{obs2 =} \FunctionTok{mean}\NormalTok{(obs2)}
 \NormalTok{  )}
 
+\CommentTok{\# The two plots.}
 \CommentTok{\# no interaction}
 \NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(design, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ UVB, }\AttributeTok{y =}\NormalTok{ obs, }\AttributeTok{colour =}\NormalTok{ CO2, }\AttributeTok{shape =}\NormalTok{ CO2, }\AttributeTok{group =}\NormalTok{ CO2))}\SpecialCharTok{+}
   \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}
@@ -1927,16 +1941,20 @@ Here we combine some dplyr magic (calcuating means in each group - there are two
   \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}
   \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data =}\NormalTok{ sumDat2)}
 
+\CommentTok{\# use patchwork to put them side{-}by{-}side.}
 \NormalTok{p1}\SpecialCharTok{+}\NormalTok{p2}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-43-1.pdf}
 
-What you see above on the left, is a pattern that suggest that the effect of \_\_\_\_\_\_ on \_\_\_\_\_\_\_\_ does not vary by \_\_\_\_\_\_\_\_. In contrast, on the right\ldots..:
+What you see above on the left, is a pattern that suggest that the effect of \_\_\_\_\_\_ on \_\_\_\_\_\_\_\_ does not vary by \_\_\_\_\_\_\_\_. In contrast, on the right the pattern suggests that the effect of \_\_\_\_\_\_ on \_\_\_\_\_\_\_\_ \_\_\_\_\_\_\_\_ by \_\_\_\_\_\_\_\_:
 
 \hypertarget{analyse-the-data}{%
 \subsection{Analyse the data}\label{analyse-the-data}}
+
+As with the plotting, we now analyse each data set.\\
+We also make a mistake of analysing the data that has an interaction with a model that does not specify this interaction. This mod3 is incorrect, but fitting it helps illuminate why you should fit the interaction if your design contains the potential for an interaction (a factorial design).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2003,7 +2021,7 @@ What you see above on the left, is a pattern that suggest that the effect of \_\
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 \end{verbatim}
 
-Note the differences in the outputs. Not what we infer if we model the interaction data incorrectly. There is no free lunch. You must understand your data and your question!
+Note the differences in the outputs. Note what we infer if we model the interaction data incorrectly. There is no free lunch. You must understand your data and your question and you must fit the model that correctly matches your design!
 
 \hypertarget{final-figuring}{%
 \subsection{final figuring}\label{final-figuring}}
@@ -2025,8 +2043,8 @@ We plot the correct model for the interaction data.
 
 \includegraphics{Introduction-to-Experimental-Design-and-Analysis_files/figure-latex/unnamed-chunk-45-1.pdf}
 
-\hypertarget{experimental-design-and-anova---a-summary}{%
-\chapter{Experimental Design and ANOVA - A Summary}\label{experimental-design-and-anova---a-summary}}
+\hypertarget{a-summary-experimental-design-and-anova}{%
+\chapter{A Summary: Experimental Design and ANOVA}\label{a-summary-experimental-design-and-anova}}
 
 There are three sets of things you should now know about based on reading these chapters and working through the examples. The first set is a bunch of clever R stuff for helping generate experimental designs. The second set is a better understanding of experimental designs in general. The third set is how to analyse and interpret data from 1-way and 2-way ANOVA models, that are the toolboxes for analysing these designs.
 
@@ -2137,11 +2155,11 @@ The data are built into R, but embedded in the \texttt{carData} package, which w
 \begin{verbatim}
 ## Rows: 200
 ## Columns: 5
-## $ sex    <fct> M, F, F, M, F, M, M, M, M, M, M, F, F, F, F, F, M, F, M, F, ...
-## $ weight <int> 77, 58, 53, 68, 59, 76, 76, 69, 71, 65, 70, 166, 51, 64, 52,...
-## $ height <int> 182, 161, 161, 177, 157, 170, 167, 186, 178, 171, 175, 57, 1...
-## $ repwt  <int> 77, 51, 54, 70, 59, 76, 77, 73, 71, 64, 75, 56, 52, 64, 57, ...
-## $ repht  <int> 180, 159, 158, 175, 155, 165, 165, 180, 175, 170, 174, 163, ...
+## $ sex    <fct> M, F, F, M, F, M, M, M, M, M, M, F, F, F, F, F, M, F, M, F, M, ~
+## $ weight <int> 77, 58, 53, 68, 59, 76, 76, 69, 71, 65, 70, 166, 51, 64, 52, 65~
+## $ height <int> 182, 161, 161, 177, 157, 170, 167, 186, 178, 171, 175, 57, 161,~
+## $ repwt  <int> 77, 51, 54, 70, 59, 76, 77, 73, 71, 64, 75, 56, 52, 64, 57, 66,~
+## $ repht  <int> 180, 159, 158, 175, 155, 165, 165, 180, 175, 170, 174, 163, 158~
 \end{verbatim}
 
 \begin{Shaded}
@@ -2248,7 +2266,7 @@ First, this model expands to the following full description:
 
 \texttt{lm(weight\ \textasciitilde{}\ height\ +\ sex\ +\ height:sex,\ data\ =\ Davis)}
 
-This reads as "Weight is a function of the effect of Height (slope), Sex (intercept) and the interaction between Height and Sex (do the slopes vary?). The \texttt{Height\ *\ Sex} syntax always expands to this \emph{full model} - the model containing the main effects and the interaction.
+This reads as ``Weight is a function of the effect of Height (slope), Sex (intercept) and the interaction between Height and Sex (do the slopes vary?). The \texttt{Height\ *\ Sex} syntax always expands to this \emph{full model} - the model containing the main effects and the interaction.
 
 OK. Let's fit the model
 
@@ -2707,8 +2725,8 @@ The data are built into R and we don't need to do anything but remember that the
 \begin{verbatim}
 ## Rows: 50
 ## Columns: 2
-## $ speed <dbl> 4, 4, 7, 7, 8, 9, 10, 10, 10, 11, 11, 12, 12, 12, 12, 13, 13,...
-## $ dist  <dbl> 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26,...
+## $ speed <dbl> 4, 4, 7, 7, 8, 9, 10, 10, 10, 11, 11, 12, 12, 12, 12, 13, 13, 13~
+## $ dist  <dbl> 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26, 34~
 \end{verbatim}
 
 Let's start with step 1: making a good picture.

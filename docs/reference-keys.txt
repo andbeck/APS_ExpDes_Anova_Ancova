@@ -53,7 +53,7 @@ build-the-data
 plot-the-data
 analyse-the-data
 final-figuring
-experimental-design-and-anova---a-summary
+a-summary-experimental-design-and-anova
 how-to-analyse-anova-models
 experimental-designs.
 clever-r-stuff

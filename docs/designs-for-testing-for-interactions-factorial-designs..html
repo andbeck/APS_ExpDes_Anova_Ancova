@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Designs for testing for interactions: factorial designs. | An Introduction to Experimental Design and Linear Models</title>
   <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Designs for testing for interactions: factorial designs. | An Introduction to Experimental Design and Linear Models" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2022-02-10" />
+<meta name="date" content="2022-07-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,8 +31,7 @@
   
   
 <link rel="prev" href="the-latin-square-design-lsd.html"/>
-<link rel="next" href="experimental-design-and-anova---a-summary.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<link rel="next" href="a-summary-experimental-design-and-anova.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -220,11 +219,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.4" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#final-figuring"><i class="fa fa-check"></i><b>8.2.4</b> final figuring</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="experimental-design-and-anova---a-summary.html"><a href="experimental-design-and-anova---a-summary.html"><i class="fa fa-check"></i><b>9</b> Experimental Design and ANOVA - A Summary</a>
+<li class="chapter" data-level="9" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html"><i class="fa fa-check"></i><b>9</b> A Summary: Experimental Design and ANOVA</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="experimental-design-and-anova---a-summary.html"><a href="experimental-design-and-anova---a-summary.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
-<li class="chapter" data-level="9.2" data-path="experimental-design-and-anova---a-summary.html"><a href="experimental-design-and-anova---a-summary.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
-<li class="chapter" data-level="9.3" data-path="experimental-design-and-anova---a-summary.html"><a href="experimental-design-and-anova---a-summary.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
+<li class="chapter" data-level="9.1" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
+<li class="chapter" data-level="9.2" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
+<li class="chapter" data-level="9.3" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html"><i class="fa fa-check"></i><b>10</b> Introducing the ANCOVA - the analysis of covariance</a>
 <ul>
@@ -288,10 +287,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="designs-for-testing-for-interactions-factorial-designs." class="section level1" number="8">
-<h1><span class="header-section-number">Chapter 8</span> Designs for testing for interactions: factorial designs.</h1>
-<div id="introducing-interactions" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Introducing Interactions</h2>
+<div id="designs-for-testing-for-interactions-factorial-designs." class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Designs for testing for interactions: factorial designs.<a href="designs-for-testing-for-interactions-factorial-designs..html#designs-for-testing-for-interactions-factorial-designs." class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introducing-interactions" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Introducing Interactions<a href="designs-for-testing-for-interactions-factorial-designs..html#introducing-interactions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Before jumping into an example, let’s introduce a simple statement that forms the core of both asking and interpreting <em>interactions</em>.</p>
 <p>If there is an interaction between two explanatory variables, X and Z, on our response variable Y, then:</p>
 <blockquote>
@@ -308,7 +307,7 @@ Therefore +CO2 could alleviate UV-B damage impacts.</p>
 +UV-B radiation will reduce the growth of arctic plants
 +CO2 will increase the growth of arctic plants
 +UV-B radiation impacts will be less under +CO2</p>
-<p>What is unique about these context and hypotheses? It’s the presentation of CO2 and UVB in the same statement and the use of words like “the effect of X will alleviate the impacts of Y” and words like “the effects of X will be less under Y.” These words and phrases reflect the context dependency of the effects of treatment levels.</p>
+<p>What is unique about these context and hypotheses? It’s the presentation of CO2 and UVB in the same statement and the use of words like “the effect of X will alleviate the impacts of Y” and words like “the effects of X will be less under Y”. These words and phrases reflect the context dependency of the effects of treatment levels.</p>
 <p>Thus, to restate what we introduced above…. when we talk about interactions, we can rely on a very simple vocabulary that is independent of the actual treatment levels: we can always describe an interaction like this:</p>
 <blockquote>
 <p>The effect of X on Y depends on Z.</p>
@@ -317,7 +316,7 @@ Therefore +CO2 could alleviate UV-B damage impacts.</p>
 <blockquote>
 <p>The effect of X on Y varies by Z.</p>
 </blockquote>
-<p>In this ‘rubric,’ Y is the response variable, and X and Z are explanatory, independent variables. So, in our example above,</p>
+<p>In this ‘rubric’, Y is the response variable, and X and Z are explanatory, independent variables. So, in our example above,</p>
 <blockquote>
 <p>the effect of CO2 on plant biomass yield depends on UV-B radiation levels.</p>
 </blockquote>
@@ -333,8 +332,8 @@ C02 = 29g Yield</p>
 <p>ADDITIVE RESULT: C02 + UV-B = 39g Yield
 SYNERGISTIC RESULT: C02 + UV-B = 60g Yield
 ANTAGONISTIC RESULT: C02 + UV-B = 19g Yield</p>
-<div id="lets-design-an-experiment-again" class="section level3" number="8.1.1">
-<h3><span class="header-section-number">8.1.1</span> Let’s design an experiment, again…</h3>
+<div id="lets-design-an-experiment-again" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Let’s design an experiment, again…<a href="designs-for-testing-for-interactions-factorial-designs..html#lets-design-an-experiment-again" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Your resources:</p>
 <p>The arctic research station has given permission for 16 plots (each 2m x 2m) in the natural vegetation nearby.
 - One UV-B plot (2m x 2m) costs £4000 (this provides the UV-B lamps, frame, power and control system, wooden walkways around the plots)
@@ -344,8 +343,8 @@ ANTAGONISTIC RESULT: C02 + UV-B = 19g Yield</p>
 <p>You have a budget of £86,000</p>
 <p>Design an experiment to test the hypotheses. (An answer is on the BB Site)</p>
 </div>
-<div id="the-factorial-design-how-and-why-study-interactions" class="section level3" number="8.1.2">
-<h3><span class="header-section-number">8.1.2</span> The Factorial Design: How and Why Study Interactions?</h3>
+<div id="the-factorial-design-how-and-why-study-interactions" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> The Factorial Design: How and Why Study Interactions?<a href="designs-for-testing-for-interactions-factorial-designs..html#the-factorial-design-how-and-why-study-interactions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The UV-B and C02 experiment could be thought of as two experiments – a Control vs UV-B and a Control vs C02 experiment. If we combine these we get a Factorial Experiment where the treatments are</p>
 <ul>
 <li>Control</li>
@@ -360,176 +359,176 @@ ANTAGONISTIC RESULT: C02 + UV-B = 19g Yield</p>
 <p>Hence ALWAYS use factorial designs when your experimental design contains the interaction!</p>
 </div>
 </div>
-<div id="a-factorial-design-and-the-two-way-anova" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> A Factorial Design and the Two-Way ANOVA</h2>
+<div id="a-factorial-design-and-the-two-way-anova" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> A Factorial Design and the Two-Way ANOVA<a href="designs-for-testing-for-interactions-factorial-designs..html#a-factorial-design-and-the-two-way-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>I’d recommend a new script now for this section. It’s a pretty distinct example. Don’t forget to use library() at the top to get all those packages working for this script. And don’t forget, this script can live in the same R Project as the other one(s).</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb1-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb1-3" aria-hidden="true" tabindex="-1"></a>Nreps <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># 4 replicates per treatment level</span></span>
-<span id="cb1-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb1-4" aria-hidden="true" tabindex="-1"></a>trt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>) <span class="co"># sets out the 2-way design</span></span>
-<span id="cb1-5"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb1-5" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> <span class="fu">design.ab</span>(trt, <span class="at">r=</span>Nreps, <span class="at">serie=</span><span class="dv">0</span>, <span class="at">design=</span><span class="st">&quot;crd&quot;</span>)<span class="sc">$</span>book</span>
-<span id="cb1-6"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># look at it.</span></span>
-<span id="cb1-8"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb67-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb67-3" aria-hidden="true" tabindex="-1"></a>Nreps <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># 4 replicates per treatment level</span></span>
+<span id="cb67-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb67-4" aria-hidden="true" tabindex="-1"></a>trt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>) <span class="co"># sets out the 2-way design</span></span>
+<span id="cb67-5"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb67-5" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> <span class="fu">design.ab</span>(trt, <span class="at">r=</span>Nreps, <span class="at">serie=</span><span class="dv">0</span>, <span class="at">design=</span><span class="st">&quot;crd&quot;</span>)<span class="sc">$</span>book</span>
+<span id="cb67-6"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb67-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-7"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="co"># look at it.</span></span>
+<span id="cb67-8"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design)</span></code></pre></div>
 <pre><code>##   plots r A B
-## 1     1 1 2 2
-## 2     2 1 1 1
-## 3     3 1 2 1
-## 4     4 2 2 2
-## 5     5 2 1 1
+## 1     1 1 2 1
+## 2     2 1 1 2
+## 3     3 1 1 1
+## 4     4 1 2 2
+## 5     5 2 2 2
 ## 6     6 2 2 1</code></pre>
 <p>So, the <code>design.ab</code> function generates a nice picture, but uses numbers instead of words for the various treatments and has set Letters as the treatments.</p>
 <p>We don’t support this approach of using numbers to <em>code for</em> the actual treatment level names - you WILL forget what the numbers and letters mean. So let’s change these <em>codes</em> to represent the words “CO2” and “UVB” which are our reality.</p>
 <p>We’ll use <code>fct_recode</code> from the tidyverse package called <code>forcats</code> (for categories, but we like cats) - this is part of the tidyverse, so if you’re using that, it’s just there!</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb3-1" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">UVB =</span> A, <span class="at">CO2 =</span> B) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">UVB =</span> <span class="fu">fct_recode</span>(UVB, <span class="st">&quot;Con&quot;</span> <span class="ot">=</span> <span class="st">&quot;1&quot;</span>, <span class="st">&quot;UVB+&quot;</span> <span class="ot">=</span> <span class="st">&quot;2&quot;</span>),</span>
-<span id="cb3-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb3-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">CO2 =</span> <span class="fu">fct_recode</span>(CO2, <span class="st">&quot;Con&quot;</span> <span class="ot">=</span> <span class="st">&quot;1&quot;</span>,<span class="st">&quot;CO2+&quot;</span> <span class="ot">=</span> <span class="st">&quot;2&quot;</span>))</span>
-<span id="cb3-5"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design, <span class="dv">10</span>) <span class="co"># is this what you expect</span></span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb69-1" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span></span>
+<span id="cb69-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">UVB =</span> A, <span class="at">CO2 =</span> B) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">UVB =</span> <span class="fu">fct_recode</span>(UVB, <span class="st">&quot;Con&quot;</span> <span class="ot">=</span> <span class="st">&quot;1&quot;</span>, <span class="st">&quot;UVB+&quot;</span> <span class="ot">=</span> <span class="st">&quot;2&quot;</span>),</span>
+<span id="cb69-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb69-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">CO2 =</span> <span class="fu">fct_recode</span>(CO2, <span class="st">&quot;Con&quot;</span> <span class="ot">=</span> <span class="st">&quot;1&quot;</span>,<span class="st">&quot;CO2+&quot;</span> <span class="ot">=</span> <span class="st">&quot;2&quot;</span>))</span>
+<span id="cb69-5"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb69-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-6"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb69-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design, <span class="dv">10</span>) <span class="co"># is this what you expect</span></span></code></pre></div>
 <pre><code>##    plots r  UVB  CO2
-## 1      1 1 UVB+ CO2+
-## 2      2 1  Con  Con
-## 3      3 1 UVB+  Con
-## 4      4 2 UVB+ CO2+
-## 5      5 2  Con  Con
+## 1      1 1 UVB+  Con
+## 2      2 1  Con CO2+
+## 3      3 1  Con  Con
+## 4      4 1 UVB+ CO2+
+## 5      5 2 UVB+ CO2+
 ## 6      6 2 UVB+  Con
-## 7      7 3  Con  Con
-## 8      8 3 UVB+ CO2+
-## 9      9 1  Con CO2+
-## 10    10 2  Con CO2+</code></pre>
+## 7      7 3 UVB+ CO2+
+## 8      8 2  Con  Con
+## 9      9 3  Con  Con
+## 10    10 4  Con  Con</code></pre>
 <blockquote>
 <p>NOTE 1: this is using the <code>fct_recode</code> function from the <em>forcats</em> package in the <em>tidyverse</em> collection.</p>
 </blockquote>
 <blockquote>
 <p>NOTE 2: we used the design = “crd” argument to specify a completely randomised, 2-way factorial design… you could make this a block design with the “rcbd”…. see the help file for <code>design.ab</code></p>
 </blockquote>
-<div id="build-the-data" class="section level3" number="8.2.1">
-<h3><span class="header-section-number">8.2.1</span> Build the Data</h3>
+<div id="build-the-data" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Build the Data<a href="designs-for-testing-for-interactions-factorial-designs..html#build-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we will build two sources of data - one that has NO INTERACTION, and one that DOES.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Sample Sizes and errors</span></span>
-<span id="cb5-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-2" aria-hidden="true" tabindex="-1"></a>Total.units <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> Nreps <span class="co"># make sure you understand the 2*2 !!</span></span>
-<span id="cb5-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-3" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(Total.units,<span class="dv">0</span>,<span class="dv">3</span>)</span>
-<span id="cb5-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Here we make to sets of observations - obs and obs2</span></span>
-<span id="cb5-6"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># the data with no interaction (obs)</span></span>
-<span id="cb5-8"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-8" aria-hidden="true" tabindex="-1"></a>design<span class="sc">$</span>obs <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> </span>
-<span id="cb5-9"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-9" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;UVB&quot;</span><span class="sc">==</span><span class="st">&quot;UVB+&quot;</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
-<span id="cb5-10"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-10" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;CO2&quot;</span> <span class="sc">==</span> <span class="st">&quot;CO2+&quot;</span>) <span class="sc">*</span> <span class="dv">9</span> <span class="sc">+</span> </span>
-<span id="cb5-11"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-11" aria-hidden="true" tabindex="-1"></a>  error</span>
-<span id="cb5-12"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the data with interaction (obs2)</span></span>
-<span id="cb5-14"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-14" aria-hidden="true" tabindex="-1"></a>design<span class="sc">$</span>obs2 <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> </span>
-<span id="cb5-15"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-15" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;UVB&quot;</span><span class="sc">==</span><span class="st">&quot;UVB+&quot;</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
-<span id="cb5-16"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-16" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;CO2&quot;</span> <span class="sc">==</span> <span class="st">&quot;CO2+&quot;</span>) <span class="sc">*</span> <span class="dv">9</span> <span class="sc">+</span> </span>
-<span id="cb5-17"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># when both are together add 8 more (synergy)</span></span>
-<span id="cb5-18"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># this is the interaction.  the effect of UVB now depends on CO2.</span></span>
-<span id="cb5-19"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-19" aria-hidden="true" tabindex="-1"></a>  ((design<span class="sc">$</span><span class="st">&quot;UVB&quot;</span><span class="sc">==</span><span class="st">&quot;UVB+&quot;</span>) <span class="sc">&amp;</span> (design<span class="sc">$</span><span class="st">&quot;CO2&quot;</span> <span class="sc">==</span> <span class="st">&quot;CO2+&quot;</span>)) <span class="sc">*</span> <span class="dv">8</span> <span class="sc">+</span></span>
-<span id="cb5-20"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add the variation</span></span>
-<span id="cb5-21"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-21" aria-hidden="true" tabindex="-1"></a>  error</span>
-<span id="cb5-22"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design)</span></code></pre></div>
-<pre><code>##   plots r  UVB  CO2       obs      obs2
-## 1     1 1 UVB+ CO2+ 23.025838 31.025838
-## 2     2 1  Con  Con 24.776413 24.776413
-## 3     3 1 UVB+  Con  4.751459  4.751459
-## 4     4 2 UVB+ CO2+ 13.124529 21.124529
-## 5     5 2  Con  Con 21.290771 21.290771
-## 6     6 2 UVB+  Con 10.927036 10.927036</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Sample Sizes and errors</span></span>
+<span id="cb71-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-2" aria-hidden="true" tabindex="-1"></a>Total.units <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> Nreps <span class="co"># make sure you understand the 2*2 !!</span></span>
+<span id="cb71-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-3" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(Total.units,<span class="dv">0</span>,<span class="dv">3</span>)</span>
+<span id="cb71-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-5"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Here we make to sets of observations - obs and obs2</span></span>
+<span id="cb71-6"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-7"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="co"># the data with no interaction (obs)</span></span>
+<span id="cb71-8"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-8" aria-hidden="true" tabindex="-1"></a>design<span class="sc">$</span>obs <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> </span>
+<span id="cb71-9"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-9" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;UVB&quot;</span><span class="sc">==</span><span class="st">&quot;UVB+&quot;</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
+<span id="cb71-10"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-10" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;CO2&quot;</span> <span class="sc">==</span> <span class="st">&quot;CO2+&quot;</span>) <span class="sc">*</span> <span class="dv">9</span> <span class="sc">+</span> </span>
+<span id="cb71-11"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-11" aria-hidden="true" tabindex="-1"></a>  error</span>
+<span id="cb71-12"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-13"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the data with interaction (obs2)</span></span>
+<span id="cb71-14"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-14" aria-hidden="true" tabindex="-1"></a>design<span class="sc">$</span>obs2 <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> </span>
+<span id="cb71-15"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-15" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;UVB&quot;</span><span class="sc">==</span><span class="st">&quot;UVB+&quot;</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
+<span id="cb71-16"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-16" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span><span class="st">&quot;CO2&quot;</span> <span class="sc">==</span> <span class="st">&quot;CO2+&quot;</span>) <span class="sc">*</span> <span class="dv">9</span> <span class="sc">+</span> </span>
+<span id="cb71-17"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># when both are together add 8 more (synergy)</span></span>
+<span id="cb71-18"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># this is the interaction.  the effect of UVB now depends on CO2.</span></span>
+<span id="cb71-19"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-19" aria-hidden="true" tabindex="-1"></a>  ((design<span class="sc">$</span><span class="st">&quot;UVB&quot;</span><span class="sc">==</span><span class="st">&quot;UVB+&quot;</span>) <span class="sc">&amp;</span> (design<span class="sc">$</span><span class="st">&quot;CO2&quot;</span> <span class="sc">==</span> <span class="st">&quot;CO2+&quot;</span>)) <span class="sc">*</span> <span class="dv">8</span> <span class="sc">+</span></span>
+<span id="cb71-20"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add the variation</span></span>
+<span id="cb71-21"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-21" aria-hidden="true" tabindex="-1"></a>  error</span>
+<span id="cb71-22"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-23"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb71-23" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design)</span></code></pre></div>
+<pre><code>##   plots r  UVB  CO2      obs     obs2
+## 1     1 1 UVB+  Con 12.82805 12.82805
+## 2     2 1  Con CO2+ 25.38908 25.38908
+## 3     3 1  Con  Con 19.17974 19.17974
+## 4     4 1 UVB+ CO2+ 25.85980 33.85980
+## 5     5 2 UVB+ CO2+ 15.92984 23.92984
+## 6     6 2 UVB+  Con  7.75704  7.75704</code></pre>
 </div>
-<div id="plot-the-data" class="section level3" number="8.2.2">
-<h3><span class="header-section-number">8.2.2</span> Plot the data!</h3>
+<div id="plot-the-data" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Plot the data!<a href="designs-for-testing-for-interactions-factorial-designs..html#plot-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we combine some dplyr magic (calcuating means in each group - there are two grouping variables!), some ggplot magic (adding the lines connecting the means on top of the raw data) and the beauty of patchwork, the package for plot layouts.</p>
 <p>Our goal here is to plot the data that does not have the interaction next to a plot of the data that does have the interaction.</p>
 <p>Don’t forget to check that you’ve got all of the <code>library()</code> calls at the top of your script, and that you ran them!</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># No interaction summary</span></span>
-<span id="cb7-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-2" aria-hidden="true" tabindex="-1"></a>sumDat1 <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(UVB, CO2) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb7-5"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs =</span> <span class="fu">mean</span>(obs)</span>
-<span id="cb7-6"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-7"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># with interaction summary</span></span>
-<span id="cb7-9"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-9" aria-hidden="true" tabindex="-1"></a>sumDat2 <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span> </span>
-<span id="cb7-10"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(UVB, CO2) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-11"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb7-12"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs2 =</span> <span class="fu">mean</span>(obs2)</span>
-<span id="cb7-13"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-13" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-14"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># The two plots.</span></span>
-<span id="cb7-16"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># no interaction</span></span>
-<span id="cb7-17"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-17" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(design, <span class="fu">aes</span>(<span class="at">x =</span> UVB, <span class="at">y =</span> obs, <span class="at">colour =</span> CO2, <span class="at">shape =</span> CO2, <span class="at">group =</span> CO2))<span class="sc">+</span></span>
-<span id="cb7-18"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb7-19"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> sumDat1)</span>
-<span id="cb7-20"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># with interaction</span></span>
-<span id="cb7-22"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-22" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(design, <span class="fu">aes</span>(<span class="at">x =</span> UVB, <span class="at">y =</span> obs2, <span class="at">colour =</span> CO2, <span class="at">shape =</span> CO2, <span class="at">group =</span> CO2))<span class="sc">+</span></span>
-<span id="cb7-23"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb7-24"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> sumDat2)</span>
-<span id="cb7-25"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-26"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co"># use patchwork to put them side-by-side.</span></span>
-<span id="cb7-27"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb7-27" aria-hidden="true" tabindex="-1"></a>p1<span class="sc">+</span>p2</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># No interaction summary</span></span>
+<span id="cb73-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-2" aria-hidden="true" tabindex="-1"></a>sumDat1 <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span> </span>
+<span id="cb73-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(UVB, CO2) <span class="sc">%&gt;%</span> </span>
+<span id="cb73-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb73-5"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs =</span> <span class="fu">mean</span>(obs)</span>
+<span id="cb73-6"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb73-7"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-8"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="co"># with interaction summary</span></span>
+<span id="cb73-9"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-9" aria-hidden="true" tabindex="-1"></a>sumDat2 <span class="ot">&lt;-</span> design <span class="sc">%&gt;%</span> </span>
+<span id="cb73-10"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(UVB, CO2) <span class="sc">%&gt;%</span> </span>
+<span id="cb73-11"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb73-12"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs2 =</span> <span class="fu">mean</span>(obs2)</span>
+<span id="cb73-13"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb73-14"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-15"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-15" aria-hidden="true" tabindex="-1"></a><span class="co"># The two plots.</span></span>
+<span id="cb73-16"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-16" aria-hidden="true" tabindex="-1"></a><span class="co"># no interaction</span></span>
+<span id="cb73-17"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-17" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(design, <span class="fu">aes</span>(<span class="at">x =</span> UVB, <span class="at">y =</span> obs, <span class="at">colour =</span> CO2, <span class="at">shape =</span> CO2, <span class="at">group =</span> CO2))<span class="sc">+</span></span>
+<span id="cb73-18"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb73-19"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> sumDat1)</span>
+<span id="cb73-20"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-21"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-21" aria-hidden="true" tabindex="-1"></a><span class="co"># with interaction</span></span>
+<span id="cb73-22"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-22" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(design, <span class="fu">aes</span>(<span class="at">x =</span> UVB, <span class="at">y =</span> obs2, <span class="at">colour =</span> CO2, <span class="at">shape =</span> CO2, <span class="at">group =</span> CO2))<span class="sc">+</span></span>
+<span id="cb73-23"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb73-24"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> sumDat2)</span>
+<span id="cb73-25"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-26"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-26" aria-hidden="true" tabindex="-1"></a><span class="co"># use patchwork to put them side-by-side.</span></span>
+<span id="cb73-27"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb73-27" aria-hidden="true" tabindex="-1"></a>p1<span class="sc">+</span>p2</span></code></pre></div>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
 <p>What you see above on the left, is a pattern that suggest that the effect of ______ on ________ does not vary by ________. In contrast, on the right the pattern suggests that the effect of ______ on ________ ________ by ________:</p>
 </div>
-<div id="analyse-the-data" class="section level3" number="8.2.3">
-<h3><span class="header-section-number">8.2.3</span> Analyse the data</h3>
+<div id="analyse-the-data" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Analyse the data<a href="designs-for-testing-for-interactions-factorial-designs..html#analyse-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As with the plotting, we now analyse each data set.<br />
 We also make a mistake of analysing the data that has an interaction with a model that does not specify this interaction. This mod3 is incorrect, but fitting it helps illuminate why you should fit the interaction if your design contains the potential for an interaction (a factorial design).</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># model with no interaction</span></span>
-<span id="cb8-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb8-2" aria-hidden="true" tabindex="-1"></a>int_mod_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> CO2<span class="sc">*</span>UVB, <span class="at">data =</span> design)</span>
-<span id="cb8-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># model with interaction</span></span>
-<span id="cb8-5"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb8-5" aria-hidden="true" tabindex="-1"></a>int_mod_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs2 <span class="sc">~</span> CO2<span class="sc">*</span>UVB, <span class="at">data =</span> design)</span>
-<span id="cb8-6"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># model with interaction, but specified incorrectly.</span></span>
-<span id="cb8-8"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb8-8" aria-hidden="true" tabindex="-1"></a>int_mod_3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs2 <span class="sc">~</span> CO2 <span class="sc">+</span> UVB, <span class="at">data =</span> design)</span>
-<span id="cb8-9"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(int_mod_1)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># model with no interaction</span></span>
+<span id="cb74-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb74-2" aria-hidden="true" tabindex="-1"></a>int_mod_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> CO2<span class="sc">*</span>UVB, <span class="at">data =</span> design)</span>
+<span id="cb74-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb74-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="co"># model with interaction</span></span>
+<span id="cb74-5"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb74-5" aria-hidden="true" tabindex="-1"></a>int_mod_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs2 <span class="sc">~</span> CO2<span class="sc">*</span>UVB, <span class="at">data =</span> design)</span>
+<span id="cb74-6"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb74-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-7"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb74-7" aria-hidden="true" tabindex="-1"></a><span class="co"># model with interaction, but specified incorrectly.</span></span>
+<span id="cb74-8"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb74-8" aria-hidden="true" tabindex="-1"></a>int_mod_3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs2 <span class="sc">~</span> CO2 <span class="sc">+</span> UVB, <span class="at">data =</span> design)</span>
+<span id="cb74-9"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb74-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-10"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb74-10" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(int_mod_1)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Response: obs
 ##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
-## CO2        1 210.86  210.86 18.9705 0.0009357 ***
-## UVB        1 515.60  515.60 46.3877 1.874e-05 ***
-## CO2:UVB    1  10.90   10.90  0.9807 0.3415801    
-## Residuals 12 133.38   11.11                      
+## CO2        1 321.00  321.00  33.469 8.671e-05 ***
+## UVB        1 241.27  241.27  25.156 0.0003013 ***
+## CO2:UVB    1   1.13    1.13   0.118 0.7371854    
+## Residuals 12 115.09    9.59                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(int_mod_2)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(int_mod_2)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Response: obs2
 ##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
-## CO2        1 507.19  507.19  45.631 2.029e-05 ***
-## UVB        1 216.29  216.29  19.459 0.0008485 ***
-## CO2:UVB    1 127.72  127.72  11.491 0.0053693 ** 
-## Residuals 12 133.38   11.11                      
+## CO2        1 671.67  671.67 70.0311 2.364e-06 ***
+## UVB        1  56.75   56.75  5.9165   0.03159 *  
+## CO2:UVB    1  82.15   82.15  8.5654   0.01268 *  
+## Residuals 12 115.09    9.59                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(int_mod_3)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(int_mod_3)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Response: obs2
-##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
-## CO2        1 507.19  507.19  25.252 0.0002324 ***
-## UVB        1 216.29  216.29  10.769 0.0059552 ** 
-## Residuals 13 261.10   20.08                      
+##           Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## CO2        1 671.67  671.67  44.269 1.58e-05 ***
+## UVB        1  56.75   56.75   3.740  0.07519 .  
+## Residuals 13 197.24   15.17                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Note the differences in the outputs. Note what we infer if we model the interaction data incorrectly. There is no free lunch. You must understand your data and your question and you must fit the model that correctly matches your design!</p>
 </div>
-<div id="final-figuring" class="section level3" number="8.2.4">
-<h3><span class="header-section-number">8.2.4</span> final figuring</h3>
+<div id="final-figuring" class="section level3 hasAnchor" number="8.2.4">
+<h3><span class="header-section-number">8.2.4</span> final figuring<a href="designs-for-testing-for-interactions-factorial-designs..html#final-figuring" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Don’t forget that the correct standard error for the ‘result’ is the residuals mean squared. You can use the dplyr+ggplot2 method, or visreg.</p>
 <p>Here we use visreg and put the figure next to our original ggplot for the interaction data.</p>
 <p>We plot the correct model for the interaction data.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb14-1" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">visreg</span>(int_mod_2,<span class="st">&quot;CO2&quot;</span>,<span class="at">by=</span><span class="st">&quot;UVB&quot;</span>,<span class="at">gg=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb14-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb14-4" aria-hidden="true" tabindex="-1"></a>p2<span class="sc">+</span>p3</span></code></pre></div>
-<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb80-1" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">visreg</span>(int_mod_2,<span class="st">&quot;CO2&quot;</span>,<span class="at">by=</span><span class="st">&quot;UVB&quot;</span>,<span class="at">gg=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb80-2"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb80-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb80-3"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb80-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-4"><a href="designs-for-testing-for-interactions-factorial-designs..html#cb80-4" aria-hidden="true" tabindex="-1"></a>p2<span class="sc">+</span>p3</span></code></pre></div>
+<p><img src="Introduction-to-Experimental-Design-and-Analysis_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 
 </div>
 </div>
@@ -540,7 +539,7 @@ We also make a mistake of analysing the data that has an interaction with a mode
         </div>
       </div>
 <a href="the-latin-square-design-lsd.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="experimental-design-and-anova---a-summary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-summary-experimental-design-and-anova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -594,6 +593,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

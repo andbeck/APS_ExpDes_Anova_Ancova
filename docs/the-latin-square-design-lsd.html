@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 The Latin Square Design (LSD) | An Introduction to Experimental Design and Linear Models</title>
   <meta name="description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 The Latin Square Design (LSD) | An Introduction to Experimental Design and Linear Models" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is an introduction to Experimental Design, ANOVA and ANCOVA analyses." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Andrew P Beckerman (based on text and slides from Mark Rees and Gareth Phoenix)" />
 
 
-<meta name="date" content="2022-02-10" />
+<meta name="date" content="2022-07-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="randomized-complete-block-design-rcb.html"/>
 <link rel="next" href="designs-for-testing-for-interactions-factorial-designs..html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -220,11 +219,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.4" data-path="designs-for-testing-for-interactions-factorial-designs..html"><a href="designs-for-testing-for-interactions-factorial-designs..html#final-figuring"><i class="fa fa-check"></i><b>8.2.4</b> final figuring</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="experimental-design-and-anova---a-summary.html"><a href="experimental-design-and-anova---a-summary.html"><i class="fa fa-check"></i><b>9</b> Experimental Design and ANOVA - A Summary</a>
+<li class="chapter" data-level="9" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html"><i class="fa fa-check"></i><b>9</b> A Summary: Experimental Design and ANOVA</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="experimental-design-and-anova---a-summary.html"><a href="experimental-design-and-anova---a-summary.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
-<li class="chapter" data-level="9.2" data-path="experimental-design-and-anova---a-summary.html"><a href="experimental-design-and-anova---a-summary.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
-<li class="chapter" data-level="9.3" data-path="experimental-design-and-anova---a-summary.html"><a href="experimental-design-and-anova---a-summary.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
+<li class="chapter" data-level="9.1" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#how-to-analyse-anova-models"><i class="fa fa-check"></i><b>9.1</b> How To Analyse ANOVA models</a></li>
+<li class="chapter" data-level="9.2" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#experimental-designs."><i class="fa fa-check"></i><b>9.2</b> Experimental Designs.</a></li>
+<li class="chapter" data-level="9.3" data-path="a-summary-experimental-design-and-anova.html"><a href="a-summary-experimental-design-and-anova.html#clever-r-stuff"><i class="fa fa-check"></i><b>9.3</b> Clever R Stuff</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="introducing-the-ancova---the-analysis-of-covariance.html"><a href="introducing-the-ancova---the-analysis-of-covariance.html"><i class="fa fa-check"></i><b>10</b> Introducing the ANCOVA - the analysis of covariance</a>
 <ul>
@@ -288,97 +287,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-latin-square-design-lsd" class="section level1" number="7">
-<h1><span class="header-section-number">Chapter 7</span> The Latin Square Design (LSD)</h1>
-<p>Sometimes you will have two sources of variation in space or time, or perhaps space and time. Perhaps there is a gradient of elevation up and down a hillside, and a gradient of sun incidence orthoganol (90˚) to that. There are innumerable examples one could imagine. The principle is that in an LSD, the treatments are allocated randomly in ‘rows’ and ‘columns.’</p>
+<div id="the-latin-square-design-lsd" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> The Latin Square Design (LSD)<a href="the-latin-square-design-lsd.html#the-latin-square-design-lsd" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Sometimes you will have two sources of variation in space or time, or perhaps space and time. Perhaps there is a gradient of elevation up and down a hillside, and a gradient of sun incidence orthoganol (90˚) to that. There are innumerable examples one could imagine. The principle is that in an LSD, the treatments are allocated randomly in ‘rows’ and ‘columns’.</p>
 <p><img src="images/lsd.png" width="584" /></p>
 <p>A Latin Square blocks on both rows and columns simultaneously.</p>
 <p>Agricolae has a built in function for helping generate these designs, obvio. Again, new section or new script…..</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="the-latin-square-design-lsd.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># makes sure random allocation happens the same for everyone.</span></span>
-<span id="cb4-2"><a href="the-latin-square-design-lsd.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb4-3"><a href="the-latin-square-design-lsd.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="the-latin-square-design-lsd.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb4-5"><a href="the-latin-square-design-lsd.html#cb4-5" aria-hidden="true" tabindex="-1"></a>treat<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Cont&quot;</span>,<span class="st">&quot;Herb1&quot;</span>,<span class="st">&quot;Herb2&quot;</span>,<span class="st">&quot;Placebo&quot;</span>)</span>
-<span id="cb4-6"><a href="the-latin-square-design-lsd.html#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="the-latin-square-design-lsd.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># design.lsd</span></span>
-<span id="cb4-8"><a href="the-latin-square-design-lsd.html#cb4-8" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> <span class="fu">design.lsd</span>(treat,<span class="at">serie =</span> <span class="dv">0</span>)<span class="sc">$</span>book</span>
-<span id="cb4-9"><a href="the-latin-square-design-lsd.html#cb4-9" aria-hidden="true" tabindex="-1"></a>design</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="the-latin-square-design-lsd.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># makes sure random allocation happens the same for everyone.</span></span>
+<span id="cb53-2"><a href="the-latin-square-design-lsd.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb53-3"><a href="the-latin-square-design-lsd.html#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="the-latin-square-design-lsd.html#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb53-5"><a href="the-latin-square-design-lsd.html#cb53-5" aria-hidden="true" tabindex="-1"></a>treat<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Cont&quot;</span>,<span class="st">&quot;Herb1&quot;</span>,<span class="st">&quot;Herb2&quot;</span>,<span class="st">&quot;Placebo&quot;</span>)</span>
+<span id="cb53-6"><a href="the-latin-square-design-lsd.html#cb53-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-7"><a href="the-latin-square-design-lsd.html#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="co"># design.lsd</span></span>
+<span id="cb53-8"><a href="the-latin-square-design-lsd.html#cb53-8" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> <span class="fu">design.lsd</span>(treat,<span class="at">serie =</span> <span class="dv">0</span>)<span class="sc">$</span>book</span>
+<span id="cb53-9"><a href="the-latin-square-design-lsd.html#cb53-9" aria-hidden="true" tabindex="-1"></a>design</span></code></pre></div>
 <pre><code>##    plots row col   treat
-## 1     11   1   1   Herb1
-## 2     12   1   2    Cont
-## 3     13   1   3 Placebo
-## 4     14   1   4   Herb2
-## 5     21   2   1    Cont
-## 6     22   2   2 Placebo
-## 7     23   2   3   Herb2
-## 8     24   2   4   Herb1
-## 9     31   3   1   Herb2
-## 10    32   3   2   Herb1
-## 11    33   3   3    Cont
-## 12    34   3   4 Placebo
-## 13    41   4   1 Placebo
-## 14    42   4   2   Herb2
-## 15    43   4   3   Herb1
-## 16    44   4   4    Cont</code></pre>
+## 1     11   1   1    Cont
+## 2     12   1   2   Herb1
+## 3     13   1   3   Herb2
+## 4     14   1   4 Placebo
+## 5     21   2   1   Herb1
+## 6     22   2   2   Herb2
+## 7     23   2   3 Placebo
+## 8     24   2   4    Cont
+## 9     31   3   1 Placebo
+## 10    32   3   2    Cont
+## 11    33   3   3   Herb1
+## 12    34   3   4   Herb2
+## 13    41   4   1   Herb2
+## 14    42   4   2 Placebo
+## 15    43   4   3    Cont
+## 16    44   4   4   Herb1</code></pre>
 <p>Make sure you understand that the double-blocking has happened! See the figure above with 4 letters. Can you create on a piece of paper the matrix from this design you’ve made in R?</p>
 <p>Now, lets generate some data, as before.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="the-latin-square-design-lsd.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for fun, set again.</span></span>
-<span id="cb6-2"><a href="the-latin-square-design-lsd.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb6-3"><a href="the-latin-square-design-lsd.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="the-latin-square-design-lsd.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure you understand why this is the total unites</span></span>
-<span id="cb6-5"><a href="the-latin-square-design-lsd.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># think about the square matrix above....</span></span>
-<span id="cb6-6"><a href="the-latin-square-design-lsd.html#cb6-6" aria-hidden="true" tabindex="-1"></a>Total.units <span class="ot">&lt;-</span> <span class="fu">length</span>(treat) <span class="sc">*</span> <span class="fu">length</span>(treat)</span>
-<span id="cb6-7"><a href="the-latin-square-design-lsd.html#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="the-latin-square-design-lsd.html#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># generate some error</span></span>
-<span id="cb6-9"><a href="the-latin-square-design-lsd.html#cb6-9" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(Total.units, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb6-10"><a href="the-latin-square-design-lsd.html#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="the-latin-square-design-lsd.html#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure you think about where we generated variation in the blocking!</span></span>
-<span id="cb6-12"><a href="the-latin-square-design-lsd.html#cb6-12" aria-hidden="true" tabindex="-1"></a>design<span class="sc">$</span>obs <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">+</span> </span>
-<span id="cb6-13"><a href="the-latin-square-design-lsd.html#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the treatment effects</span></span>
-<span id="cb6-14"><a href="the-latin-square-design-lsd.html#cb6-14" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>treat<span class="sc">==</span><span class="st">&quot;Herb1&quot;</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
-<span id="cb6-15"><a href="the-latin-square-design-lsd.html#cb6-15" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>treat <span class="sc">==</span> <span class="st">&quot;Herb2&quot;</span>) <span class="sc">*</span> <span class="dv">9</span> <span class="sc">+</span>               </span>
-<span id="cb6-16"><a href="the-latin-square-design-lsd.html#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the latin square blocking effects</span></span>
-<span id="cb6-17"><a href="the-latin-square-design-lsd.html#cb6-17" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>row<span class="sc">==</span><span class="dv">1</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">-</span> </span>
-<span id="cb6-18"><a href="the-latin-square-design-lsd.html#cb6-18" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>col<span class="sc">==</span><span class="dv">4</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
-<span id="cb6-19"><a href="the-latin-square-design-lsd.html#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the error</span></span>
-<span id="cb6-20"><a href="the-latin-square-design-lsd.html#cb6-20" aria-hidden="true" tabindex="-1"></a>  error</span>
-<span id="cb6-21"><a href="the-latin-square-design-lsd.html#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="the-latin-square-design-lsd.html#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># look at it....  there are three explanatory variables... </span></span>
-<span id="cb6-23"><a href="the-latin-square-design-lsd.html#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># treat, row-block, column-block!</span></span>
-<span id="cb6-24"><a href="the-latin-square-design-lsd.html#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="the-latin-square-design-lsd.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for fun, set again.</span></span>
+<span id="cb55-2"><a href="the-latin-square-design-lsd.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb55-3"><a href="the-latin-square-design-lsd.html#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="the-latin-square-design-lsd.html#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure you understand why this is the total unites</span></span>
+<span id="cb55-5"><a href="the-latin-square-design-lsd.html#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co"># think about the square matrix above....</span></span>
+<span id="cb55-6"><a href="the-latin-square-design-lsd.html#cb55-6" aria-hidden="true" tabindex="-1"></a>Total.units <span class="ot">&lt;-</span> <span class="fu">length</span>(treat) <span class="sc">*</span> <span class="fu">length</span>(treat)</span>
+<span id="cb55-7"><a href="the-latin-square-design-lsd.html#cb55-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-8"><a href="the-latin-square-design-lsd.html#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="co"># generate some error</span></span>
+<span id="cb55-9"><a href="the-latin-square-design-lsd.html#cb55-9" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(Total.units, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb55-10"><a href="the-latin-square-design-lsd.html#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-11"><a href="the-latin-square-design-lsd.html#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure you think about where we generated variation in the blocking!</span></span>
+<span id="cb55-12"><a href="the-latin-square-design-lsd.html#cb55-12" aria-hidden="true" tabindex="-1"></a>design<span class="sc">$</span>obs <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">+</span> </span>
+<span id="cb55-13"><a href="the-latin-square-design-lsd.html#cb55-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the treatment effects</span></span>
+<span id="cb55-14"><a href="the-latin-square-design-lsd.html#cb55-14" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>treat<span class="sc">==</span><span class="st">&quot;Herb1&quot;</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
+<span id="cb55-15"><a href="the-latin-square-design-lsd.html#cb55-15" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>treat <span class="sc">==</span> <span class="st">&quot;Herb2&quot;</span>) <span class="sc">*</span> <span class="dv">9</span> <span class="sc">+</span>               </span>
+<span id="cb55-16"><a href="the-latin-square-design-lsd.html#cb55-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the latin square blocking effects</span></span>
+<span id="cb55-17"><a href="the-latin-square-design-lsd.html#cb55-17" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>row<span class="sc">==</span><span class="dv">1</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">-</span> </span>
+<span id="cb55-18"><a href="the-latin-square-design-lsd.html#cb55-18" aria-hidden="true" tabindex="-1"></a>  (design<span class="sc">$</span>col<span class="sc">==</span><span class="dv">4</span>) <span class="sc">*</span> <span class="dv">10</span> <span class="sc">+</span> </span>
+<span id="cb55-19"><a href="the-latin-square-design-lsd.html#cb55-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the error</span></span>
+<span id="cb55-20"><a href="the-latin-square-design-lsd.html#cb55-20" aria-hidden="true" tabindex="-1"></a>  error</span>
+<span id="cb55-21"><a href="the-latin-square-design-lsd.html#cb55-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-22"><a href="the-latin-square-design-lsd.html#cb55-22" aria-hidden="true" tabindex="-1"></a><span class="co"># look at it....  there are three explanatory variables... </span></span>
+<span id="cb55-23"><a href="the-latin-square-design-lsd.html#cb55-23" aria-hidden="true" tabindex="-1"></a><span class="co"># treat, row-block, column-block!</span></span>
+<span id="cb55-24"><a href="the-latin-square-design-lsd.html#cb55-24" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(design)</span></code></pre></div>
 <pre><code>##   plots row col   treat      obs
-## 1    11   1   1   Herb1 40.18707
-## 2    12   1   2    Cont 31.99603
-## 3    13   1   3 Placebo 32.29937
-## 4    14   1   4   Herb2 30.12746
-## 5    21   2   1    Cont 21.08111
-## 6    22   2   2 Placebo 20.56917</code></pre>
-<div id="fitting-the-model" class="section level3" number="7.0.1">
-<h3><span class="header-section-number">7.0.1</span> Fitting the model</h3>
+## 1    11   1   1    Cont 30.18707
+## 2    12   1   2   Herb1 41.99603
+## 3    13   1   3   Herb2 41.29937
+## 4    14   1   4 Placebo 21.12746
+## 5    21   2   1   Herb1 31.08111
+## 6    22   2   2   Herb2 29.56917</code></pre>
+<div id="fitting-the-model" class="section level3 hasAnchor" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Fitting the model<a href="the-latin-square-design-lsd.html#fitting-the-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s fit the naive and full models as before</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="the-latin-square-design-lsd.html#cb8-1" aria-hidden="true" tabindex="-1"></a>naive_lsd <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> treat, <span class="at">data =</span> design)</span>
-<span id="cb8-2"><a href="the-latin-square-design-lsd.html#cb8-2" aria-hidden="true" tabindex="-1"></a>full_lsd <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> row <span class="sc">+</span> col <span class="sc">+</span> treat, <span class="at">data =</span> design)</span>
-<span id="cb8-3"><a href="the-latin-square-design-lsd.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(naive_lsd)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="the-latin-square-design-lsd.html#cb57-1" aria-hidden="true" tabindex="-1"></a>naive_lsd <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> treat, <span class="at">data =</span> design)</span>
+<span id="cb57-2"><a href="the-latin-square-design-lsd.html#cb57-2" aria-hidden="true" tabindex="-1"></a>full_lsd <span class="ot">&lt;-</span> <span class="fu">lm</span>(obs <span class="sc">~</span> row <span class="sc">+</span> col <span class="sc">+</span> treat, <span class="at">data =</span> design)</span>
+<span id="cb57-3"><a href="the-latin-square-design-lsd.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(naive_lsd)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Response: obs
 ##           Df Sum Sq Mean Sq F value Pr(&gt;F)
-## treat      3 332.46 110.819  1.9116 0.1816
+## treat      3 398.31 132.771  2.2902 0.1303
 ## Residuals 12 695.68  57.973</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="the-latin-square-design-lsd.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(full_lsd)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="the-latin-square-design-lsd.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(full_lsd)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Response: obs
 ##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
 ## row        3 402.44 134.145 139.002 6.209e-06 ***
 ## col        3 287.45  95.818  99.287 1.672e-05 ***
-## treat      3 332.46 110.819 114.832 1.090e-05 ***
+## treat      3 398.31 132.771 137.578 6.401e-06 ***
 ## Residuals  6   5.79   0.965                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Very quickly we can see, again, that without blocking, we have a risk of not detecting differences among treatments!</p>
 <p>Take a look above at the <code>design$obs</code> object. Can you review the <code>summary</code> output and validate that the model is estimating what we simulated? You should see the treatment effects (+10, +9) and you should also be able to see the block effects…</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="the-latin-square-design-lsd.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(full_lsd)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="the-latin-square-design-lsd.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(full_lsd)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = obs ~ row + col + treat, data = design)
@@ -388,43 +387,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## -0.99849 -0.41205  0.00493  0.37463  1.24126 
 ## 
 ## Coefficients:
-##               Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)   31.04906    0.77663  39.979 1.64e-08 ***
-## row2         -11.20921    0.69464 -16.137 3.60e-06 ***
-## row3         -12.11319    0.69464 -17.438 2.28e-06 ***
-## row4         -11.34149    0.69464 -16.327 3.36e-06 ***
-## col2           1.21302    0.69464   1.746    0.131    
-## col3           0.45381    0.69464   0.653    0.538    
-## col4          -9.18174    0.69464 -13.218 1.16e-05 ***
-## treatHerb1     9.74744    0.69464  14.032 8.17e-06 ***
-## treatHerb2     8.27355    0.69464  11.911 2.12e-05 ***
-## treatPlacebo  -0.09241    0.69464  -0.133    0.899    
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   30.7965     0.7766  39.654 1.72e-08 ***
+## row2         -11.2092     0.6946 -16.137 3.60e-06 ***
+## row3         -12.1132     0.6946 -17.438 2.28e-06 ***
+## row4         -11.3415     0.6946 -16.327 3.36e-06 ***
+## col2           1.2130     0.6946   1.746    0.131    
+## col3           0.4538     0.6946   0.653    0.538    
+## col4          -9.1817     0.6946 -13.218 1.16e-05 ***
+## treatHerb1    10.2526     0.6946  14.759 6.08e-06 ***
+## treatHerb2     9.1602     0.6946  13.187 1.17e-05 ***
+## treatPlacebo  -0.4739     0.6946  -0.682    0.521    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 0.9824 on 6 degrees of freedom
-## Multiple R-squared:  0.9944, Adjusted R-squared:  0.9859 
-## F-statistic: 117.7 on 9 and 6 DF,  p-value: 4.719e-06</code></pre>
+## Multiple R-squared:  0.9947, Adjusted R-squared:  0.9868 
+## F-statistic: 125.3 on 9 and 6 DF,  p-value: 3.921e-06</code></pre>
 <p>Finally, we can use contrasts to test a few of our key hypotheses. Make some notes on what these things mean!</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="the-latin-square-design-lsd.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#first the set of comparisons with control.  This is the same thing that </span></span>
-<span id="cb14-2"><a href="the-latin-square-design-lsd.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the summary table does!</span></span>
-<span id="cb14-3"><a href="the-latin-square-design-lsd.html#cb14-3" aria-hidden="true" tabindex="-1"></a>contrast1 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb14-4"><a href="the-latin-square-design-lsd.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;C v H1&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),</span>
-<span id="cb14-5"><a href="the-latin-square-design-lsd.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;C v H2&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
-<span id="cb14-6"><a href="the-latin-square-design-lsd.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;C v P&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb14-7"><a href="the-latin-square-design-lsd.html#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="the-latin-square-design-lsd.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(full_lsd, <span class="st">&quot;treat&quot;</span>, contrast1)</span></code></pre></div>
-<pre><code>##                Estimate Std. Error    t value     Pr(&gt;|t|)
-## treatC v H1  9.74743817  0.6946426 14.0323065 8.171412e-06
-## treatC v H2  8.27355032  0.6946426 11.9105135 2.120658e-05
-## treatC v P  -0.09240547  0.6946426 -0.1330259 8.985222e-01
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="the-latin-square-design-lsd.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">#first the set of comparisons with control.  This is the same thing that </span></span>
+<span id="cb63-2"><a href="the-latin-square-design-lsd.html#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the summary table does!</span></span>
+<span id="cb63-3"><a href="the-latin-square-design-lsd.html#cb63-3" aria-hidden="true" tabindex="-1"></a>contrast1 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb63-4"><a href="the-latin-square-design-lsd.html#cb63-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;C v H1&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb63-5"><a href="the-latin-square-design-lsd.html#cb63-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;C v H2&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
+<span id="cb63-6"><a href="the-latin-square-design-lsd.html#cb63-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;C v P&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb63-7"><a href="the-latin-square-design-lsd.html#cb63-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-8"><a href="the-latin-square-design-lsd.html#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(full_lsd, <span class="st">&quot;treat&quot;</span>, contrast1)</span></code></pre></div>
+<pre><code>##               Estimate Std. Error    t value     Pr(&gt;|t|)
+## treatC v H1 10.2525618  0.6946426 14.7594771 6.079845e-06
+## treatC v H2  9.1601564  0.6946426 13.1868620 1.174267e-05
+## treatC v P  -0.4738879  0.6946426 -0.6822038 5.205624e-01
 ## attr(,&quot;class&quot;)
 ## [1] &quot;fit_contrast&quot;</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="the-latin-square-design-lsd.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now the H1 vs H2</span></span>
-<span id="cb16-2"><a href="the-latin-square-design-lsd.html#cb16-2" aria-hidden="true" tabindex="-1"></a>contrast2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="st">&quot;H1 v H2&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
-<span id="cb16-3"><a href="the-latin-square-design-lsd.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(full_lsd, <span class="st">&quot;treat&quot;</span>, contrast2)</span></code></pre></div>
-<pre><code>##               Estimate Std. Error   t value   Pr(&gt;|t|)
-## treatH1 v H2 -1.473888  0.6946426 -2.121793 0.07808973
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="the-latin-square-design-lsd.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now the H1 vs H2</span></span>
+<span id="cb65-2"><a href="the-latin-square-design-lsd.html#cb65-2" aria-hidden="true" tabindex="-1"></a>contrast2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="st">&quot;H1 v H2&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb65-3"><a href="the-latin-square-design-lsd.html#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fit.contrast</span>(full_lsd, <span class="st">&quot;treat&quot;</span>, contrast2)</span></code></pre></div>
+<pre><code>##               Estimate Std. Error   t value  Pr(&gt;|t|)
+## treatH1 v H2 -1.092405  0.6946426 -1.572615 0.1668691
 ## attr(,&quot;class&quot;)
 ## [1] &quot;fit_contrast&quot;</code></pre>
 
@@ -490,6 +489,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
